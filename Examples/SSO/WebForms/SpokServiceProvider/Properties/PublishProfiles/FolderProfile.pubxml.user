@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_NewBackgroundProfile>True</_NewBackgroundProfile>
+    <_PublishTargetUrl>C:\_Varsha\SAMLv20-evaluation\Publishcode\SpokServiceProvider</_PublishTargetUrl>
+    <History>True|2024-02-26T13:47:28.1699347Z;True|2024-02-23T06:55:16.2027001-06:00;True|2024-02-23T06:33:10.7376842-06:00;True|2024-02-23T05:59:18.1025355-06:00;True|2024-02-23T05:45:07.1922330-06:00;True|2023-10-18T01:38:19.0499271-05:00;True|2023-10-15T00:44:37.7369492-05:00;True|2023-10-15T00:40:09.3332366-05:00;True|2023-10-15T00:36:14.0279644-05:00;True|2023-10-15T00:24:19.3928169-05:00;True|2023-10-15T00:18:19.5976525-05:00;True|2023-10-15T00:01:43.0744830-05:00;True|2023-10-14T23:47:33.2610560-05:00;True|2022-04-10T20:34:19.3915017-05:00;True|2022-04-10T19:58:04.2343402-05:00;True|2022-04-10T19:57:15.7986168-05:00;True|2022-04-08T01:38:22.9299166-05:00;True|2022-04-08T01:37:04.5165216-05:00;True|2022-04-08T01:34:24.8836555-05:00;True|2022-04-08T01:33:16.2378405-05:00;True|2022-04-08T01:32:32.8871629-05:00;True|2022-04-08T01:31:42.6349262-05:00;True|2022-04-08T01:23:04.5384959-05:00;True|2022-04-07T21:10:17.3076627-05:00;True|2021-07-07T20:54:18.5362452-05:00;True|2021-07-07T20:43:59.6124346-05:00;True|2021-07-07T20:42:04.4519135-05:00;True|2021-07-07T20:34:46.3472403-05:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/readme.txt">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="App_Data/spoklogo.jpg">
+      <publishTime>02/26/2024 07:42:44</publishTime>
+    </File>
+    <File Include="bin/ComponentSpace.SAML2.dll">
+      <publishTime>11/07/2023 18:37:42</publishTime>
+    </File>
+    <File Include="bin/ComponentSpace.SAML2.pdb">
+      <publishTime>12/05/2017 13:03:57</publishTime>
+    </File>
+    <File Include="bin/ExampleServiceProvider.dll">
+      <publishTime>10/18/2023 16:38:17</publishTime>
+    </File>
+    <File Include="bin/ExampleServiceProvider.pdb">
+      <publishTime>10/18/2023 16:38:17</publishTime>
+    </File>
+    <File Include="bin/SpokServiceProvider.dll">
+      <publishTime>02/23/2024 06:55:15</publishTime>
+    </File>
+    <File Include="bin/SpokServiceProvider.pdb">
+      <publishTime>02/23/2024 06:55:15</publishTime>
+    </File>
+    <File Include="bin/System.Security.AccessControl.dll">
+      <publishTime>11/15/2019 08:41:04</publishTime>
+    </File>
+    <File Include="bin/System.Security.Cryptography.Xml.dll">
+      <publishTime>11/15/2019 08:38:22</publishTime>
+    </File>
+    <File Include="bin/System.Security.Permissions.dll">
+      <publishTime>11/15/2019 08:38:24</publishTime>
+    </File>
+    <File Include="bin/System.Security.Principal.Windows.dll">
+      <publishTime>11/15/2019 08:41:16</publishTime>
+    </File>
+    <File Include="Certificates/adfs.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/azure.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/bitium.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/centrify.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/google.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/idp.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/okta.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/onelogin.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/pingone.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/proxy.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/salesforce.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/shibboleth.cer">
+      <publishTime>06/23/2017 15:56:56</publishTime>
+    </File>
+    <File Include="Certificates/shibboleth1.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/shibboleth2.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/sp.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/sp.pfx">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Certificates/wso2.cer">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>02/26/2024 07:47:05</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>02/20/2024 04:01:59</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>02/26/2024 07:43:46</publishTime>
+    </File>
+    <File Include="saml.config">
+      <publishTime>02/23/2024 06:42:10</publishTime>
+    </File>
+    <File Include="SAML/AssertionConsumerService.aspx">
+      <publishTime>02/20/2024 04:02:00</publishTime>
+    </File>
+    <File Include="SAML/ExportMetadata.aspx">
+      <publishTime>02/20/2024 04:01:59</publishTime>
+    </File>
+    <File Include="SAML/ImportMetadata.aspx">
+      <publishTime>02/20/2024 04:01:59</publishTime>
+    </File>
+    <File Include="SAML/SLOService.aspx">
+      <publishTime>02/20/2024 04:01:59</publishTime>
+    </File>
+    <File Include="SAML/Web.config">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.11.3.min.js">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Site.css">
+      <publishTime>01/31/2024 08:02:34</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/22/2024 09:30:29</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

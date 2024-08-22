@@ -1,0 +1,2 @@
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Encryption\EncryptAssertion\obj\Debug\EncryptAssertion.csproj.AssemblyReference.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Encryption\EncryptAssertion\obj\Debug\EncryptAssertion.csproj.CoreCompileInputs.cache

@@ -1,0 +1,11 @@
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\bin\Debug\ImportMetadata.exe.config
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\bin\Debug\ImportMetadata.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\bin\Debug\ImportMetadata.pdb
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\bin\Debug\ComponentSpace.Saml2.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\bin\Debug\System.Security.Principal.Windows.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\bin\Debug\ComponentSpace.Saml2.xml
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\obj\Debug\ImportMetadata.csproj.AssemblyReference.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\obj\Debug\ImportMetadata.csproj.CoreCompileInputs.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\obj\Debug\ImportMetadata.csproj.CopyComplete
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\obj\Debug\ImportMetadata.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ImportMetadata\obj\Debug\ImportMetadata.pdb

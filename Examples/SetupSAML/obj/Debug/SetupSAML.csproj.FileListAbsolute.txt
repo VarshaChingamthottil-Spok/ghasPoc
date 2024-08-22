@@ -1,0 +1,10 @@
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SetupSAML\obj\Debug\SetupSAML.csproj.AssemblyReference.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SetupSAML\obj\Debug\SetupSAML.csproj.CoreCompileInputs.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SetupSAML\bin\Debug\SetupSAML.exe.config
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SetupSAML\bin\Debug\SetupSAML.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SetupSAML\bin\Debug\SetupSAML.pdb
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SetupSAML\bin\Debug\ComponentSpace.Saml2.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SetupSAML\bin\Debug\ComponentSpace.Saml2.xml
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SetupSAML\obj\Debug\SetupSAML.csproj.CopyComplete
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SetupSAML\obj\Debug\SetupSAML.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SetupSAML\obj\Debug\SetupSAML.pdb

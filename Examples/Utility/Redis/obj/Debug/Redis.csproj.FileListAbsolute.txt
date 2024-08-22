@@ -1,0 +1,2 @@
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Utility\Redis\obj\Debug\Redis.csproj.AssemblyReference.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Utility\Redis\obj\Debug\Redis.csproj.CoreCompileInputs.cache

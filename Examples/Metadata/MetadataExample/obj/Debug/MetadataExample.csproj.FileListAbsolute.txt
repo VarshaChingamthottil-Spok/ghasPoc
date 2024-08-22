@@ -1,0 +1,15 @@
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\bin\Debug\idp.cer
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\bin\Debug\idp.pfx
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\bin\Debug\sp.cer
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\bin\Debug\sp.pfx
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\bin\Debug\MetadataExample.exe.config
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\bin\Debug\MetadataExample.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\bin\Debug\MetadataExample.pdb
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\bin\Debug\ComponentSpace.Saml2.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\bin\Debug\System.Security.Principal.Windows.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\bin\Debug\ComponentSpace.Saml2.xml
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\obj\Debug\MetadataExample.csproj.AssemblyReference.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\obj\Debug\MetadataExample.csproj.CoreCompileInputs.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\obj\Debug\MetadataExample.csproj.CopyComplete
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\obj\Debug\MetadataExample.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\MetadataExample\obj\Debug\MetadataExample.pdb

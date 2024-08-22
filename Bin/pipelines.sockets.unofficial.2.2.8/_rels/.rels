@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Type="http://schemas.microsoft.com/packaging/2010/07/manifest" Target="/Pipelines.Sockets.Unofficial.nuspec" Id="R04982DFF9383826A" />
+  <Relationship Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="/package/services/metadata/core-properties/04a66002be3e46379332ece777586fce.psmdcp" Id="RC6F63310E594B3CA" />
+</Relationships>

@@ -1,0 +1,12 @@
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\bin\Debug\idp.pfx
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\bin\Debug\TestSHA256Signature.exe.config
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\bin\Debug\TestSHA256Signature.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\bin\Debug\TestSHA256Signature.pdb
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\bin\Debug\ComponentSpace.Saml2.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\bin\Debug\System.Security.Principal.Windows.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\bin\Debug\ComponentSpace.Saml2.xml
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\obj\x86\Debug\TestSHA256Signature.csproj.AssemblyReference.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\obj\x86\Debug\TestSHA256Signature.csproj.CoreCompileInputs.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\obj\x86\Debug\TestSHA256Signature.csproj.CopyComplete
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\obj\x86\Debug\TestSHA256Signature.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Signature\TestSHA256Signature\obj\x86\Debug\TestSHA256Signature.pdb

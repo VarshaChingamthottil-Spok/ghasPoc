@@ -1,0 +1,1012 @@
+13720/8: 2/22/2024 5:54:52 AM: ComponentSpace.Saml2, Version=6.5.0.0, Culture=neutral, PublicKeyToken=16647a1283418145, .NET v4.0 build, Evaluation.
+13720/8: 2/22/2024 5:54:53 AM: CLR: 4.0.30319.42000, OS: Microsoft Windows NT 6.2.9200.0, Account: SPOKVDEV\VChingamthottil, Culture: English (United States)
+13720/8: 2/22/2024 5:54:53 AM: Initializing the SAML environment.
+13720/8: 2/22/2024 5:54:53 AM: Loading the SAML configuration file C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider\saml.config.
+13720/8: 2/22/2024 5:54:53 AM: SAML configuration:
+<?xml version="1.0"?>
+<SAMLConfiguration xmlns="urn:componentspace:SAML:2.0:configuration">
+	<!--Name="https://fs.spok.com/adfs/services/trust"-->
+  <IdentityProvider	 
+    Name="https://ExampleIdentityProvider"
+    Description="Example Identity Provider">
+    <LocalCertificates>
+      <Certificate FileName="Certificates\idp.pfx" Password="********"/>
+    </LocalCertificates>
+  </IdentityProvider>
+
+  <PartnerServiceProviders>
+    <!-- Web forms example -->
+    <PartnerServiceProvider
+      Name="https://ExampleServiceProvider"
+      Description="Example Service Provider"
+      AssertionConsumerServiceUrl="https://localhost:44338/SAML/AssertionConsumerService.aspx"
+      SingleLogoutServiceUrl="https://localhost:44338/SAML/SLOService.aspx">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\sp.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+
+	  <!-- Web forms example -->
+	  <PartnerServiceProvider
+		Name="https://SpokServiceProvider"
+		Description="Spok Service Provider"
+		AssertionConsumerServiceUrl="https://localhost:44348/SAML/AssertionConsumerService.aspx"
+		SingleLogoutServiceUrl="https://localhost:44348/SAML/SLOService.aspx">
+		  <PartnerCertificates>
+			  <Certificate FileName="Certificates\sp.cer"/>
+		  </PartnerCertificates>
+	  </PartnerServiceProvider>
+
+    <!-- MVC example -->
+    <PartnerServiceProvider 
+	  Name="https://MvcExampleServiceProvider"
+	  Description="MVC Example Service Provider"
+	  AssertionConsumerServiceUrl="https://localhost:44386/SAML/AssertionConsumerService"
+	  SingleLogoutServiceUrl="https://localhost:44386/SAML/SingleLogoutService">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\sp.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+
+    <!-- SAML Proxy -->
+    <PartnerServiceProvider
+      Name="https://SamlProxy"
+      Description="SAML Proxy"
+      AssertionConsumerServiceUrl="https://localhost:44361/SAML/SP/AssertionConsumerService"
+      SingleLogoutServiceUrl="https://localhost:44361/SAML/SP/SingleLogoutService">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\proxy.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+	  
+    <!-- ADFS -->
+    <PartnerServiceProvider
+      Name="http://adfs.test/adfs/services/trust"
+      Description="ADFS"
+      AssertionConsumerServiceUrl="https://fs.spok.com/adfs/ls">
+    </PartnerServiceProvider>   
+  </PartnerServiceProviders>
+</SAMLConfiguration>
+
+13720/8: 2/22/2024 5:54:53 AM: The SAML configuration file has been successfully loaded.
+13720/8: 2/22/2024 5:54:53 AM: SAML configuration changes in the directory C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider are being monitored.
+13720/8: 2/22/2024 5:54:53 AM: The SAML environment has been successfully initialized.
+13720/8: 2/22/2024 5:54:53 AM: The SAML_SessionId session cookie with value 9e7b8788-1505-4a7d-8454-167b1be5cef7 has been set.
+13720/8: 2/22/2024 5:54:53 AM: HTTP cookie: SAML_SessionId=9e7b8788-1505-4a7d-8454-167b1be5cef7; Path=/; SameSite=None; Secure; HttpOnly
+13720/8: 2/22/2024 5:54:53 AM: Checking if there are any partner service providers that have successfully completed SSO and also support SLO.
+13720/8: 2/22/2024 5:54:53 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+13720/8: 2/22/2024 5:54:53 AM: SLO to partner service providers cannot occur.
+13720/12: 2/22/2024 5:55:15 AM: Checking if there are any SSO responses pending to partner service providers.
+13720/12: 2/22/2024 5:55:15 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+13720/12: 2/22/2024 5:55:15 AM: There are no SSO responses pending to partner service providers.
+13720/12: 2/22/2024 5:55:15 AM: Receiving an SSO request from a partner service provider.
+13720/12: 2/22/2024 5:55:15 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+13720/12: 2/22/2024 5:55:15 AM: Receiving request over HTTP Redirect.
+13720/12: 2/22/2024 5:55:15 AM: HTTPS request:
+GET /SAML/SSOService.aspx?SAMLRequest=fZLNbsIwEIRfJfI95BcCFiBRUFUkWiJCe%2BilMs6mWHXs1OvQ9u2bBKjoAa6rnZnPsx4jK2VFZ7Xdqw181oDWWS4m5C0Z%2Bjt%2FkERuMthxN2bRyB3xAtwoTsD34ySKeEicFzAotJqQsOcTZ4lYw1KhZco2Iz%2BMXT90w3AbBLTfp0HUSwbxK3EWTYpQzHbKvbUVUs%2BTmjO512hpHEcj38tmjysvy9YZmIPg0GNYfRPnXhsOHe2EFEwitKkpQxQH%2BJukRlvNtbwTKhfqfUJqo6hmKJAqVgJSy2lrTxtqujsuIX3YblM3XWdb4swQwbR4c62wLsGcIJ43qyvA0fAIfE15wv8upULadX6bqjo9gUzH7TbtqjUX%2BttydsYg0zNuVumPE0zTz0HkYMbehfcxqKJPjdlykWop%2BE9bd8ns9aygF3QTkbtFt0prhRVwUQjImx6l1F9zA8w2x7Gmbm7jTY%2Bp%2F%2F%2Fc9Bc%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=qBkERd8dyDZ07SUigFYUMtIh%2BnNeiJYCSwyLgqj7%2B8sltbABpiglbKHch5TBau2AcQ0loG2RCOrljC2i53vv1XbdCm41J9i%2FboefoPx%2Br22jvEhtBy5mFpvs58a%2BXw8dximO8fF%2BYkyD0YTMR2JiNENn%2FmmFurXst9OMK5eGATYSw3vfFueb17VuObnYxheqzUecMQ43PS6m2QtzMtAIIeddT9dCWz7%2BL8vD43xfs9zc%2FZMQ1dzhROeLGjhvKY5XCt63jCDCfLpIJ5qiBTA8bIOrKe%2BYymwknzqEl5iGDnLV2mH2cVWGpmRPO94GDa47T1Ks%2Bq4GGPmqbGc0lvQ%2Fvw%3D%3D HTTP/1.1
+Cache-Control: max-age=0
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: SAML_SessionId=9e7b8788-1505-4a7d-8454-167b1be5cef7
+Host: localhost:44390
+Referer: https://localhost:44338/
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Site: same-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+sec-ch-ua: "Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+
+13720/12: 2/22/2024 5:55:15 AM: Parsing HTTP redirect URL: /SAML/SSOService.aspx?SAMLRequest=fZLNbsIwEIRfJfI95BcCFiBRUFUkWiJCe%2BilMs6mWHXs1OvQ9u2bBKjoAa6rnZnPsx4jK2VFZ7Xdqw181oDWWS4m5C0Z%2Bjt%2FkERuMthxN2bRyB3xAtwoTsD34ySKeEicFzAotJqQsOcTZ4lYw1KhZco2Iz%2BMXT90w3AbBLTfp0HUSwbxK3EWTYpQzHbKvbUVUs%2BTmjO512hpHEcj38tmjysvy9YZmIPg0GNYfRPnXhsOHe2EFEwitKkpQxQH%2BJukRlvNtbwTKhfqfUJqo6hmKJAqVgJSy2lrTxtqujsuIX3YblM3XWdb4swQwbR4c62wLsGcIJ43qyvA0fAIfE15wv8upULadX6bqjo9gUzH7TbtqjUX%2BttydsYg0zNuVumPE0zTz0HkYMbehfcxqKJPjdlykWop%2BE9bd8ns9aygF3QTkbtFt0prhRVwUQjImx6l1F9zA8w2x7Gmbm7jTY%2Bp%2F%2F%2Fc9Bc%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=qBkERd8dyDZ07SUigFYUMtIh%2BnNeiJYCSwyLgqj7%2B8sltbABpiglbKHch5TBau2AcQ0loG2RCOrljC2i53vv1XbdCm41J9i%2FboefoPx%2Br22jvEhtBy5mFpvs58a%2BXw8dximO8fF%2BYkyD0YTMR2JiNENn%2FmmFurXst9OMK5eGATYSw3vfFueb17VuObnYxheqzUecMQ43PS6m2QtzMtAIIeddT9dCWz7%2BL8vD43xfs9zc%2FZMQ1dzhROeLGjhvKY5XCt63jCDCfLpIJ5qiBTA8bIOrKe%2BYymwknzqEl5iGDnLV2mH2cVWGpmRPO94GDa47T1Ks%2Bq4GGPmqbGc0lvQ%2Fvw%3D%3D
+13720/12: 2/22/2024 5:55:15 AM: Decoding SAML message: fZLNbsIwEIRfJfI95BcCFiBRUFUkWiJCe+ilMs6mWHXs1OvQ9u2bBKjoAa6rnZnPsx4jK2VFZ7Xdqw181oDWWS4m5C0Z+jt/kERuMthxN2bRyB3xAtwoTsD34ySKeEicFzAotJqQsOcTZ4lYw1KhZco2Iz+MXT90w3AbBLTfp0HUSwbxK3EWTYpQzHbKvbUVUs+TmjO512hpHEcj38tmjysvy9YZmIPg0GNYfRPnXhsOHe2EFEwitKkpQxQH+JukRlvNtbwTKhfqfUJqo6hmKJAqVgJSy2lrTxtqujsuIX3YblM3XWdb4swQwbR4c62wLsGcIJ43qyvA0fAIfE15wv8upULadX6bqjo9gUzH7TbtqjUX+ttydsYg0zNuVumPE0zTz0HkYMbehfcxqKJPjdlykWop+E9bd8ns9aygF3QTkbtFt0prhRVwUQjImx6l1F9zA8w2x7Gmbm7jTY+p///c9Bc=
+13720/12: 2/22/2024 5:55:15 AM: Decoded SAML message: <samlp:AuthnRequest ID="_780b0673-76bc-4a39-9cfe-347e004733c2" Version="2.0" IssueInstant="2024-02-22T11:55:13.764Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44338/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>
+13720/12: 2/22/2024 5:55:15 AM: Relay state: /
+13720/12: 2/22/2024 5:55:15 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+13720/12: 2/22/2024 5:55:15 AM: Signature: qBkERd8dyDZ07SUigFYUMtIh+nNeiJYCSwyLgqj7+8sltbABpiglbKHch5TBau2AcQ0loG2RCOrljC2i53vv1XbdCm41J9i/boefoPx+r22jvEhtBy5mFpvs58a+Xw8dximO8fF+YkyD0YTMR2JiNENn/mmFurXst9OMK5eGATYSw3vfFueb17VuObnYxheqzUecMQ43PS6m2QtzMtAIIeddT9dCWz7+L8vD43xfs9zc/ZMQ1dzhROeLGjhvKY5XCt63jCDCfLpIJ5qiBTA8bIOrKe+YymwknzqEl5iGDnLV2mH2cVWGpmRPO94GDa47T1Ks+q4GGPmqbGc0lvQ/vw==
+13720/12: 2/22/2024 5:55:15 AM: Received request over HTTP Redirect, samlMessage=<samlp:AuthnRequest ID="_780b0673-76bc-4a39-9cfe-347e004733c2" Version="2.0" IssueInstant="2024-02-22T11:55:13.764Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44338/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>, relayState=/, signatureAlgorithm=http://www.w3.org/2001/04/xmldsig-more#rsa-sha256, signature=qBkERd8dyDZ07SUigFYUMtIh+nNeiJYCSwyLgqj7+8sltbABpiglbKHch5TBau2AcQ0loG2RCOrljC2i53vv1XbdCm41J9i/boefoPx+r22jvEhtBy5mFpvs58a+Xw8dximO8fF+YkyD0YTMR2JiNENn/mmFurXst9OMK5eGATYSw3vfFueb17VuObnYxheqzUecMQ43PS6m2QtzMtAIIeddT9dCWz7+L8vD43xfs9zc/ZMQ1dzhROeLGjhvKY5XCt63jCDCfLpIJ5qiBTA8bIOrKe+YymwknzqEl5iGDnLV2mH2cVWGpmRPO94GDa47T1Ks+q4GGPmqbGc0lvQ/vw==
+13720/12: 2/22/2024 5:55:15 AM: SAML message received: partner=https://SpokServiceProvider, message=<samlp:AuthnRequest ID="_780b0673-76bc-4a39-9cfe-347e004733c2" Version="2.0" IssueInstant="2024-02-22T11:55:13.764Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44338/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>, relay state=/
+13720/12: 2/22/2024 5:55:15 AM: The XML validated against the SAML XML Schemas.
+13720/12: 2/22/2024 5:55:15 AM: Verifying the authn request signature.
+13720/12: 2/22/2024 5:55:15 AM: Loading the X.509 certificate from the file C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider\Certificates\sp.cer.
+13720/12: 2/22/2024 5:55:15 AM: The X.509 certificate with subject name CN=www.sp.com, serial number 0867A17DC9EFEABE4CCBF7E7ADB7C37A and thumbprint 427A3D5B39DF593B1D44B769D3697AEDF00FD83F has been loaded.
+13720/12: 2/22/2024 5:55:15 AM: The X.509 certificate with subject name CN=www.sp.com, serial number 0867A17DC9EFEABE4CCBF7E7ADB7C37A and thumbprint 427A3D5B39DF593B1D44B769D3697AEDF00FD83F has been cached.
+13720/12: 2/22/2024 5:55:15 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+13720/12: 2/22/2024 5:55:15 AM: Checking HTTP redirect signature.
+13720/12: 2/22/2024 5:55:15 AM: Query string: SAMLRequest=fZLNbsIwEIRfJfI95BcCFiBRUFUkWiJCe%2BilMs6mWHXs1OvQ9u2bBKjoAa6rnZnPsx4jK2VFZ7Xdqw181oDWWS4m5C0Z%2Bjt%2FkERuMthxN2bRyB3xAtwoTsD34ySKeEicFzAotJqQsOcTZ4lYw1KhZco2Iz%2BMXT90w3AbBLTfp0HUSwbxK3EWTYpQzHbKvbUVUs%2BTmjO512hpHEcj38tmjysvy9YZmIPg0GNYfRPnXhsOHe2EFEwitKkpQxQH%2BJukRlvNtbwTKhfqfUJqo6hmKJAqVgJSy2lrTxtqujsuIX3YblM3XWdb4swQwbR4c62wLsGcIJ43qyvA0fAIfE15wv8upULadX6bqjo9gUzH7TbtqjUX%2BttydsYg0zNuVumPE0zTz0HkYMbehfcxqKJPjdlykWop%2BE9bd8ns9aygF3QTkbtFt0prhRVwUQjImx6l1F9zA8w2x7Gmbm7jTY%2Bp%2F%2F%2Fc9Bc%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256
+13720/12: 2/22/2024 5:55:15 AM: Signed data: SAMLRequest=fZLNbsIwEIRfJfI95BcCFiBRUFUkWiJCe%2BilMs6mWHXs1OvQ9u2bBKjoAa6rnZnPsx4jK2VFZ7Xdqw181oDWWS4m5C0Z%2Bjt%2FkERuMthxN2bRyB3xAtwoTsD34ySKeEicFzAotJqQsOcTZ4lYw1KhZco2Iz%2BMXT90w3AbBLTfp0HUSwbxK3EWTYpQzHbKvbUVUs%2BTmjO512hpHEcj38tmjysvy9YZmIPg0GNYfRPnXhsOHe2EFEwitKkpQxQH%2BJukRlvNtbwTKhfqfUJqo6hmKJAqVgJSy2lrTxtqujsuIX3YblM3XWdb4swQwbR4c62wLsGcIJ43qyvA0fAIfE15wv8upULadX6bqjo9gUzH7TbtqjUX%2BttydsYg0zNuVumPE0zTz0HkYMbehfcxqKJPjdlykWop%2BE9bd8ns9aygF3QTkbtFt0prhRVwUQjImx6l1F9zA8w2x7Gmbm7jTY%2Bp%2F%2F%2Fc9Bc%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256
+13720/12: 2/22/2024 5:55:15 AM: Verifying signature.
+13720/12: 2/22/2024 5:55:15 AM: Signed data: 53 41 4d 4c 52 65 71 75 65 73 74 3d 66 5a 4c 4e 62 73 49 77 45 49 52 66 4a 66 49 39 35 42 63 43 46 69 42 52 55 46 55 6b 57 69 4a 43 65 25 32 42 69 6c 4d 73 36 6d 57 48 58 73 31 4f 76 51 39 75 32 62 42 4b 6a 6f 41 61 36 72 6e 5a 6e 50 73 78 34 6a 4b 32 56 46 5a 37 58 64 71 77 31 38 31 6f 44 57 57 53 34 6d 35 43 30 5a 25 32 42 6a 74 25 32 46 6b 45 52 75 4d 74 68 78 4e 32 62 52 79 42 33 78 41 74 77 6f 54 73 44 33 34 79 53 4b 65 45 69 63 46 7a 41 6f 74 4a 71 51 73 4f 63 54 5a 34 6c 59 77 31 4b 68 5a 63 6f 32 49 7a 25 32 42 4d 58 54 39 30 77 33 41 62 42 4c 54 66 70 30 48 55 53 77 62 78 4b 33 45 57 54 59 70 51 7a 48 62 4b 76 62 55 56 55 73 25 32 42 54 6d 6a 4f 35 31 32 68 70 48 45 63 6a 33 38 74 6d 6a 79 73 76 79 39 59 5a 6d 49 50 67 30 47 4e 59 66 52 50 6e 58 68 73 4f 48 65 32 45 46 45 77 69 74 4b 6b 70 51 78 51 48 25 32 42 4a 75 6b 52 6c 76 4e 74 62 77 54 4b 68 66 71 66 55 4a 71 6f 36 68 6d 4b 4a 41 71 56 67 4a 53 79 32 6c 72 54 78 74 71 75 6a 73 75 49 58 33 59 62 6c 4d 33 58 57 64 62 34 73 77 51 77 62 52 34 63 36 32 77 4c 73 47 63 49 4a 34 33 71 79 76 41 30 66 41 49 66 45 31 35 77 76 38 75 70 55 4c 61 64 58 36 62 71 6a 6f 39 67 55 7a 48 37 54 62 74 71 6a 55 58 25 32 42 74 74 79 64 73 59 67 30 7a 4e 75 56 75 6d 50 45 30 7a 54 7a 30 48 6b 59 4d 62 65 68 66 63 78 71 4b 4a 50 6a 64 6c 79 6b 57 6f 70 25 32 42 45 39 62 64 38 6e 73 39 61 79 67 46 33 51 54 6b 62 74 46 74 30 70 72 68 52 56 77 55 51 6a 49 6d 78 36 6c 31 46 39 7a 41 38 77 32 78 37 47 6d 62 6d 37 6a 54 59 25 32 42 70 25 32 46 25 32 46 25 32 46 63 39 42 63 25 33 44 26 52 65 6c 61 79 53 74 61 74 65 3d 25 32 46 26 53 69 67 41 6c 67 3d 68 74 74 70 25 33 41 25 32 46 25 32 46 77 77 77 2e 77 33 2e 6f 72 67 25 32 46 32 30 30 31 25 32 46 30 34 25 32 46 78 6d 6c 64 73 69 67 2d 6d 6f 72 65 25 32 33 72 73 61 2d 73 68 61 32 35 36
+13720/12: 2/22/2024 5:55:15 AM: Signature: a8 19 04 45 df 1d c8 36 74 ed 25 22 80 56 14 32 d2 21 fa 73 5e 88 96 02 4b 0c 8b 82 a8 fb fb cb 25 b5 b0 01 a6 28 25 6c a1 dc 87 94 c1 6a ed 80 71 0d 25 a0 6d 91 08 ea e5 8c 2d a2 e7 7b ef d5 76 dd 0a 6e 35 27 d8 bf 6e 87 9f a0 fc 7e af 6d a3 bc 48 6d 07 2e 66 16 9b ec e7 c6 be 5f 0f 1d c6 29 8e f1 f1 7e 62 4c 83 d1 84 cc 47 62 62 34 43 67 fe 69 85 ba b5 ec b7 d3 8c 2b 97 86 01 36 12 c3 7b df 16 e7 9b d7 b5 6e 39 b9 d8 c6 17 aa cd 47 9c 31 0e 37 3d 2e a6 d9 0b 73 32 d0 08 21 e7 5d 4f d7 42 5b 3e fe 2f cb c3 e3 7c 5f b3 dc dc fd 93 10 d5 dc e1 44 e7 8b 1a 38 6f 29 8e 57 0a de b7 8c 20 c2 7c ba 48 27 9a a2 05 30 3c 6c 83 ab 29 ef 98 ca 6c 24 9f 3a 84 97 98 86 0e 72 d5 da 61 f6 71 55 86 a6 64 4f 3b de 06 0d ae 3b 4f 52 ac fa ae 06 18 f9 aa 6c 67 34 96 f4 3f bf
+13720/12: 2/22/2024 5:55:15 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+13720/12: 2/22/2024 5:55:15 AM: Signature verified: True
+13720/12: 2/22/2024 5:55:15 AM: HTTP redirect signature verified.
+13720/12: 2/22/2024 5:55:15 AM: The authn request signature verified.
+13720/12: 2/22/2024 5:55:15 AM: The SAML request destination won't be checked as the destination URL hasn't been specified.
+13720/12: 2/22/2024 5:55:15 AM: Saving session state for 9e7b8788-1505-4a7d-8454-167b1be5cef7:IdentityProviderSession to the SSO session store.
+13720/12: 2/22/2024 5:55:15 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+Pending response state:
+Action: SendSamlResponse
+Partner name: https://SpokServiceProvider
+Relay state: /
+In response to: _780b0673-76bc-4a39-9cfe-347e004733c2
+Response URL: https://localhost:44338/SAML/AssertionConsumerService.aspx
+
+13720/12: 2/22/2024 5:55:16 AM: An SSO request from the partner service provider https://SpokServiceProvider has been successfully received.
+13720/8: 2/22/2024 5:55:28 AM: Checking if there are any SSO responses pending to partner service providers.
+13720/8: 2/22/2024 5:55:28 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+Pending response state:
+Action: SendSamlResponse
+Partner name: https://SpokServiceProvider
+Relay state: /
+In response to: _780b0673-76bc-4a39-9cfe-347e004733c2
+Response URL: https://localhost:44338/SAML/AssertionConsumerService.aspx
+
+13720/8: 2/22/2024 5:55:28 AM: There are SSO responses pending to partner service providers.
+13720/8: 2/22/2024 5:55:28 AM: Sending an SSO response to a partner service provider.
+13720/8: 2/22/2024 5:55:28 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+Pending response state:
+Action: SendSamlResponse
+Partner name: https://SpokServiceProvider
+Relay state: /
+In response to: _780b0673-76bc-4a39-9cfe-347e004733c2
+Response URL: https://localhost:44338/SAML/AssertionConsumerService.aspx
+
+13720/8: 2/22/2024 5:55:28 AM: Loading the X.509 certificate from the file C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider\Certificates\idp.pfx.
+13720/8: 2/22/2024 5:55:28 AM: The X.509 certificate with subject name CN=www.idp.com, serial number 74F0EBFE22358DB8433138F9558C9AF9 and thumbprint A6A4AE4E0B378EC73678E5812690AF50E3EC3769 has been loaded.
+13720/8: 2/22/2024 5:55:28 AM: The X.509 certificate with subject name CN=www.idp.com, serial number 74F0EBFE22358DB8433138F9558C9AF9 and thumbprint A6A4AE4E0B378EC73678E5812690AF50E3EC3769 has been cached.
+13720/8: 2/22/2024 5:55:28 AM: Generating an XML signature.
+13720/8: 2/22/2024 5:55:28 AM: XML signature generation was successful.
+13720/8: 2/22/2024 5:55:28 AM: Sending response over HTTP POST, targetURL=https://localhost:44338/SAML/AssertionConsumerService.aspx, samlMessage=<samlp:Response ID="_e823b7a1-2440-498b-a68c-21b57b873a93" InResponseTo="_780b0673-76bc-4a39-9cfe-347e004733c2" Version="2.0" IssueInstant="2024-02-22T11:55:28.435Z" Destination="https://localhost:44338/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://ExampleIdentityProvider</saml:Issuer><samlp:Status><samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" /></samlp:Status><saml:Assertion Version="2.0" ID="_3e5f1d09-4e49-4720-addb-e789d62fc792" IssueInstant="2024-02-22T11:55:28.439Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:Issuer>https://ExampleIdentityProvider</saml:Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI="#_3e5f1d09-4e49-4720-addb-e789d62fc792"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><InclusiveNamespaces PrefixList="#default saml ds xs xsi" xmlns="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transform></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>nbOr97mnY+r+y+gxebA7EgRZffrnxalDgxGFvtfbqwE=</DigestValue></Reference></SignedInfo><SignatureValue>Z/3U8KhuSCageVU59wCJCgWYlQMuvnLICFRMvDQ0NDcKOBJ4exhwTuYFaqLGGDAZNS0gjSq1LsOLjs/3/nfelRjIzkt4yAOEHy4RrPmu/I55s8ysuHO8n2D4suDSNqvwuhwpr9UWrVvocI4DcC7RjfbrHfx+7Emici8SeDifnMxaEoK4Zoa1zb/618Qi0aCXmaxcO1nWLo0a3o6Yi7p6csWlBsStAhXIvVnJhR7rBFWALvRmrQEPSHNgTpN3hz3JaDUwu0CfFypSLiAndcBoASScJFYai64Gzy5OUWQEvtrwjVBm9vV0o8hflocuA6GQ1AVopmAzDd3X9pSp+5Cfww==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDATCCAemgAwIBAgIQdPDr/iI1jbhDMTj5VYya+TANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDEwt3d3cuaWRwLmNvbTAeFw0xMzExMjIwODIwNTJaFw00OTEyMzExNDAwMDBaMBYxFDASBgNVBAMTC3d3dy5pZHAuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi0XJRLDrcbSyqUd8XG4BgxObQMYLAkENlmJOsAEpl1xMabUiq1X4v0Fc8ZaCpUE3fFGENMEWgBjnQUUE0WtVUh5JPMsukolf9qljbJkCkvHXH3O4Uen7vA2oNQWt4bK96SpXADpZKFvpk4D7btKOgU/NamjiqwHI4fI8kFJKwKBJchRPUQdC4ljRRmGIrSnpY+t25/d3KGXwbe9Z2MGGy2hyA0tgOWuchIK+1vAKKBUh9nDEXfr80+xW680w5TqHyDcqbWvQsXXhH0yZLfINKNS6/IojHPsBy7tf36Ck9H5Pw+1PPu6NzBFSz5ZkC8KzrS6vuZXc/ImYrnheMQsqqQIDAQABo0swSTBHBgNVHQEEQDA+gBD4dY4MCPEmG4sxZrcni8vtoRgwFjEUMBIGA1UEAxMLd3d3LmlkcC5jb22CEHTw6/4iNY24QzE4+VWMmvkwDQYJKoZIhvcNAQELBQADggEBABhak2aR84MCdyXO4AKOQvZybsCMdhRq2i1i0WhD4/xe7Ry5haC6TeXIp8Q4cC3MzsrDal74xHI714BW0loafpHAsXfd9EvkKTVaJ+1Zpe16+SsTL4upS1cGydigqwUzsdpGck4wI1moJ9477O+46If2gF27u9Cdk7Onxe/5dwLIxWmkVRdbQIH5GsKUeAjOdRQmy+X1MX6KyRoaCwWGYwxi5Sa+r+3AtDvD4BX0EJGKFZeeM3J/yMpYh/75aN0cFQfDEdJ7C5NE0vonidE0QtIFvsoWtZUtur2fiW7yBxse38TPQsi2r6A6c/TZsZ5bq31yh3gr3kSN62H8iVKLQLA=</X509Certificate></X509Data></KeyInfo></Signature><saml:Subject><saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">spokaduser</saml:NameID><saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer"><saml:SubjectConfirmationData NotOnOrAfter="2024-02-22T11:58:28.44Z" Recipient="https://localhost:44338/SAML/AssertionConsumerService.aspx" InResponseTo="_780b0673-76bc-4a39-9cfe-347e004733c2" /></saml:SubjectConfirmation></saml:Subject><saml:Conditions NotBefore="2024-02-22T11:52:28.439Z" NotOnOrAfter="2024-02-22T11:58:28.439Z"><saml:AudienceRestriction><saml:Audience>https://SpokServiceProvider</saml:Audience></saml:AudienceRestriction></saml:Conditions><saml:AuthnStatement AuthnInstant="2024-02-22T11:55:28.441Z" SessionIndex="_3e5f1d09-4e49-4720-addb-e789d62fc792"><saml:AuthnContext><saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef></saml:AuthnContext></saml:AuthnStatement><saml:AttributeStatement><saml:Attribute Name="Email"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Spok AD User</saml:AttributeValue></saml:Attribute><saml:Attribute Name="GivenName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKADUSER</saml:AttributeValue></saml:Attribute><saml:Attribute Name="FamilyName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKVDEV</saml:AttributeValue></saml:Attribute></saml:AttributeStatement></saml:Assertion></samlp:Response>, relayState=/
+13720/8: 2/22/2024 5:55:28 AM: Sending form by HTTP Post: 
+<html>
+    <body>
+        <noscript>
+            <p>
+                Since your browser doesn't support JavaScript, you must press the Continue button to proceed.
+            </p>
+        </noscript>
+        <form id="samlform" action="https://localhost:44338/SAML/AssertionConsumerService.aspx" method="post" target="_self">
+            <div>
+                <input type="hidden" name="SAMLResponse" value="PHNhbWxwOlJlc3BvbnNlIElEPSJfZTgyM2I3YTEtMjQ0MC00OThiLWE2OGMtMjFiNTdiODczYTkzIiBJblJlc3BvbnNlVG89Il83ODBiMDY3My03NmJjLTRhMzktOWNmZS0zNDdlMDA0NzMzYzIiIFZlcnNpb249IjIuMCIgSXNzdWVJbnN0YW50PSIyMDI0LTAyLTIyVDExOjU1OjI4LjQzNVoiIERlc3RpbmF0aW9uPSJodHRwczovL2xvY2FsaG9zdDo0NDMzOC9TQU1ML0Fzc2VydGlvbkNvbnN1bWVyU2VydmljZS5hc3B4IiB4bWxuczpzYW1scD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIj48c2FtbDpJc3N1ZXIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+aHR0cHM6Ly9FeGFtcGxlSWRlbnRpdHlQcm92aWRlcjwvc2FtbDpJc3N1ZXI+PHNhbWxwOlN0YXR1cz48c2FtbHA6U3RhdHVzQ29kZSBWYWx1ZT0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnN0YXR1czpTdWNjZXNzIiAvPjwvc2FtbHA6U3RhdHVzPjxzYW1sOkFzc2VydGlvbiBWZXJzaW9uPSIyLjAiIElEPSJfM2U1ZjFkMDktNGU0OS00NzIwLWFkZGItZTc4OWQ2MmZjNzkyIiBJc3N1ZUluc3RhbnQ9IjIwMjQtMDItMjJUMTE6NTU6MjguNDM5WiIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+PHNhbWw6SXNzdWVyPmh0dHBzOi8vRXhhbXBsZUlkZW50aXR5UHJvdmlkZXI8L3NhbWw6SXNzdWVyPjxTaWduYXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJbmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjxTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNyc2Etc2hhMjU2IiAvPjxSZWZlcmVuY2UgVVJJPSIjXzNlNWYxZDA5LTRlNDktNDcyMC1hZGRiLWU3ODlkNjJmYzc5MiI+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIiAvPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiPjxJbmNsdXNpdmVOYW1lc3BhY2VzIFByZWZpeExpc3Q9IiNkZWZhdWx0IHNhbWwgZHMgeHMgeHNpIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjwvVHJhbnNmb3JtPjwvVHJhbnNmb3Jtcz48RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjc2hhMjU2IiAvPjxEaWdlc3RWYWx1ZT5uYk9yOTdtblkrcit5K2d4ZWJBN0VnUlpmZnJueGFsRGd4R0Z2dGZicXdFPTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT5aLzNVOEtodVNDYWdlVlU1OXdDSkNnV1lsUU11dm5MSUNGUk12RFEwTkRjS09CSjRleGh3VHVZRmFxTEdHREFaTlMwZ2pTcTFMc09ManMvMy9uZmVsUmpJemt0NHlBT0VIeTRSclBtdS9JNTVzOHlzdUhPOG4yRDRzdURTTnF2d3Vod3ByOVVXclZ2b2NJNERjQzdSamZickhmeCs3RW1pY2k4U2VEaWZuTXhhRW9LNFpvYTF6Yi82MThRaTBhQ1htYXhjTzFuV0xvMGEzbzZZaTdwNmNzV2xCc1N0QWhYSXZWbkpoUjdyQkZXQUx2Um1yUUVQU0hOZ1RwTjNoejNKYURVd3UwQ2ZGeXBTTGlBbmRjQm9BU1NjSkZZYWk2NEd6eTVPVVdRRXZ0cndqVkJtOXZWMG84aGZsb2N1QTZHUTFBVm9wbUF6RGQzWDlwU3ArNUNmd3c9PTwvU2lnbmF0dXJlVmFsdWU+PEtleUluZm8+PFg1MDlEYXRhPjxYNTA5Q2VydGlmaWNhdGU+TUlJREFUQ0NBZW1nQXdJQkFnSVFkUERyL2lJMWpiaERNVGo1Vll5YStUQU5CZ2txaGtpRzl3MEJBUXNGQURBV01SUXdFZ1lEVlFRREV3dDNkM2N1YVdSd0xtTnZiVEFlRncweE16RXhNakl3T0RJd05USmFGdzAwT1RFeU16RXhOREF3TURCYU1CWXhGREFTQmdOVkJBTVRDM2QzZHk1cFpIQXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFpMFhKUkxEcmNiU3lxVWQ4WEc0Qmd4T2JRTVlMQWtFTmxtSk9zQUVwbDF4TWFiVWlxMVg0djBGYzhaYUNwVUUzZkZHRU5NRVdnQmpuUVVVRTBXdFZVaDVKUE1zdWtvbGY5cWxqYkprQ2t2SFhIM080VWVuN3ZBMm9OUVd0NGJLOTZTcFhBRHBaS0Z2cGs0RDdidEtPZ1UvTmFtamlxd0hJNGZJOGtGSkt3S0JKY2hSUFVRZEM0bGpSUm1HSXJTbnBZK3QyNS9kM0tHWHdiZTlaMk1HR3kyaHlBMHRnT1d1Y2hJSysxdkFLS0JVaDluREVYZnI4MCt4VzY4MHc1VHFIeURjcWJXdlFzWFhoSDB5WkxmSU5LTlM2L0lvakhQc0J5N3RmMzZDazlINVB3KzFQUHU2TnpCRlN6NVprQzhLenJTNnZ1WlhjL0ltWXJuaGVNUXNxcVFJREFRQUJvMHN3U1RCSEJnTlZIUUVFUURBK2dCRDRkWTRNQ1BFbUc0c3hacmNuaTh2dG9SZ3dGakVVTUJJR0ExVUVBeE1MZDNkM0xtbGtjQzVqYjIyQ0VIVHc2LzRpTlkyNFF6RTQrVldNbXZrd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFCaGFrMmFSODRNQ2R5WE80QUtPUXZaeWJzQ01kaFJxMmkxaTBXaEQ0L3hlN1J5NWhhQzZUZVhJcDhRNGNDM016c3JEYWw3NHhISTcxNEJXMGxvYWZwSEFzWGZkOUV2a0tUVmFKKzFacGUxNitTc1RMNHVwUzFjR3lkaWdxd1V6c2RwR2NrNHdJMW1vSjk0NzdPKzQ2SWYyZ0YyN3U5Q2RrN09ueGUvNWR3TEl4V21rVlJkYlFJSDVHc0tVZUFqT2RSUW15K1gxTVg2S3lSb2FDd1dHWXd4aTVTYStyKzNBdER2RDRCWDBFSkdLRlplZU0zSi95TXBZaC83NWFOMGNGUWZERWRKN0M1TkUwdm9uaWRFMFF0SUZ2c29XdFpVdHVyMmZpVzd5QnhzZTM4VFBRc2kycjZBNmMvVFpzWjVicTMxeWgzZ3Iza1NONjJIOGlWS0xRTEE9PC9YNTA5Q2VydGlmaWNhdGU+PC9YNTA5RGF0YT48L0tleUluZm8+PC9TaWduYXR1cmU+PHNhbWw6U3ViamVjdD48c2FtbDpOYW1lSUQgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoxLjE6bmFtZWlkLWZvcm1hdDp1bnNwZWNpZmllZCI+c3Bva2FkdXNlcjwvc2FtbDpOYW1lSUQ+PHNhbWw6U3ViamVjdENvbmZpcm1hdGlvbiBNZXRob2Q9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpjbTpiZWFyZXIiPjxzYW1sOlN1YmplY3RDb25maXJtYXRpb25EYXRhIE5vdE9uT3JBZnRlcj0iMjAyNC0wMi0yMlQxMTo1ODoyOC40NFoiIFJlY2lwaWVudD0iaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMzgvU0FNTC9Bc3NlcnRpb25Db25zdW1lclNlcnZpY2UuYXNweCIgSW5SZXNwb25zZVRvPSJfNzgwYjA2NzMtNzZiYy00YTM5LTljZmUtMzQ3ZTAwNDczM2MyIiAvPjwvc2FtbDpTdWJqZWN0Q29uZmlybWF0aW9uPjwvc2FtbDpTdWJqZWN0PjxzYW1sOkNvbmRpdGlvbnMgTm90QmVmb3JlPSIyMDI0LTAyLTIyVDExOjUyOjI4LjQzOVoiIE5vdE9uT3JBZnRlcj0iMjAyNC0wMi0yMlQxMTo1ODoyOC40MzlaIj48c2FtbDpBdWRpZW5jZVJlc3RyaWN0aW9uPjxzYW1sOkF1ZGllbmNlPmh0dHBzOi8vU3Bva1NlcnZpY2VQcm92aWRlcjwvc2FtbDpBdWRpZW5jZT48L3NhbWw6QXVkaWVuY2VSZXN0cmljdGlvbj48L3NhbWw6Q29uZGl0aW9ucz48c2FtbDpBdXRoblN0YXRlbWVudCBBdXRobkluc3RhbnQ9IjIwMjQtMDItMjJUMTE6NTU6MjguNDQxWiIgU2Vzc2lvbkluZGV4PSJfM2U1ZjFkMDktNGU0OS00NzIwLWFkZGItZTc4OWQ2MmZjNzkyIj48c2FtbDpBdXRobkNvbnRleHQ+PHNhbWw6QXV0aG5Db250ZXh0Q2xhc3NSZWY+dXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFjOmNsYXNzZXM6dW5zcGVjaWZpZWQ8L3NhbWw6QXV0aG5Db250ZXh0Q2xhc3NSZWY+PC9zYW1sOkF1dGhuQ29udGV4dD48L3NhbWw6QXV0aG5TdGF0ZW1lbnQ+PHNhbWw6QXR0cmlidXRlU3RhdGVtZW50PjxzYW1sOkF0dHJpYnV0ZSBOYW1lPSJFbWFpbCI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeHNpOnR5cGU9InhzOnN0cmluZyIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj5TcG9rIEFEIFVzZXI8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48c2FtbDpBdHRyaWJ1dGUgTmFtZT0iR2l2ZW5OYW1lIj48c2FtbDpBdHRyaWJ1dGVWYWx1ZSB4c2k6dHlwZT0ieHM6c3RyaW5nIiB4bWxuczp4cz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiPlNQT0tBRFVTRVI8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48c2FtbDpBdHRyaWJ1dGUgTmFtZT0iRmFtaWx5TmFtZSI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeHNpOnR5cGU9InhzOnN0cmluZyIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj5TUE9LVkRFVjwvc2FtbDpBdHRyaWJ1dGVWYWx1ZT48L3NhbWw6QXR0cmlidXRlPjwvc2FtbDpBdHRyaWJ1dGVTdGF0ZW1lbnQ+PC9zYW1sOkFzc2VydGlvbj48L3NhbWxwOlJlc3BvbnNlPg=="/><input type="hidden" name="RelayState" value="/"/>
+            </div>
+            <noscript>
+                <div>
+                    <input type="submit" value="Continue"/>
+                </div>
+            </noscript>
+        </form>
+    </body>
+    <script>
+        function submitForm() {
+            document.forms.samlform.submit();
+        }
+
+        if (document.readyState === "loading") {
+		    document.addEventListener("DOMContentLoaded", submitForm);
+	    } else {
+		    submitForm();
+        }
+    </script>
+</html>
+
+13720/8: 2/22/2024 5:55:28 AM: Sending SAML form: 
+<html>
+    <body>
+        <noscript>
+            <p>
+                Since your browser doesn't support JavaScript, you must press the Continue button to proceed.
+            </p>
+        </noscript>
+        <form id="samlform" action="https://localhost:44338/SAML/AssertionConsumerService.aspx" method="post" target="_self">
+            <div>
+                <input type="hidden" name="SAMLResponse" value="PHNhbWxwOlJlc3BvbnNlIElEPSJfZTgyM2I3YTEtMjQ0MC00OThiLWE2OGMtMjFiNTdiODczYTkzIiBJblJlc3BvbnNlVG89Il83ODBiMDY3My03NmJjLTRhMzktOWNmZS0zNDdlMDA0NzMzYzIiIFZlcnNpb249IjIuMCIgSXNzdWVJbnN0YW50PSIyMDI0LTAyLTIyVDExOjU1OjI4LjQzNVoiIERlc3RpbmF0aW9uPSJodHRwczovL2xvY2FsaG9zdDo0NDMzOC9TQU1ML0Fzc2VydGlvbkNvbnN1bWVyU2VydmljZS5hc3B4IiB4bWxuczpzYW1scD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIj48c2FtbDpJc3N1ZXIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+aHR0cHM6Ly9FeGFtcGxlSWRlbnRpdHlQcm92aWRlcjwvc2FtbDpJc3N1ZXI+PHNhbWxwOlN0YXR1cz48c2FtbHA6U3RhdHVzQ29kZSBWYWx1ZT0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnN0YXR1czpTdWNjZXNzIiAvPjwvc2FtbHA6U3RhdHVzPjxzYW1sOkFzc2VydGlvbiBWZXJzaW9uPSIyLjAiIElEPSJfM2U1ZjFkMDktNGU0OS00NzIwLWFkZGItZTc4OWQ2MmZjNzkyIiBJc3N1ZUluc3RhbnQ9IjIwMjQtMDItMjJUMTE6NTU6MjguNDM5WiIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+PHNhbWw6SXNzdWVyPmh0dHBzOi8vRXhhbXBsZUlkZW50aXR5UHJvdmlkZXI8L3NhbWw6SXNzdWVyPjxTaWduYXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJbmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjxTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNyc2Etc2hhMjU2IiAvPjxSZWZlcmVuY2UgVVJJPSIjXzNlNWYxZDA5LTRlNDktNDcyMC1hZGRiLWU3ODlkNjJmYzc5MiI+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIiAvPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiPjxJbmNsdXNpdmVOYW1lc3BhY2VzIFByZWZpeExpc3Q9IiNkZWZhdWx0IHNhbWwgZHMgeHMgeHNpIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjwvVHJhbnNmb3JtPjwvVHJhbnNmb3Jtcz48RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjc2hhMjU2IiAvPjxEaWdlc3RWYWx1ZT5uYk9yOTdtblkrcit5K2d4ZWJBN0VnUlpmZnJueGFsRGd4R0Z2dGZicXdFPTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT5aLzNVOEtodVNDYWdlVlU1OXdDSkNnV1lsUU11dm5MSUNGUk12RFEwTkRjS09CSjRleGh3VHVZRmFxTEdHREFaTlMwZ2pTcTFMc09ManMvMy9uZmVsUmpJemt0NHlBT0VIeTRSclBtdS9JNTVzOHlzdUhPOG4yRDRzdURTTnF2d3Vod3ByOVVXclZ2b2NJNERjQzdSamZickhmeCs3RW1pY2k4U2VEaWZuTXhhRW9LNFpvYTF6Yi82MThRaTBhQ1htYXhjTzFuV0xvMGEzbzZZaTdwNmNzV2xCc1N0QWhYSXZWbkpoUjdyQkZXQUx2Um1yUUVQU0hOZ1RwTjNoejNKYURVd3UwQ2ZGeXBTTGlBbmRjQm9BU1NjSkZZYWk2NEd6eTVPVVdRRXZ0cndqVkJtOXZWMG84aGZsb2N1QTZHUTFBVm9wbUF6RGQzWDlwU3ArNUNmd3c9PTwvU2lnbmF0dXJlVmFsdWU+PEtleUluZm8+PFg1MDlEYXRhPjxYNTA5Q2VydGlmaWNhdGU+TUlJREFUQ0NBZW1nQXdJQkFnSVFkUERyL2lJMWpiaERNVGo1Vll5YStUQU5CZ2txaGtpRzl3MEJBUXNGQURBV01SUXdFZ1lEVlFRREV3dDNkM2N1YVdSd0xtTnZiVEFlRncweE16RXhNakl3T0RJd05USmFGdzAwT1RFeU16RXhOREF3TURCYU1CWXhGREFTQmdOVkJBTVRDM2QzZHk1cFpIQXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFpMFhKUkxEcmNiU3lxVWQ4WEc0Qmd4T2JRTVlMQWtFTmxtSk9zQUVwbDF4TWFiVWlxMVg0djBGYzhaYUNwVUUzZkZHRU5NRVdnQmpuUVVVRTBXdFZVaDVKUE1zdWtvbGY5cWxqYkprQ2t2SFhIM080VWVuN3ZBMm9OUVd0NGJLOTZTcFhBRHBaS0Z2cGs0RDdidEtPZ1UvTmFtamlxd0hJNGZJOGtGSkt3S0JKY2hSUFVRZEM0bGpSUm1HSXJTbnBZK3QyNS9kM0tHWHdiZTlaMk1HR3kyaHlBMHRnT1d1Y2hJSysxdkFLS0JVaDluREVYZnI4MCt4VzY4MHc1VHFIeURjcWJXdlFzWFhoSDB5WkxmSU5LTlM2L0lvakhQc0J5N3RmMzZDazlINVB3KzFQUHU2TnpCRlN6NVprQzhLenJTNnZ1WlhjL0ltWXJuaGVNUXNxcVFJREFRQUJvMHN3U1RCSEJnTlZIUUVFUURBK2dCRDRkWTRNQ1BFbUc0c3hacmNuaTh2dG9SZ3dGakVVTUJJR0ExVUVBeE1MZDNkM0xtbGtjQzVqYjIyQ0VIVHc2LzRpTlkyNFF6RTQrVldNbXZrd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFCaGFrMmFSODRNQ2R5WE80QUtPUXZaeWJzQ01kaFJxMmkxaTBXaEQ0L3hlN1J5NWhhQzZUZVhJcDhRNGNDM016c3JEYWw3NHhISTcxNEJXMGxvYWZwSEFzWGZkOUV2a0tUVmFKKzFacGUxNitTc1RMNHVwUzFjR3lkaWdxd1V6c2RwR2NrNHdJMW1vSjk0NzdPKzQ2SWYyZ0YyN3U5Q2RrN09ueGUvNWR3TEl4V21rVlJkYlFJSDVHc0tVZUFqT2RSUW15K1gxTVg2S3lSb2FDd1dHWXd4aTVTYStyKzNBdER2RDRCWDBFSkdLRlplZU0zSi95TXBZaC83NWFOMGNGUWZERWRKN0M1TkUwdm9uaWRFMFF0SUZ2c29XdFpVdHVyMmZpVzd5QnhzZTM4VFBRc2kycjZBNmMvVFpzWjVicTMxeWgzZ3Iza1NONjJIOGlWS0xRTEE9PC9YNTA5Q2VydGlmaWNhdGU+PC9YNTA5RGF0YT48L0tleUluZm8+PC9TaWduYXR1cmU+PHNhbWw6U3ViamVjdD48c2FtbDpOYW1lSUQgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoxLjE6bmFtZWlkLWZvcm1hdDp1bnNwZWNpZmllZCI+c3Bva2FkdXNlcjwvc2FtbDpOYW1lSUQ+PHNhbWw6U3ViamVjdENvbmZpcm1hdGlvbiBNZXRob2Q9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpjbTpiZWFyZXIiPjxzYW1sOlN1YmplY3RDb25maXJtYXRpb25EYXRhIE5vdE9uT3JBZnRlcj0iMjAyNC0wMi0yMlQxMTo1ODoyOC40NFoiIFJlY2lwaWVudD0iaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMzgvU0FNTC9Bc3NlcnRpb25Db25zdW1lclNlcnZpY2UuYXNweCIgSW5SZXNwb25zZVRvPSJfNzgwYjA2NzMtNzZiYy00YTM5LTljZmUtMzQ3ZTAwNDczM2MyIiAvPjwvc2FtbDpTdWJqZWN0Q29uZmlybWF0aW9uPjwvc2FtbDpTdWJqZWN0PjxzYW1sOkNvbmRpdGlvbnMgTm90QmVmb3JlPSIyMDI0LTAyLTIyVDExOjUyOjI4LjQzOVoiIE5vdE9uT3JBZnRlcj0iMjAyNC0wMi0yMlQxMTo1ODoyOC40MzlaIj48c2FtbDpBdWRpZW5jZVJlc3RyaWN0aW9uPjxzYW1sOkF1ZGllbmNlPmh0dHBzOi8vU3Bva1NlcnZpY2VQcm92aWRlcjwvc2FtbDpBdWRpZW5jZT48L3NhbWw6QXVkaWVuY2VSZXN0cmljdGlvbj48L3NhbWw6Q29uZGl0aW9ucz48c2FtbDpBdXRoblN0YXRlbWVudCBBdXRobkluc3RhbnQ9IjIwMjQtMDItMjJUMTE6NTU6MjguNDQxWiIgU2Vzc2lvbkluZGV4PSJfM2U1ZjFkMDktNGU0OS00NzIwLWFkZGItZTc4OWQ2MmZjNzkyIj48c2FtbDpBdXRobkNvbnRleHQ+PHNhbWw6QXV0aG5Db250ZXh0Q2xhc3NSZWY+dXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFjOmNsYXNzZXM6dW5zcGVjaWZpZWQ8L3NhbWw6QXV0aG5Db250ZXh0Q2xhc3NSZWY+PC9zYW1sOkF1dGhuQ29udGV4dD48L3NhbWw6QXV0aG5TdGF0ZW1lbnQ+PHNhbWw6QXR0cmlidXRlU3RhdGVtZW50PjxzYW1sOkF0dHJpYnV0ZSBOYW1lPSJFbWFpbCI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeHNpOnR5cGU9InhzOnN0cmluZyIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj5TcG9rIEFEIFVzZXI8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48c2FtbDpBdHRyaWJ1dGUgTmFtZT0iR2l2ZW5OYW1lIj48c2FtbDpBdHRyaWJ1dGVWYWx1ZSB4c2k6dHlwZT0ieHM6c3RyaW5nIiB4bWxuczp4cz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiPlNQT0tBRFVTRVI8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48c2FtbDpBdHRyaWJ1dGUgTmFtZT0iRmFtaWx5TmFtZSI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeHNpOnR5cGU9InhzOnN0cmluZyIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj5TUE9LVkRFVjwvc2FtbDpBdHRyaWJ1dGVWYWx1ZT48L3NhbWw6QXR0cmlidXRlPjwvc2FtbDpBdHRyaWJ1dGVTdGF0ZW1lbnQ+PC9zYW1sOkFzc2VydGlvbj48L3NhbWxwOlJlc3BvbnNlPg=="/><input type="hidden" name="RelayState" value="/"/>
+            </div>
+            <noscript>
+                <div>
+                    <input type="submit" value="Continue"/>
+                </div>
+            </noscript>
+        </form>
+    </body>
+    <script>
+        function submitForm() {
+            document.forms.samlform.submit();
+        }
+
+        if (document.readyState === "loading") {
+		    document.addEventListener("DOMContentLoaded", submitForm);
+	    } else {
+		    submitForm();
+        }
+    </script>
+</html>
+
+13720/8: 2/22/2024 5:55:28 AM: Response sent over HTTP POST.
+13720/8: 2/22/2024 5:55:29 AM: SAML message sent: partner=https://SpokServiceProvider, message=<samlp:Response ID="_e823b7a1-2440-498b-a68c-21b57b873a93" InResponseTo="_780b0673-76bc-4a39-9cfe-347e004733c2" Version="2.0" IssueInstant="2024-02-22T11:55:28.435Z" Destination="https://localhost:44338/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://ExampleIdentityProvider</saml:Issuer><samlp:Status><samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" /></samlp:Status><saml:Assertion Version="2.0" ID="_3e5f1d09-4e49-4720-addb-e789d62fc792" IssueInstant="2024-02-22T11:55:28.439Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:Issuer>https://ExampleIdentityProvider</saml:Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI="#_3e5f1d09-4e49-4720-addb-e789d62fc792"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><InclusiveNamespaces PrefixList="#default saml ds xs xsi" xmlns="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transform></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>nbOr97mnY+r+y+gxebA7EgRZffrnxalDgxGFvtfbqwE=</DigestValue></Reference></SignedInfo><SignatureValue>Z/3U8KhuSCageVU59wCJCgWYlQMuvnLICFRMvDQ0NDcKOBJ4exhwTuYFaqLGGDAZNS0gjSq1LsOLjs/3/nfelRjIzkt4yAOEHy4RrPmu/I55s8ysuHO8n2D4suDSNqvwuhwpr9UWrVvocI4DcC7RjfbrHfx+7Emici8SeDifnMxaEoK4Zoa1zb/618Qi0aCXmaxcO1nWLo0a3o6Yi7p6csWlBsStAhXIvVnJhR7rBFWALvRmrQEPSHNgTpN3hz3JaDUwu0CfFypSLiAndcBoASScJFYai64Gzy5OUWQEvtrwjVBm9vV0o8hflocuA6GQ1AVopmAzDd3X9pSp+5Cfww==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDATCCAemgAwIBAgIQdPDr/iI1jbhDMTj5VYya+TANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDEwt3d3cuaWRwLmNvbTAeFw0xMzExMjIwODIwNTJaFw00OTEyMzExNDAwMDBaMBYxFDASBgNVBAMTC3d3dy5pZHAuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi0XJRLDrcbSyqUd8XG4BgxObQMYLAkENlmJOsAEpl1xMabUiq1X4v0Fc8ZaCpUE3fFGENMEWgBjnQUUE0WtVUh5JPMsukolf9qljbJkCkvHXH3O4Uen7vA2oNQWt4bK96SpXADpZKFvpk4D7btKOgU/NamjiqwHI4fI8kFJKwKBJchRPUQdC4ljRRmGIrSnpY+t25/d3KGXwbe9Z2MGGy2hyA0tgOWuchIK+1vAKKBUh9nDEXfr80+xW680w5TqHyDcqbWvQsXXhH0yZLfINKNS6/IojHPsBy7tf36Ck9H5Pw+1PPu6NzBFSz5ZkC8KzrS6vuZXc/ImYrnheMQsqqQIDAQABo0swSTBHBgNVHQEEQDA+gBD4dY4MCPEmG4sxZrcni8vtoRgwFjEUMBIGA1UEAxMLd3d3LmlkcC5jb22CEHTw6/4iNY24QzE4+VWMmvkwDQYJKoZIhvcNAQELBQADggEBABhak2aR84MCdyXO4AKOQvZybsCMdhRq2i1i0WhD4/xe7Ry5haC6TeXIp8Q4cC3MzsrDal74xHI714BW0loafpHAsXfd9EvkKTVaJ+1Zpe16+SsTL4upS1cGydigqwUzsdpGck4wI1moJ9477O+46If2gF27u9Cdk7Onxe/5dwLIxWmkVRdbQIH5GsKUeAjOdRQmy+X1MX6KyRoaCwWGYwxi5Sa+r+3AtDvD4BX0EJGKFZeeM3J/yMpYh/75aN0cFQfDEdJ7C5NE0vonidE0QtIFvsoWtZUtur2fiW7yBxse38TPQsi2r6A6c/TZsZ5bq31yh3gr3kSN62H8iVKLQLA=</X509Certificate></X509Data></KeyInfo></Signature><saml:Subject><saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">spokaduser</saml:NameID><saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer"><saml:SubjectConfirmationData NotOnOrAfter="2024-02-22T11:58:28.44Z" Recipient="https://localhost:44338/SAML/AssertionConsumerService.aspx" InResponseTo="_780b0673-76bc-4a39-9cfe-347e004733c2" /></saml:SubjectConfirmation></saml:Subject><saml:Conditions NotBefore="2024-02-22T11:52:28.439Z" NotOnOrAfter="2024-02-22T11:58:28.439Z"><saml:AudienceRestriction><saml:Audience>https://SpokServiceProvider</saml:Audience></saml:AudienceRestriction></saml:Conditions><saml:AuthnStatement AuthnInstant="2024-02-22T11:55:28.441Z" SessionIndex="_3e5f1d09-4e49-4720-addb-e789d62fc792"><saml:AuthnContext><saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef></saml:AuthnContext></saml:AuthnStatement><saml:AttributeStatement><saml:Attribute Name="Email"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Spok AD User</saml:AttributeValue></saml:Attribute><saml:Attribute Name="GivenName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKADUSER</saml:AttributeValue></saml:Attribute><saml:Attribute Name="FamilyName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKVDEV</saml:AttributeValue></saml:Attribute></saml:AttributeStatement></saml:Assertion></samlp:Response>, relay state=/, destination URL=https://localhost:44338/SAML/AssertionConsumerService.aspx
+13720/8: 2/22/2024 5:55:29 AM: Saving session state for 9e7b8788-1505-4a7d-8454-167b1be5cef7:IdentityProviderSession to the SSO session store.
+13720/8: 2/22/2024 5:55:29 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _3e5f1d09-4e49-4720-addb-e789d62fc792
+
+13720/8: 2/22/2024 5:55:29 AM: An SSO response has been successfully sent to the partner service provider https://SpokServiceProvider.
+13720/8: 2/22/2024 5:55:55 AM: Checking if there are any SSO responses pending to partner service providers.
+13720/8: 2/22/2024 5:55:55 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _3e5f1d09-4e49-4720-addb-e789d62fc792
+
+13720/8: 2/22/2024 5:55:55 AM: There are no SSO responses pending to partner service providers.
+13720/8: 2/22/2024 5:55:55 AM: Receiving an SSO request from a partner service provider.
+13720/8: 2/22/2024 5:55:55 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _3e5f1d09-4e49-4720-addb-e789d62fc792
+
+13720/8: 2/22/2024 5:55:55 AM: Receiving request over HTTP Redirect.
+13720/8: 2/22/2024 5:55:55 AM: HTTPS request:
+GET /SAML/SSOService.aspx?SAMLRequest=fZJRb4IwFIX%2FCuk7gghTGyVxmmUmbhJxe9jLUstlNist6y3O%2FfsB4uIe9PXmnnO%2BntsJskKWdFbZvdrAVwVoneViSt53fr4L%2BWjscvB9N2Rh5u7A5%2B5gEI2Gd8MgyzJOnFcwKLSakqDnE2eJWMFSoWXK1iM%2FCF0%2FcINg2%2B%2FTKKLRoDcMgzfiLOoUoZhtlXtrS6SeJzVncq%2FR0jAcjH0vnT2tvDRdp2AOgkOPYXkkzoM2HFraKcmZRGhSE4YoDvA3SYy2mmt5L1Qm1MeUVEZRzVAgVawApJbTxp7W1HR3WkL6uN0mbrJOt8SZIYJp8OZaYVWA6SBeNqsrwOHoBHxN2eEfC6mQtp3fpiq7J5B40mzTtlpzob8tZ2cMEp9x01J%2FdjB1PweRgZl4F96noJI%2B12bLRaKl4D9N3QWz17P6vX47EZmbt6u0UlgCF7mArO5RSv09N8BsfRxrqvo2XnxK%2Ff%2Fn4l8%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=aNaaMpmE4S6SoYd4qJskN7S4c2nQ62BcUQqHizEPRj0dnhkZend6Wavy85k0jwPSRs3hDsa2c8Is%2FLLBhxIvWcOwu6G7TgoLtNsuhhzTqdiQ7qCVZMUomOQJxDNqsPeJQzjvn%2FO8o3fFERDVS9hOtWrxtERJGCxGUaeSXz5dYFtqRKv5jR9nge0UmpQdZhIV%2FYf%2BgVOZ%2BQT1rSyaMaRlrajEGjubqRR7d7H2TVXhhMPs%2B%2FktuVdyVBmeSzB3pfvynE0Ww%2FRjX%2Byx7ixB9g4iMJuwYLhfmbPqE09dct7%2F%2FyXvolRAWzS0qwTrHbcEoRmvSf1pBEs0SKfCcq4mOJR7Bg%3D%3D HTTP/1.1
+Cache-Control: max-age=0
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: SAML_SessionId=9e7b8788-1505-4a7d-8454-167b1be5cef7; ExampleIdentityProvider=F73B186E4A89664E3DCE6AC7BF576327C78EC1C8D381BBBF43CEEC266148E1A8181FE57CB1E4DC2A88C9079A4931B0C8ADB91EF39645A7FF299B2BB1DB0EEA0653651668B53E8937438351FE62B67E72C5C0043A7CCAF0452A226CE322280B6260B1FDB0E1F92A6FEA560E8F15A24F85002C5CD84E08CCDED21998E27587F134587FA6976C648C10B67C000E1002B6E8; SpokServiceProvider=2D25647FEE9F3FF81F371EED73B288602081CA42F0A3F5D05485ECB0A78023F78E30212CF01946C84AB9DDB673CF0059F8DA8616AE618429B3AC452D4D3397C282C0C6E1302C76D8B951EB7822626F9AFEC3171D83BD5112CC5B288E4C0DDBDE116FB5857994E092E675FA4150224B849E9788E9B66FEE7D9E56BEAC036E2729575CB4AE1241A1FA8248EC5F6DDB16D2; ASP.NET_SessionId=k5f3wgbetnv1raznv32gxnsj
+Host: localhost:44390
+Referer: https://localhost:44348/
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Site: same-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+sec-ch-ua: "Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+
+13720/8: 2/22/2024 5:55:55 AM: Parsing HTTP redirect URL: /SAML/SSOService.aspx?SAMLRequest=fZJRb4IwFIX%2FCuk7gghTGyVxmmUmbhJxe9jLUstlNist6y3O%2FfsB4uIe9PXmnnO%2BntsJskKWdFbZvdrAVwVoneViSt53fr4L%2BWjscvB9N2Rh5u7A5%2B5gEI2Gd8MgyzJOnFcwKLSakqDnE2eJWMFSoWXK1iM%2FCF0%2FcINg2%2B%2FTKKLRoDcMgzfiLOoUoZhtlXtrS6SeJzVncq%2FR0jAcjH0vnT2tvDRdp2AOgkOPYXkkzoM2HFraKcmZRGhSE4YoDvA3SYy2mmt5L1Qm1MeUVEZRzVAgVawApJbTxp7W1HR3WkL6uN0mbrJOt8SZIYJp8OZaYVWA6SBeNqsrwOHoBHxN2eEfC6mQtp3fpiq7J5B40mzTtlpzob8tZ2cMEp9x01J%2FdjB1PweRgZl4F96noJI%2B12bLRaKl4D9N3QWz17P6vX47EZmbt6u0UlgCF7mArO5RSv09N8BsfRxrqvo2XnxK%2Ff%2Fn4l8%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=aNaaMpmE4S6SoYd4qJskN7S4c2nQ62BcUQqHizEPRj0dnhkZend6Wavy85k0jwPSRs3hDsa2c8Is%2FLLBhxIvWcOwu6G7TgoLtNsuhhzTqdiQ7qCVZMUomOQJxDNqsPeJQzjvn%2FO8o3fFERDVS9hOtWrxtERJGCxGUaeSXz5dYFtqRKv5jR9nge0UmpQdZhIV%2FYf%2BgVOZ%2BQT1rSyaMaRlrajEGjubqRR7d7H2TVXhhMPs%2B%2FktuVdyVBmeSzB3pfvynE0Ww%2FRjX%2Byx7ixB9g4iMJuwYLhfmbPqE09dct7%2F%2FyXvolRAWzS0qwTrHbcEoRmvSf1pBEs0SKfCcq4mOJR7Bg%3D%3D
+13720/8: 2/22/2024 5:55:55 AM: Decoding SAML message: fZJRb4IwFIX/Cuk7gghTGyVxmmUmbhJxe9jLUstlNist6y3O/fsB4uIe9PXmnnO+ntsJskKWdFbZvdrAVwVoneViSt53fr4L+WjscvB9N2Rh5u7A5+5gEI2Gd8MgyzJOnFcwKLSakqDnE2eJWMFSoWXK1iM/CF0/cINg2+/TKKLRoDcMgzfiLOoUoZhtlXtrS6SeJzVncq/R0jAcjH0vnT2tvDRdp2AOgkOPYXkkzoM2HFraKcmZRGhSE4YoDvA3SYy2mmt5L1Qm1MeUVEZRzVAgVawApJbTxp7W1HR3WkL6uN0mbrJOt8SZIYJp8OZaYVWA6SBeNqsrwOHoBHxN2eEfC6mQtp3fpiq7J5B40mzTtlpzob8tZ2cMEp9x01J/djB1PweRgZl4F96noJI+12bLRaKl4D9N3QWz17P6vX47EZmbt6u0UlgCF7mArO5RSv09N8BsfRxrqvo2XnxK/f/n4l8=
+13720/8: 2/22/2024 5:55:55 AM: Decoded SAML message: <samlp:AuthnRequest ID="_b0fb4c89-ce00-4a4d-be0c-33587672dddc" Version="2.0" IssueInstant="2024-02-22T11:55:53.742Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44348/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>
+13720/8: 2/22/2024 5:55:56 AM: Relay state: /
+13720/8: 2/22/2024 5:55:56 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+13720/8: 2/22/2024 5:55:56 AM: Signature: aNaaMpmE4S6SoYd4qJskN7S4c2nQ62BcUQqHizEPRj0dnhkZend6Wavy85k0jwPSRs3hDsa2c8Is/LLBhxIvWcOwu6G7TgoLtNsuhhzTqdiQ7qCVZMUomOQJxDNqsPeJQzjvn/O8o3fFERDVS9hOtWrxtERJGCxGUaeSXz5dYFtqRKv5jR9nge0UmpQdZhIV/Yf+gVOZ+QT1rSyaMaRlrajEGjubqRR7d7H2TVXhhMPs+/ktuVdyVBmeSzB3pfvynE0Ww/RjX+yx7ixB9g4iMJuwYLhfmbPqE09dct7//yXvolRAWzS0qwTrHbcEoRmvSf1pBEs0SKfCcq4mOJR7Bg==
+13720/8: 2/22/2024 5:55:56 AM: Received request over HTTP Redirect, samlMessage=<samlp:AuthnRequest ID="_b0fb4c89-ce00-4a4d-be0c-33587672dddc" Version="2.0" IssueInstant="2024-02-22T11:55:53.742Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44348/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>, relayState=/, signatureAlgorithm=http://www.w3.org/2001/04/xmldsig-more#rsa-sha256, signature=aNaaMpmE4S6SoYd4qJskN7S4c2nQ62BcUQqHizEPRj0dnhkZend6Wavy85k0jwPSRs3hDsa2c8Is/LLBhxIvWcOwu6G7TgoLtNsuhhzTqdiQ7qCVZMUomOQJxDNqsPeJQzjvn/O8o3fFERDVS9hOtWrxtERJGCxGUaeSXz5dYFtqRKv5jR9nge0UmpQdZhIV/Yf+gVOZ+QT1rSyaMaRlrajEGjubqRR7d7H2TVXhhMPs+/ktuVdyVBmeSzB3pfvynE0Ww/RjX+yx7ixB9g4iMJuwYLhfmbPqE09dct7//yXvolRAWzS0qwTrHbcEoRmvSf1pBEs0SKfCcq4mOJR7Bg==
+13720/8: 2/22/2024 5:55:56 AM: SAML message received: partner=https://SpokServiceProvider, message=<samlp:AuthnRequest ID="_b0fb4c89-ce00-4a4d-be0c-33587672dddc" Version="2.0" IssueInstant="2024-02-22T11:55:53.742Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44348/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>, relay state=/
+13720/8: 2/22/2024 5:55:56 AM: The XML validated against the SAML XML Schemas.
+13720/8: 2/22/2024 5:55:56 AM: Verifying the authn request signature.
+13720/8: 2/22/2024 5:55:56 AM: The X.509 certificate with subject name CN=www.sp.com, serial number 0867A17DC9EFEABE4CCBF7E7ADB7C37A and thumbprint 427A3D5B39DF593B1D44B769D3697AEDF00FD83F has been retrieved from the cache.
+13720/8: 2/22/2024 5:55:56 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+13720/8: 2/22/2024 5:55:56 AM: Checking HTTP redirect signature.
+13720/8: 2/22/2024 5:55:56 AM: Query string: SAMLRequest=fZJRb4IwFIX%2FCuk7gghTGyVxmmUmbhJxe9jLUstlNist6y3O%2FfsB4uIe9PXmnnO%2BntsJskKWdFbZvdrAVwVoneViSt53fr4L%2BWjscvB9N2Rh5u7A5%2B5gEI2Gd8MgyzJOnFcwKLSakqDnE2eJWMFSoWXK1iM%2FCF0%2FcINg2%2B%2FTKKLRoDcMgzfiLOoUoZhtlXtrS6SeJzVncq%2FR0jAcjH0vnT2tvDRdp2AOgkOPYXkkzoM2HFraKcmZRGhSE4YoDvA3SYy2mmt5L1Qm1MeUVEZRzVAgVawApJbTxp7W1HR3WkL6uN0mbrJOt8SZIYJp8OZaYVWA6SBeNqsrwOHoBHxN2eEfC6mQtp3fpiq7J5B40mzTtlpzob8tZ2cMEp9x01J%2FdjB1PweRgZl4F96noJI%2B12bLRaKl4D9N3QWz17P6vX47EZmbt6u0UlgCF7mArO5RSv09N8BsfRxrqvo2XnxK%2Ff%2Fn4l8%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256
+13720/8: 2/22/2024 5:55:57 AM: Signed data: SAMLRequest=fZJRb4IwFIX%2FCuk7gghTGyVxmmUmbhJxe9jLUstlNist6y3O%2FfsB4uIe9PXmnnO%2BntsJskKWdFbZvdrAVwVoneViSt53fr4L%2BWjscvB9N2Rh5u7A5%2B5gEI2Gd8MgyzJOnFcwKLSakqDnE2eJWMFSoWXK1iM%2FCF0%2FcINg2%2B%2FTKKLRoDcMgzfiLOoUoZhtlXtrS6SeJzVncq%2FR0jAcjH0vnT2tvDRdp2AOgkOPYXkkzoM2HFraKcmZRGhSE4YoDvA3SYy2mmt5L1Qm1MeUVEZRzVAgVawApJbTxp7W1HR3WkL6uN0mbrJOt8SZIYJp8OZaYVWA6SBeNqsrwOHoBHxN2eEfC6mQtp3fpiq7J5B40mzTtlpzob8tZ2cMEp9x01J%2FdjB1PweRgZl4F96noJI%2B12bLRaKl4D9N3QWz17P6vX47EZmbt6u0UlgCF7mArO5RSv09N8BsfRxrqvo2XnxK%2Ff%2Fn4l8%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256
+13720/8: 2/22/2024 5:55:57 AM: Verifying signature.
+13720/8: 2/22/2024 5:55:57 AM: Signed data: 53 41 4d 4c 52 65 71 75 65 73 74 3d 66 5a 4a 52 62 34 49 77 46 49 58 25 32 46 43 75 6b 37 67 67 68 54 47 79 56 78 6d 6d 55 6d 62 68 4a 78 65 39 6a 4c 55 73 74 6c 4e 69 73 74 36 79 33 4f 25 32 46 66 73 42 34 75 49 65 39 50 58 6d 6e 6e 4f 25 32 42 6e 74 73 4a 73 6b 4b 57 64 46 62 5a 76 64 72 41 56 77 56 6f 6e 65 56 69 53 74 35 33 66 72 34 4c 25 32 42 57 6a 73 63 76 42 39 4e 32 52 68 35 75 37 41 35 25 32 42 35 67 45 49 32 47 64 38 4d 67 79 7a 4a 4f 6e 46 63 77 4b 4c 53 61 6b 71 44 6e 45 32 65 4a 57 4d 46 53 6f 57 58 4b 31 69 4d 25 32 46 43 46 30 25 32 46 63 49 4e 67 32 25 32 42 25 32 46 54 4b 4b 4c 52 6f 44 63 4d 67 7a 66 69 4c 4f 6f 55 6f 5a 68 74 6c 58 74 72 53 36 53 65 4a 7a 56 6e 63 71 25 32 46 52 30 6a 41 63 6a 48 30 76 6e 54 32 74 76 44 52 64 70 32 41 4f 67 6b 4f 50 59 58 6b 6b 7a 6f 4d 32 48 46 72 61 4b 63 6d 5a 52 47 68 53 45 34 59 6f 44 76 41 33 53 59 79 32 6d 6d 74 35 4c 31 51 6d 31 4d 65 55 56 45 5a 52 7a 56 41 67 56 61 77 41 70 4a 62 54 78 70 37 57 31 48 52 33 57 6b 4c 36 75 4e 30 6d 62 72 4a 4f 74 38 53 5a 49 59 4a 70 38 4f 5a 61 59 56 57 41 36 53 42 65 4e 71 73 72 77 4f 48 6f 42 48 78 4e 32 65 45 66 43 36 6d 51 74 70 33 66 70 69 71 37 4a 35 42 34 30 6d 7a 54 74 6c 70 7a 6f 62 38 74 5a 32 63 4d 45 70 39 78 30 31 4a 25 32 46 64 6a 42 31 50 77 65 52 67 5a 6c 34 46 39 36 6e 6f 4a 49 25 32 42 31 32 62 4c 52 61 4b 6c 34 44 39 4e 33 51 57 7a 31 37 50 36 76 58 34 37 45 5a 6d 62 74 36 75 30 55 6c 67 43 46 37 6d 41 72 4f 35 52 53 76 30 39 4e 38 42 73 66 52 78 72 71 76 6f 32 58 6e 78 4b 25 32 46 66 25 32 46 6e 34 6c 38 25 33 44 26 52 65 6c 61 79 53 74 61 74 65 3d 25 32 46 26 53 69 67 41 6c 67 3d 68 74 74 70 25 33 41 25 32 46 25 32 46 77 77 77 2e 77 33 2e 6f 72 67 25 32 46 32 30 30 31 25 32 46 30 34 25 32 46 78 6d 6c 64 73 69 67 2d 6d 6f 72 65 25 32 33 72 73 61 2d 73 68 61 32 35 36
+13720/8: 2/22/2024 5:55:57 AM: Signature: 68 d6 9a 32 99 84 e1 2e 92 a1 87 78 a8 9b 24 37 b4 b8 73 69 d0 eb 60 5c 51 0a 87 8b 31 0f 46 3d 1d 9e 19 19 7a 77 7a 59 ab f2 f3 99 34 8f 03 d2 46 cd e1 0e c6 b6 73 c2 2c fc b2 c1 87 12 2f 59 c3 b0 bb a1 bb 4e 0a 0b b4 db 2e 86 1c d3 a9 d8 90 ee a0 95 64 c5 28 98 e4 09 c4 33 6a b0 f7 89 43 38 ef 9f f3 bc a3 77 c5 11 10 d5 4b d8 4e b5 6a f1 b4 44 49 18 2c 46 51 a7 92 5f 3e 5d 60 5b 6a 44 ab f9 8d 1f 67 81 ed 14 9a 94 1d 66 12 15 fd 87 fe 81 53 99 f9 04 f5 ad 2c 9a 31 a4 65 ad a8 c4 1a 3b 9b a9 14 7b 77 b1 f6 4d 55 e1 84 c3 ec fb f9 2d b9 57 72 54 19 9e 4b 30 77 a5 fb f2 9c 4d 16 c3 f4 63 5f ec b1 ee 2c 41 f6 0e 22 30 9b b0 60 b8 5f 99 b3 ea 13 4f 5d 72 de ff ff 25 ef a2 54 40 5b 34 b4 ab 04 eb 1d b7 04 a1 19 af 49 fd 69 04 4b 34 48 a7 c2 72 ae 26 38 94 7b 06
+13720/8: 2/22/2024 5:55:57 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+13720/8: 2/22/2024 5:55:57 AM: Signature verified: True
+13720/8: 2/22/2024 5:55:57 AM: HTTP redirect signature verified.
+13720/8: 2/22/2024 5:55:57 AM: The authn request signature verified.
+13720/8: 2/22/2024 5:55:58 AM: The SAML request destination won't be checked as the destination URL hasn't been specified.
+13720/8: 2/22/2024 5:55:58 AM: Saving session state for 9e7b8788-1505-4a7d-8454-167b1be5cef7:IdentityProviderSession to the SSO session store.
+13720/8: 2/22/2024 5:55:58 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+Pending response state:
+Action: SendSamlResponse
+Partner name: https://SpokServiceProvider
+Relay state: /
+In response to: _b0fb4c89-ce00-4a4d-be0c-33587672dddc
+Response URL: https://localhost:44348/SAML/AssertionConsumerService.aspx
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _3e5f1d09-4e49-4720-addb-e789d62fc792
+
+13720/8: 2/22/2024 5:55:58 AM: An SSO request from the partner service provider https://SpokServiceProvider has been successfully received.
+13720/8: 2/22/2024 5:55:58 AM: Sending an SSO response to a partner service provider.
+13720/8: 2/22/2024 5:55:58 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+Pending response state:
+Action: SendSamlResponse
+Partner name: https://SpokServiceProvider
+Relay state: /
+In response to: _b0fb4c89-ce00-4a4d-be0c-33587672dddc
+Response URL: https://localhost:44348/SAML/AssertionConsumerService.aspx
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _3e5f1d09-4e49-4720-addb-e789d62fc792
+
+13720/8: 2/22/2024 5:55:58 AM: The X.509 certificate with subject name CN=www.idp.com, serial number 74F0EBFE22358DB8433138F9558C9AF9 and thumbprint A6A4AE4E0B378EC73678E5812690AF50E3EC3769 has been retrieved from the cache.
+13720/8: 2/22/2024 5:55:58 AM: Generating an XML signature.
+13720/8: 2/22/2024 5:55:58 AM: XML signature generation was successful.
+13720/8: 2/22/2024 5:55:58 AM: Sending response over HTTP POST, targetURL=https://localhost:44348/SAML/AssertionConsumerService.aspx, samlMessage=<samlp:Response ID="_716cf088-3e2b-41b1-acc6-3cde4354330e" InResponseTo="_b0fb4c89-ce00-4a4d-be0c-33587672dddc" Version="2.0" IssueInstant="2024-02-22T11:55:58.646Z" Destination="https://localhost:44348/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://ExampleIdentityProvider</saml:Issuer><samlp:Status><samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" /></samlp:Status><saml:Assertion Version="2.0" ID="_7a33abe8-149b-49ec-b33e-8e102654c797" IssueInstant="2024-02-22T11:55:58.646Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:Issuer>https://ExampleIdentityProvider</saml:Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI="#_7a33abe8-149b-49ec-b33e-8e102654c797"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><InclusiveNamespaces PrefixList="#default saml ds xs xsi" xmlns="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transform></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>m/j4kHmKXDDdrkh7frAJbVgFQ6IeTQKkkRh6KnqXpCQ=</DigestValue></Reference></SignedInfo><SignatureValue>Bu0OZEmb6SJX5XK8PqFY56MyzePita4wUuvY/pHnG5C4NNYKz+0ZMGzgHh11USNZYd65mBMy9euTE+XfldcwEsIjdlDbRfxu7haEJuNrlmlTOPLbXuzgddSWXsl5p5TTTNlSSoezqaFCS16c1uAKvFpxJrSrbIyxWlc+hVBjcSZ+yl9nRMtbGt99OWPuj3LejaNsMZNL9mklAum1rfXSi2z+i/eAZh+cB4lDmf9suSn/gbZLagJuzyFPMDShod4sFRlsbReui1ICREC+C8F+Ldi1z3XDENzLJGXXyDpDD6pqCMnqqMeN6IVEwvsWLjQ/Q077l+EAok5irBwzVv4Blw==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDATCCAemgAwIBAgIQdPDr/iI1jbhDMTj5VYya+TANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDEwt3d3cuaWRwLmNvbTAeFw0xMzExMjIwODIwNTJaFw00OTEyMzExNDAwMDBaMBYxFDASBgNVBAMTC3d3dy5pZHAuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi0XJRLDrcbSyqUd8XG4BgxObQMYLAkENlmJOsAEpl1xMabUiq1X4v0Fc8ZaCpUE3fFGENMEWgBjnQUUE0WtVUh5JPMsukolf9qljbJkCkvHXH3O4Uen7vA2oNQWt4bK96SpXADpZKFvpk4D7btKOgU/NamjiqwHI4fI8kFJKwKBJchRPUQdC4ljRRmGIrSnpY+t25/d3KGXwbe9Z2MGGy2hyA0tgOWuchIK+1vAKKBUh9nDEXfr80+xW680w5TqHyDcqbWvQsXXhH0yZLfINKNS6/IojHPsBy7tf36Ck9H5Pw+1PPu6NzBFSz5ZkC8KzrS6vuZXc/ImYrnheMQsqqQIDAQABo0swSTBHBgNVHQEEQDA+gBD4dY4MCPEmG4sxZrcni8vtoRgwFjEUMBIGA1UEAxMLd3d3LmlkcC5jb22CEHTw6/4iNY24QzE4+VWMmvkwDQYJKoZIhvcNAQELBQADggEBABhak2aR84MCdyXO4AKOQvZybsCMdhRq2i1i0WhD4/xe7Ry5haC6TeXIp8Q4cC3MzsrDal74xHI714BW0loafpHAsXfd9EvkKTVaJ+1Zpe16+SsTL4upS1cGydigqwUzsdpGck4wI1moJ9477O+46If2gF27u9Cdk7Onxe/5dwLIxWmkVRdbQIH5GsKUeAjOdRQmy+X1MX6KyRoaCwWGYwxi5Sa+r+3AtDvD4BX0EJGKFZeeM3J/yMpYh/75aN0cFQfDEdJ7C5NE0vonidE0QtIFvsoWtZUtur2fiW7yBxse38TPQsi2r6A6c/TZsZ5bq31yh3gr3kSN62H8iVKLQLA=</X509Certificate></X509Data></KeyInfo></Signature><saml:Subject><saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">spokaduser</saml:NameID><saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer"><saml:SubjectConfirmationData NotOnOrAfter="2024-02-22T11:58:58.646Z" Recipient="https://localhost:44348/SAML/AssertionConsumerService.aspx" InResponseTo="_b0fb4c89-ce00-4a4d-be0c-33587672dddc" /></saml:SubjectConfirmation></saml:Subject><saml:Conditions NotBefore="2024-02-22T11:52:58.646Z" NotOnOrAfter="2024-02-22T11:58:58.646Z"><saml:AudienceRestriction><saml:Audience>https://SpokServiceProvider</saml:Audience></saml:AudienceRestriction></saml:Conditions><saml:AuthnStatement AuthnInstant="2024-02-22T11:55:58.646Z" SessionIndex="_7a33abe8-149b-49ec-b33e-8e102654c797"><saml:AuthnContext><saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef></saml:AuthnContext></saml:AuthnStatement><saml:AttributeStatement><saml:Attribute Name="Email"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Spok AD User</saml:AttributeValue></saml:Attribute><saml:Attribute Name="GivenName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKADUSER</saml:AttributeValue></saml:Attribute><saml:Attribute Name="FamilyName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKVDEV</saml:AttributeValue></saml:Attribute></saml:AttributeStatement></saml:Assertion></samlp:Response>, relayState=/
+13720/8: 2/22/2024 5:55:59 AM: Sending form by HTTP Post: 
+<html>
+    <body>
+        <noscript>
+            <p>
+                Since your browser doesn't support JavaScript, you must press the Continue button to proceed.
+            </p>
+        </noscript>
+        <form id="samlform" action="https://localhost:44348/SAML/AssertionConsumerService.aspx" method="post" target="_self">
+            <div>
+                <input type="hidden" name="SAMLResponse" value="PHNhbWxwOlJlc3BvbnNlIElEPSJfNzE2Y2YwODgtM2UyYi00MWIxLWFjYzYtM2NkZTQzNTQzMzBlIiBJblJlc3BvbnNlVG89Il9iMGZiNGM4OS1jZTAwLTRhNGQtYmUwYy0zMzU4NzY3MmRkZGMiIFZlcnNpb249IjIuMCIgSXNzdWVJbnN0YW50PSIyMDI0LTAyLTIyVDExOjU1OjU4LjY0NloiIERlc3RpbmF0aW9uPSJodHRwczovL2xvY2FsaG9zdDo0NDM0OC9TQU1ML0Fzc2VydGlvbkNvbnN1bWVyU2VydmljZS5hc3B4IiB4bWxuczpzYW1scD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIj48c2FtbDpJc3N1ZXIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+aHR0cHM6Ly9FeGFtcGxlSWRlbnRpdHlQcm92aWRlcjwvc2FtbDpJc3N1ZXI+PHNhbWxwOlN0YXR1cz48c2FtbHA6U3RhdHVzQ29kZSBWYWx1ZT0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnN0YXR1czpTdWNjZXNzIiAvPjwvc2FtbHA6U3RhdHVzPjxzYW1sOkFzc2VydGlvbiBWZXJzaW9uPSIyLjAiIElEPSJfN2EzM2FiZTgtMTQ5Yi00OWVjLWIzM2UtOGUxMDI2NTRjNzk3IiBJc3N1ZUluc3RhbnQ9IjIwMjQtMDItMjJUMTE6NTU6NTguNjQ2WiIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+PHNhbWw6SXNzdWVyPmh0dHBzOi8vRXhhbXBsZUlkZW50aXR5UHJvdmlkZXI8L3NhbWw6SXNzdWVyPjxTaWduYXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJbmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjxTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNyc2Etc2hhMjU2IiAvPjxSZWZlcmVuY2UgVVJJPSIjXzdhMzNhYmU4LTE0OWItNDllYy1iMzNlLThlMTAyNjU0Yzc5NyI+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIiAvPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiPjxJbmNsdXNpdmVOYW1lc3BhY2VzIFByZWZpeExpc3Q9IiNkZWZhdWx0IHNhbWwgZHMgeHMgeHNpIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjwvVHJhbnNmb3JtPjwvVHJhbnNmb3Jtcz48RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjc2hhMjU2IiAvPjxEaWdlc3RWYWx1ZT5tL2o0a0htS1hERGRya2g3ZnJBSmJWZ0ZRNkllVFFLa2tSaDZLbnFYcENRPTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT5CdTBPWkVtYjZTSlg1WEs4UHFGWTU2TXl6ZVBpdGE0d1V1dlkvcEhuRzVDNE5OWUt6KzBaTUd6Z0hoMTFVU05aWWQ2NW1CTXk5ZXVURStYZmxkY3dFc0lqZGxEYlJmeHU3aGFFSnVOcmxtbFRPUExiWHV6Z2RkU1dYc2w1cDVUVFRObFNTb2V6cWFGQ1MxNmMxdUFLdkZweEpyU3JiSXl4V2xjK2hWQmpjU1oreWw5blJNdGJHdDk5T1dQdWozTGVqYU5zTVpOTDlta2xBdW0xcmZYU2kyeitpL2VBWmgrY0I0bERtZjlzdVNuL2diWkxhZ0p1enlGUE1EU2hvZDRzRlJsc2JSZXVpMUlDUkVDK0M4RitMZGkxejNYREVOekxKR1hYeURwREQ2cHFDTW5xcU1lTjZJVkV3dnNXTGpRL1EwNzdsK0VBb2s1aXJCd3pWdjRCbHc9PTwvU2lnbmF0dXJlVmFsdWU+PEtleUluZm8+PFg1MDlEYXRhPjxYNTA5Q2VydGlmaWNhdGU+TUlJREFUQ0NBZW1nQXdJQkFnSVFkUERyL2lJMWpiaERNVGo1Vll5YStUQU5CZ2txaGtpRzl3MEJBUXNGQURBV01SUXdFZ1lEVlFRREV3dDNkM2N1YVdSd0xtTnZiVEFlRncweE16RXhNakl3T0RJd05USmFGdzAwT1RFeU16RXhOREF3TURCYU1CWXhGREFTQmdOVkJBTVRDM2QzZHk1cFpIQXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFpMFhKUkxEcmNiU3lxVWQ4WEc0Qmd4T2JRTVlMQWtFTmxtSk9zQUVwbDF4TWFiVWlxMVg0djBGYzhaYUNwVUUzZkZHRU5NRVdnQmpuUVVVRTBXdFZVaDVKUE1zdWtvbGY5cWxqYkprQ2t2SFhIM080VWVuN3ZBMm9OUVd0NGJLOTZTcFhBRHBaS0Z2cGs0RDdidEtPZ1UvTmFtamlxd0hJNGZJOGtGSkt3S0JKY2hSUFVRZEM0bGpSUm1HSXJTbnBZK3QyNS9kM0tHWHdiZTlaMk1HR3kyaHlBMHRnT1d1Y2hJSysxdkFLS0JVaDluREVYZnI4MCt4VzY4MHc1VHFIeURjcWJXdlFzWFhoSDB5WkxmSU5LTlM2L0lvakhQc0J5N3RmMzZDazlINVB3KzFQUHU2TnpCRlN6NVprQzhLenJTNnZ1WlhjL0ltWXJuaGVNUXNxcVFJREFRQUJvMHN3U1RCSEJnTlZIUUVFUURBK2dCRDRkWTRNQ1BFbUc0c3hacmNuaTh2dG9SZ3dGakVVTUJJR0ExVUVBeE1MZDNkM0xtbGtjQzVqYjIyQ0VIVHc2LzRpTlkyNFF6RTQrVldNbXZrd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFCaGFrMmFSODRNQ2R5WE80QUtPUXZaeWJzQ01kaFJxMmkxaTBXaEQ0L3hlN1J5NWhhQzZUZVhJcDhRNGNDM016c3JEYWw3NHhISTcxNEJXMGxvYWZwSEFzWGZkOUV2a0tUVmFKKzFacGUxNitTc1RMNHVwUzFjR3lkaWdxd1V6c2RwR2NrNHdJMW1vSjk0NzdPKzQ2SWYyZ0YyN3U5Q2RrN09ueGUvNWR3TEl4V21rVlJkYlFJSDVHc0tVZUFqT2RSUW15K1gxTVg2S3lSb2FDd1dHWXd4aTVTYStyKzNBdER2RDRCWDBFSkdLRlplZU0zSi95TXBZaC83NWFOMGNGUWZERWRKN0M1TkUwdm9uaWRFMFF0SUZ2c29XdFpVdHVyMmZpVzd5QnhzZTM4VFBRc2kycjZBNmMvVFpzWjVicTMxeWgzZ3Iza1NONjJIOGlWS0xRTEE9PC9YNTA5Q2VydGlmaWNhdGU+PC9YNTA5RGF0YT48L0tleUluZm8+PC9TaWduYXR1cmU+PHNhbWw6U3ViamVjdD48c2FtbDpOYW1lSUQgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoxLjE6bmFtZWlkLWZvcm1hdDp1bnNwZWNpZmllZCI+c3Bva2FkdXNlcjwvc2FtbDpOYW1lSUQ+PHNhbWw6U3ViamVjdENvbmZpcm1hdGlvbiBNZXRob2Q9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpjbTpiZWFyZXIiPjxzYW1sOlN1YmplY3RDb25maXJtYXRpb25EYXRhIE5vdE9uT3JBZnRlcj0iMjAyNC0wMi0yMlQxMTo1ODo1OC42NDZaIiBSZWNpcGllbnQ9Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzQ4L1NBTUwvQXNzZXJ0aW9uQ29uc3VtZXJTZXJ2aWNlLmFzcHgiIEluUmVzcG9uc2VUbz0iX2IwZmI0Yzg5LWNlMDAtNGE0ZC1iZTBjLTMzNTg3NjcyZGRkYyIgLz48L3NhbWw6U3ViamVjdENvbmZpcm1hdGlvbj48L3NhbWw6U3ViamVjdD48c2FtbDpDb25kaXRpb25zIE5vdEJlZm9yZT0iMjAyNC0wMi0yMlQxMTo1Mjo1OC42NDZaIiBOb3RPbk9yQWZ0ZXI9IjIwMjQtMDItMjJUMTE6NTg6NTguNjQ2WiI+PHNhbWw6QXVkaWVuY2VSZXN0cmljdGlvbj48c2FtbDpBdWRpZW5jZT5odHRwczovL1Nwb2tTZXJ2aWNlUHJvdmlkZXI8L3NhbWw6QXVkaWVuY2U+PC9zYW1sOkF1ZGllbmNlUmVzdHJpY3Rpb24+PC9zYW1sOkNvbmRpdGlvbnM+PHNhbWw6QXV0aG5TdGF0ZW1lbnQgQXV0aG5JbnN0YW50PSIyMDI0LTAyLTIyVDExOjU1OjU4LjY0NloiIFNlc3Npb25JbmRleD0iXzdhMzNhYmU4LTE0OWItNDllYy1iMzNlLThlMTAyNjU0Yzc5NyI+PHNhbWw6QXV0aG5Db250ZXh0PjxzYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPnVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphYzpjbGFzc2VzOnVuc3BlY2lmaWVkPC9zYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPjwvc2FtbDpBdXRobkNvbnRleHQ+PC9zYW1sOkF1dGhuU3RhdGVtZW50PjxzYW1sOkF0dHJpYnV0ZVN0YXRlbWVudD48c2FtbDpBdHRyaWJ1dGUgTmFtZT0iRW1haWwiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U3BvayBBRCBVc2VyPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkdpdmVuTmFtZSI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeHNpOnR5cGU9InhzOnN0cmluZyIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj5TUE9LQURVU0VSPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkZhbWlseU5hbWUiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U1BPS1ZERVY8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48L3NhbWw6QXR0cmlidXRlU3RhdGVtZW50Pjwvc2FtbDpBc3NlcnRpb24+PC9zYW1scDpSZXNwb25zZT4="/><input type="hidden" name="RelayState" value="/"/>
+            </div>
+            <noscript>
+                <div>
+                    <input type="submit" value="Continue"/>
+                </div>
+            </noscript>
+        </form>
+    </body>
+    <script>
+        function submitForm() {
+            document.forms.samlform.submit();
+        }
+
+        if (document.readyState === "loading") {
+		    document.addEventListener("DOMContentLoaded", submitForm);
+	    } else {
+		    submitForm();
+        }
+    </script>
+</html>
+
+13720/8: 2/22/2024 5:55:59 AM: Sending SAML form: 
+<html>
+    <body>
+        <noscript>
+            <p>
+                Since your browser doesn't support JavaScript, you must press the Continue button to proceed.
+            </p>
+        </noscript>
+        <form id="samlform" action="https://localhost:44348/SAML/AssertionConsumerService.aspx" method="post" target="_self">
+            <div>
+                <input type="hidden" name="SAMLResponse" value="PHNhbWxwOlJlc3BvbnNlIElEPSJfNzE2Y2YwODgtM2UyYi00MWIxLWFjYzYtM2NkZTQzNTQzMzBlIiBJblJlc3BvbnNlVG89Il9iMGZiNGM4OS1jZTAwLTRhNGQtYmUwYy0zMzU4NzY3MmRkZGMiIFZlcnNpb249IjIuMCIgSXNzdWVJbnN0YW50PSIyMDI0LTAyLTIyVDExOjU1OjU4LjY0NloiIERlc3RpbmF0aW9uPSJodHRwczovL2xvY2FsaG9zdDo0NDM0OC9TQU1ML0Fzc2VydGlvbkNvbnN1bWVyU2VydmljZS5hc3B4IiB4bWxuczpzYW1scD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIj48c2FtbDpJc3N1ZXIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+aHR0cHM6Ly9FeGFtcGxlSWRlbnRpdHlQcm92aWRlcjwvc2FtbDpJc3N1ZXI+PHNhbWxwOlN0YXR1cz48c2FtbHA6U3RhdHVzQ29kZSBWYWx1ZT0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnN0YXR1czpTdWNjZXNzIiAvPjwvc2FtbHA6U3RhdHVzPjxzYW1sOkFzc2VydGlvbiBWZXJzaW9uPSIyLjAiIElEPSJfN2EzM2FiZTgtMTQ5Yi00OWVjLWIzM2UtOGUxMDI2NTRjNzk3IiBJc3N1ZUluc3RhbnQ9IjIwMjQtMDItMjJUMTE6NTU6NTguNjQ2WiIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+PHNhbWw6SXNzdWVyPmh0dHBzOi8vRXhhbXBsZUlkZW50aXR5UHJvdmlkZXI8L3NhbWw6SXNzdWVyPjxTaWduYXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJbmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjxTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNyc2Etc2hhMjU2IiAvPjxSZWZlcmVuY2UgVVJJPSIjXzdhMzNhYmU4LTE0OWItNDllYy1iMzNlLThlMTAyNjU0Yzc5NyI+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIiAvPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiPjxJbmNsdXNpdmVOYW1lc3BhY2VzIFByZWZpeExpc3Q9IiNkZWZhdWx0IHNhbWwgZHMgeHMgeHNpIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjwvVHJhbnNmb3JtPjwvVHJhbnNmb3Jtcz48RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjc2hhMjU2IiAvPjxEaWdlc3RWYWx1ZT5tL2o0a0htS1hERGRya2g3ZnJBSmJWZ0ZRNkllVFFLa2tSaDZLbnFYcENRPTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT5CdTBPWkVtYjZTSlg1WEs4UHFGWTU2TXl6ZVBpdGE0d1V1dlkvcEhuRzVDNE5OWUt6KzBaTUd6Z0hoMTFVU05aWWQ2NW1CTXk5ZXVURStYZmxkY3dFc0lqZGxEYlJmeHU3aGFFSnVOcmxtbFRPUExiWHV6Z2RkU1dYc2w1cDVUVFRObFNTb2V6cWFGQ1MxNmMxdUFLdkZweEpyU3JiSXl4V2xjK2hWQmpjU1oreWw5blJNdGJHdDk5T1dQdWozTGVqYU5zTVpOTDlta2xBdW0xcmZYU2kyeitpL2VBWmgrY0I0bERtZjlzdVNuL2diWkxhZ0p1enlGUE1EU2hvZDRzRlJsc2JSZXVpMUlDUkVDK0M4RitMZGkxejNYREVOekxKR1hYeURwREQ2cHFDTW5xcU1lTjZJVkV3dnNXTGpRL1EwNzdsK0VBb2s1aXJCd3pWdjRCbHc9PTwvU2lnbmF0dXJlVmFsdWU+PEtleUluZm8+PFg1MDlEYXRhPjxYNTA5Q2VydGlmaWNhdGU+TUlJREFUQ0NBZW1nQXdJQkFnSVFkUERyL2lJMWpiaERNVGo1Vll5YStUQU5CZ2txaGtpRzl3MEJBUXNGQURBV01SUXdFZ1lEVlFRREV3dDNkM2N1YVdSd0xtTnZiVEFlRncweE16RXhNakl3T0RJd05USmFGdzAwT1RFeU16RXhOREF3TURCYU1CWXhGREFTQmdOVkJBTVRDM2QzZHk1cFpIQXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFpMFhKUkxEcmNiU3lxVWQ4WEc0Qmd4T2JRTVlMQWtFTmxtSk9zQUVwbDF4TWFiVWlxMVg0djBGYzhaYUNwVUUzZkZHRU5NRVdnQmpuUVVVRTBXdFZVaDVKUE1zdWtvbGY5cWxqYkprQ2t2SFhIM080VWVuN3ZBMm9OUVd0NGJLOTZTcFhBRHBaS0Z2cGs0RDdidEtPZ1UvTmFtamlxd0hJNGZJOGtGSkt3S0JKY2hSUFVRZEM0bGpSUm1HSXJTbnBZK3QyNS9kM0tHWHdiZTlaMk1HR3kyaHlBMHRnT1d1Y2hJSysxdkFLS0JVaDluREVYZnI4MCt4VzY4MHc1VHFIeURjcWJXdlFzWFhoSDB5WkxmSU5LTlM2L0lvakhQc0J5N3RmMzZDazlINVB3KzFQUHU2TnpCRlN6NVprQzhLenJTNnZ1WlhjL0ltWXJuaGVNUXNxcVFJREFRQUJvMHN3U1RCSEJnTlZIUUVFUURBK2dCRDRkWTRNQ1BFbUc0c3hacmNuaTh2dG9SZ3dGakVVTUJJR0ExVUVBeE1MZDNkM0xtbGtjQzVqYjIyQ0VIVHc2LzRpTlkyNFF6RTQrVldNbXZrd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFCaGFrMmFSODRNQ2R5WE80QUtPUXZaeWJzQ01kaFJxMmkxaTBXaEQ0L3hlN1J5NWhhQzZUZVhJcDhRNGNDM016c3JEYWw3NHhISTcxNEJXMGxvYWZwSEFzWGZkOUV2a0tUVmFKKzFacGUxNitTc1RMNHVwUzFjR3lkaWdxd1V6c2RwR2NrNHdJMW1vSjk0NzdPKzQ2SWYyZ0YyN3U5Q2RrN09ueGUvNWR3TEl4V21rVlJkYlFJSDVHc0tVZUFqT2RSUW15K1gxTVg2S3lSb2FDd1dHWXd4aTVTYStyKzNBdER2RDRCWDBFSkdLRlplZU0zSi95TXBZaC83NWFOMGNGUWZERWRKN0M1TkUwdm9uaWRFMFF0SUZ2c29XdFpVdHVyMmZpVzd5QnhzZTM4VFBRc2kycjZBNmMvVFpzWjVicTMxeWgzZ3Iza1NONjJIOGlWS0xRTEE9PC9YNTA5Q2VydGlmaWNhdGU+PC9YNTA5RGF0YT48L0tleUluZm8+PC9TaWduYXR1cmU+PHNhbWw6U3ViamVjdD48c2FtbDpOYW1lSUQgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoxLjE6bmFtZWlkLWZvcm1hdDp1bnNwZWNpZmllZCI+c3Bva2FkdXNlcjwvc2FtbDpOYW1lSUQ+PHNhbWw6U3ViamVjdENvbmZpcm1hdGlvbiBNZXRob2Q9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpjbTpiZWFyZXIiPjxzYW1sOlN1YmplY3RDb25maXJtYXRpb25EYXRhIE5vdE9uT3JBZnRlcj0iMjAyNC0wMi0yMlQxMTo1ODo1OC42NDZaIiBSZWNpcGllbnQ9Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzQ4L1NBTUwvQXNzZXJ0aW9uQ29uc3VtZXJTZXJ2aWNlLmFzcHgiIEluUmVzcG9uc2VUbz0iX2IwZmI0Yzg5LWNlMDAtNGE0ZC1iZTBjLTMzNTg3NjcyZGRkYyIgLz48L3NhbWw6U3ViamVjdENvbmZpcm1hdGlvbj48L3NhbWw6U3ViamVjdD48c2FtbDpDb25kaXRpb25zIE5vdEJlZm9yZT0iMjAyNC0wMi0yMlQxMTo1Mjo1OC42NDZaIiBOb3RPbk9yQWZ0ZXI9IjIwMjQtMDItMjJUMTE6NTg6NTguNjQ2WiI+PHNhbWw6QXVkaWVuY2VSZXN0cmljdGlvbj48c2FtbDpBdWRpZW5jZT5odHRwczovL1Nwb2tTZXJ2aWNlUHJvdmlkZXI8L3NhbWw6QXVkaWVuY2U+PC9zYW1sOkF1ZGllbmNlUmVzdHJpY3Rpb24+PC9zYW1sOkNvbmRpdGlvbnM+PHNhbWw6QXV0aG5TdGF0ZW1lbnQgQXV0aG5JbnN0YW50PSIyMDI0LTAyLTIyVDExOjU1OjU4LjY0NloiIFNlc3Npb25JbmRleD0iXzdhMzNhYmU4LTE0OWItNDllYy1iMzNlLThlMTAyNjU0Yzc5NyI+PHNhbWw6QXV0aG5Db250ZXh0PjxzYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPnVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphYzpjbGFzc2VzOnVuc3BlY2lmaWVkPC9zYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPjwvc2FtbDpBdXRobkNvbnRleHQ+PC9zYW1sOkF1dGhuU3RhdGVtZW50PjxzYW1sOkF0dHJpYnV0ZVN0YXRlbWVudD48c2FtbDpBdHRyaWJ1dGUgTmFtZT0iRW1haWwiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U3BvayBBRCBVc2VyPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkdpdmVuTmFtZSI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeHNpOnR5cGU9InhzOnN0cmluZyIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj5TUE9LQURVU0VSPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkZhbWlseU5hbWUiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U1BPS1ZERVY8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48L3NhbWw6QXR0cmlidXRlU3RhdGVtZW50Pjwvc2FtbDpBc3NlcnRpb24+PC9zYW1scDpSZXNwb25zZT4="/><input type="hidden" name="RelayState" value="/"/>
+            </div>
+            <noscript>
+                <div>
+                    <input type="submit" value="Continue"/>
+                </div>
+            </noscript>
+        </form>
+    </body>
+    <script>
+        function submitForm() {
+            document.forms.samlform.submit();
+        }
+
+        if (document.readyState === "loading") {
+		    document.addEventListener("DOMContentLoaded", submitForm);
+	    } else {
+		    submitForm();
+        }
+    </script>
+</html>
+
+13720/8: 2/22/2024 5:55:59 AM: Response sent over HTTP POST.
+13720/8: 2/22/2024 5:55:59 AM: SAML message sent: partner=https://SpokServiceProvider, message=<samlp:Response ID="_716cf088-3e2b-41b1-acc6-3cde4354330e" InResponseTo="_b0fb4c89-ce00-4a4d-be0c-33587672dddc" Version="2.0" IssueInstant="2024-02-22T11:55:58.646Z" Destination="https://localhost:44348/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://ExampleIdentityProvider</saml:Issuer><samlp:Status><samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" /></samlp:Status><saml:Assertion Version="2.0" ID="_7a33abe8-149b-49ec-b33e-8e102654c797" IssueInstant="2024-02-22T11:55:58.646Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:Issuer>https://ExampleIdentityProvider</saml:Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI="#_7a33abe8-149b-49ec-b33e-8e102654c797"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><InclusiveNamespaces PrefixList="#default saml ds xs xsi" xmlns="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transform></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>m/j4kHmKXDDdrkh7frAJbVgFQ6IeTQKkkRh6KnqXpCQ=</DigestValue></Reference></SignedInfo><SignatureValue>Bu0OZEmb6SJX5XK8PqFY56MyzePita4wUuvY/pHnG5C4NNYKz+0ZMGzgHh11USNZYd65mBMy9euTE+XfldcwEsIjdlDbRfxu7haEJuNrlmlTOPLbXuzgddSWXsl5p5TTTNlSSoezqaFCS16c1uAKvFpxJrSrbIyxWlc+hVBjcSZ+yl9nRMtbGt99OWPuj3LejaNsMZNL9mklAum1rfXSi2z+i/eAZh+cB4lDmf9suSn/gbZLagJuzyFPMDShod4sFRlsbReui1ICREC+C8F+Ldi1z3XDENzLJGXXyDpDD6pqCMnqqMeN6IVEwvsWLjQ/Q077l+EAok5irBwzVv4Blw==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDATCCAemgAwIBAgIQdPDr/iI1jbhDMTj5VYya+TANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDEwt3d3cuaWRwLmNvbTAeFw0xMzExMjIwODIwNTJaFw00OTEyMzExNDAwMDBaMBYxFDASBgNVBAMTC3d3dy5pZHAuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi0XJRLDrcbSyqUd8XG4BgxObQMYLAkENlmJOsAEpl1xMabUiq1X4v0Fc8ZaCpUE3fFGENMEWgBjnQUUE0WtVUh5JPMsukolf9qljbJkCkvHXH3O4Uen7vA2oNQWt4bK96SpXADpZKFvpk4D7btKOgU/NamjiqwHI4fI8kFJKwKBJchRPUQdC4ljRRmGIrSnpY+t25/d3KGXwbe9Z2MGGy2hyA0tgOWuchIK+1vAKKBUh9nDEXfr80+xW680w5TqHyDcqbWvQsXXhH0yZLfINKNS6/IojHPsBy7tf36Ck9H5Pw+1PPu6NzBFSz5ZkC8KzrS6vuZXc/ImYrnheMQsqqQIDAQABo0swSTBHBgNVHQEEQDA+gBD4dY4MCPEmG4sxZrcni8vtoRgwFjEUMBIGA1UEAxMLd3d3LmlkcC5jb22CEHTw6/4iNY24QzE4+VWMmvkwDQYJKoZIhvcNAQELBQADggEBABhak2aR84MCdyXO4AKOQvZybsCMdhRq2i1i0WhD4/xe7Ry5haC6TeXIp8Q4cC3MzsrDal74xHI714BW0loafpHAsXfd9EvkKTVaJ+1Zpe16+SsTL4upS1cGydigqwUzsdpGck4wI1moJ9477O+46If2gF27u9Cdk7Onxe/5dwLIxWmkVRdbQIH5GsKUeAjOdRQmy+X1MX6KyRoaCwWGYwxi5Sa+r+3AtDvD4BX0EJGKFZeeM3J/yMpYh/75aN0cFQfDEdJ7C5NE0vonidE0QtIFvsoWtZUtur2fiW7yBxse38TPQsi2r6A6c/TZsZ5bq31yh3gr3kSN62H8iVKLQLA=</X509Certificate></X509Data></KeyInfo></Signature><saml:Subject><saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">spokaduser</saml:NameID><saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer"><saml:SubjectConfirmationData NotOnOrAfter="2024-02-22T11:58:58.646Z" Recipient="https://localhost:44348/SAML/AssertionConsumerService.aspx" InResponseTo="_b0fb4c89-ce00-4a4d-be0c-33587672dddc" /></saml:SubjectConfirmation></saml:Subject><saml:Conditions NotBefore="2024-02-22T11:52:58.646Z" NotOnOrAfter="2024-02-22T11:58:58.646Z"><saml:AudienceRestriction><saml:Audience>https://SpokServiceProvider</saml:Audience></saml:AudienceRestriction></saml:Conditions><saml:AuthnStatement AuthnInstant="2024-02-22T11:55:58.646Z" SessionIndex="_7a33abe8-149b-49ec-b33e-8e102654c797"><saml:AuthnContext><saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef></saml:AuthnContext></saml:AuthnStatement><saml:AttributeStatement><saml:Attribute Name="Email"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Spok AD User</saml:AttributeValue></saml:Attribute><saml:Attribute Name="GivenName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKADUSER</saml:AttributeValue></saml:Attribute><saml:Attribute Name="FamilyName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKVDEV</saml:AttributeValue></saml:Attribute></saml:AttributeStatement></saml:Assertion></samlp:Response>, relay state=/, destination URL=https://localhost:44348/SAML/AssertionConsumerService.aspx
+13720/8: 2/22/2024 5:55:59 AM: Saving session state for 9e7b8788-1505-4a7d-8454-167b1be5cef7:IdentityProviderSession to the SSO session store.
+13720/8: 2/22/2024 5:56:00 AM: Identity provider session (9e7b8788-1505-4a7d-8454-167b1be5cef7) state:
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _3e5f1d09-4e49-4720-addb-e789d62fc792
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _7a33abe8-149b-49ec-b33e-8e102654c797
+
+13720/8: 2/22/2024 5:56:00 AM: An SSO response has been successfully sent to the partner service provider https://SpokServiceProvider.
+4324/9: 2/22/2024 7:33:36 AM: ComponentSpace.Saml2, Version=6.5.0.0, Culture=neutral, PublicKeyToken=16647a1283418145, .NET v4.0 build, Evaluation.
+4324/9: 2/22/2024 7:33:36 AM: CLR: 4.0.30319.42000, OS: Microsoft Windows NT 6.2.9200.0, Account: SPOKVDEV\VChingamthottil, Culture: English (United States)
+4324/9: 2/22/2024 7:33:36 AM: Initializing the SAML environment.
+4324/9: 2/22/2024 7:33:36 AM: Loading the SAML configuration file C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider\saml.config.
+4324/9: 2/22/2024 7:33:37 AM: SAML configuration:
+<?xml version="1.0"?>
+<SAMLConfiguration xmlns="urn:componentspace:SAML:2.0:configuration">
+	<!--Name="https://fs.spok.com/adfs/services/trust"-->
+  <IdentityProvider	 
+    Name="https://ExampleIdentityProvider"
+    Description="Example Identity Provider">
+    <LocalCertificates>
+      <Certificate FileName="Certificates\idp.pfx" Password="********"/>
+    </LocalCertificates>
+  </IdentityProvider>
+
+  <PartnerServiceProviders>
+    <!-- Web forms example -->
+    <PartnerServiceProvider
+      Name="https://ExampleServiceProvider"
+      Description="Example Service Provider"
+      AssertionConsumerServiceUrl="https://localhost:44338/SAML/AssertionConsumerService.aspx"
+      SingleLogoutServiceUrl="https://localhost:44338/SAML/SLOService.aspx">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\sp.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+
+	  <!-- Web forms example -->
+	  <PartnerServiceProvider
+		Name="https://SpokServiceProvider"
+		Description="Spok Service Provider"
+		AssertionConsumerServiceUrl="https://localhost:44348/SAML/AssertionConsumerService.aspx"
+		SingleLogoutServiceUrl="https://localhost:44348/SAML/SLOService.aspx">
+		  <PartnerCertificates>
+			  <Certificate FileName="Certificates\sp.cer"/>
+		  </PartnerCertificates>
+	  </PartnerServiceProvider>
+
+    <!-- MVC example -->
+    <PartnerServiceProvider 
+	  Name="https://MvcExampleServiceProvider"
+	  Description="MVC Example Service Provider"
+	  AssertionConsumerServiceUrl="https://localhost:44386/SAML/AssertionConsumerService"
+	  SingleLogoutServiceUrl="https://localhost:44386/SAML/SingleLogoutService">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\sp.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+
+    <!-- SAML Proxy -->
+    <PartnerServiceProvider
+      Name="https://SamlProxy"
+      Description="SAML Proxy"
+      AssertionConsumerServiceUrl="https://localhost:44361/SAML/SP/AssertionConsumerService"
+      SingleLogoutServiceUrl="https://localhost:44361/SAML/SP/SingleLogoutService">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\proxy.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+	  
+    <!-- ADFS -->
+    <PartnerServiceProvider
+      Name="http://adfs.test/adfs/services/trust"
+      Description="ADFS"
+      AssertionConsumerServiceUrl="https://fs.spok.com/adfs/ls">
+    </PartnerServiceProvider>   
+  </PartnerServiceProviders>
+</SAMLConfiguration>
+
+4324/9: 2/22/2024 7:33:37 AM: The SAML configuration file has been successfully loaded.
+4324/9: 2/22/2024 7:33:37 AM: SAML configuration changes in the directory C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider are being monitored.
+4324/9: 2/22/2024 7:33:37 AM: The SAML environment has been successfully initialized.
+4324/9: 2/22/2024 7:33:37 AM: Checking if there are any SSO responses pending to partner service providers.
+4324/9: 2/22/2024 7:33:37 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+4324/9: 2/22/2024 7:33:37 AM: There are no SSO responses pending to partner service providers.
+4324/9: 2/22/2024 7:33:37 AM: Receiving an SSO request from a partner service provider.
+4324/9: 2/22/2024 7:33:37 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+4324/9: 2/22/2024 7:33:37 AM: Receiving request over HTTP Redirect.
+4324/9: 2/22/2024 7:33:37 AM: HTTPS request:
+GET /SAML/SSOService.aspx?SAMLRequest=fZLLTsMwEEV%2FJfI%2BzZO2WG2l0gpRiUdEAgs2yImn1MKxg8cp8Pc4aUBl0UqWF6O5c4%2FveIaslg1dtnanHuGjBbTeZj0nr%2BySAXAe%2BpNykvjpBCK%2FvCjdxTlPx2M2TZKSeM9gUGg1J%2FEoJN4GsYWNQsuUdaUwTv0w9uO4iBKauJOOplHyQry1cxGK2V65s7ZBGgRSV0zuNFqapsllGOTLu9sgzx9yMHtRwYhh80W8a20q6GnnZMskQueaMUSxh79KZrTVlZZXQnGh3uakNYpqhgKpYjUgtRXtxlNHTctDE9Kbosj87CEviLdEBNPhrbTCtgYzQDw93p4ATqcH4FPKAf%2Brlgppn%2Fl5qmZ4AlnMum7aR2uO9Ofl7BeDLH5x80a%2FDzAun73gYGbB0eyDUUPv3bDNOtNSVN9d3DWzp72iUdRXBPe3fSttFTZQia0A7nKUUn%2BuDDDrlmNN63YTLA6u%2F%2F%2Fc4gc%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=jcfvI%2FsNBM7EbpyF5uxcxZmtnaV%2BwM5bQ4QZuGLJSFvt9v%2Fr%2FoefF6z75rd%2FwQWiMJMuR%2Bu5IaRN7c3YnTX2PE4Fmj3gjxGMwsJOzmK1LxBUPWZM2KKBZctoW5BI4OfmSSQ5K4NsJyxab6oAeuHF0ZAHM77bzChRu5e5ek19kbAwPAm%2FkuTLbOL1PObAomZ1dQ4HbnQe9q1%2F47%2FuScgVWL73ZDtHhYZbWd1gfJvOHYdN8s6ZNdIm1OrNYe%2BJHnbto%2FsBfLr165Ywy3MBAW1m6hgbjl5k91nk5qMXtkNq8Y9cfXFCwpbCz7GAIUqC3pyVKN9bTE4EpaP%2FM0s%2B1HZOJg%3D%3D HTTP/1.1
+Cache-Control: max-age=0
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: SAML_SessionId=5155b41c-0098-44e1-970d-406acc1a3be0
+Host: localhost:44390
+Referer: https://localhost:44348/
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Site: same-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+sec-ch-ua: "Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+
+4324/9: 2/22/2024 7:33:37 AM: Parsing HTTP redirect URL: /SAML/SSOService.aspx?SAMLRequest=fZLLTsMwEEV%2FJfI%2BzZO2WG2l0gpRiUdEAgs2yImn1MKxg8cp8Pc4aUBl0UqWF6O5c4%2FveIaslg1dtnanHuGjBbTeZj0nr%2BySAXAe%2BpNykvjpBCK%2FvCjdxTlPx2M2TZKSeM9gUGg1J%2FEoJN4GsYWNQsuUdaUwTv0w9uO4iBKauJOOplHyQry1cxGK2V65s7ZBGgRSV0zuNFqapsllGOTLu9sgzx9yMHtRwYhh80W8a20q6GnnZMskQueaMUSxh79KZrTVlZZXQnGh3uakNYpqhgKpYjUgtRXtxlNHTctDE9Kbosj87CEviLdEBNPhrbTCtgYzQDw93p4ATqcH4FPKAf%2Brlgppn%2Fl5qmZ4AlnMum7aR2uO9Ofl7BeDLH5x80a%2FDzAun73gYGbB0eyDUUPv3bDNOtNSVN9d3DWzp72iUdRXBPe3fSttFTZQia0A7nKUUn%2BuDDDrlmNN63YTLA6u%2F%2F%2Fc4gc%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=jcfvI%2FsNBM7EbpyF5uxcxZmtnaV%2BwM5bQ4QZuGLJSFvt9v%2Fr%2FoefF6z75rd%2FwQWiMJMuR%2Bu5IaRN7c3YnTX2PE4Fmj3gjxGMwsJOzmK1LxBUPWZM2KKBZctoW5BI4OfmSSQ5K4NsJyxab6oAeuHF0ZAHM77bzChRu5e5ek19kbAwPAm%2FkuTLbOL1PObAomZ1dQ4HbnQe9q1%2F47%2FuScgVWL73ZDtHhYZbWd1gfJvOHYdN8s6ZNdIm1OrNYe%2BJHnbto%2FsBfLr165Ywy3MBAW1m6hgbjl5k91nk5qMXtkNq8Y9cfXFCwpbCz7GAIUqC3pyVKN9bTE4EpaP%2FM0s%2B1HZOJg%3D%3D
+4324/9: 2/22/2024 7:33:37 AM: Decoding SAML message: fZLLTsMwEEV/JfI+zZO2WG2l0gpRiUdEAgs2yImn1MKxg8cp8Pc4aUBl0UqWF6O5c4/veIaslg1dtnanHuGjBbTeZj0nr+ySAXAe+pNykvjpBCK/vCjdxTlPx2M2TZKSeM9gUGg1J/EoJN4GsYWNQsuUdaUwTv0w9uO4iBKauJOOplHyQry1cxGK2V65s7ZBGgRSV0zuNFqapsllGOTLu9sgzx9yMHtRwYhh80W8a20q6GnnZMskQueaMUSxh79KZrTVlZZXQnGh3uakNYpqhgKpYjUgtRXtxlNHTctDE9Kbosj87CEviLdEBNPhrbTCtgYzQDw93p4ATqcH4FPKAf+rlgppn/l5qmZ4AlnMum7aR2uO9Ofl7BeDLH5x80a/DzAun73gYGbB0eyDUUPv3bDNOtNSVN9d3DWzp72iUdRXBPe3fSttFTZQia0A7nKUUn+uDDDrlmNN63YTLA6u///c4gc=
+4324/9: 2/22/2024 7:33:38 AM: Decoded SAML message: <samlp:AuthnRequest ID="_a9aeedd0-7b73-47e1-b5b1-bddd466a833b" Version="2.0" IssueInstant="2024-02-22T13:33:34.813Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44348/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>
+4324/9: 2/22/2024 7:33:38 AM: Relay state: /
+4324/9: 2/22/2024 7:33:38 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+4324/9: 2/22/2024 7:33:38 AM: Signature: jcfvI/sNBM7EbpyF5uxcxZmtnaV+wM5bQ4QZuGLJSFvt9v/r/oefF6z75rd/wQWiMJMuR+u5IaRN7c3YnTX2PE4Fmj3gjxGMwsJOzmK1LxBUPWZM2KKBZctoW5BI4OfmSSQ5K4NsJyxab6oAeuHF0ZAHM77bzChRu5e5ek19kbAwPAm/kuTLbOL1PObAomZ1dQ4HbnQe9q1/47/uScgVWL73ZDtHhYZbWd1gfJvOHYdN8s6ZNdIm1OrNYe+JHnbto/sBfLr165Ywy3MBAW1m6hgbjl5k91nk5qMXtkNq8Y9cfXFCwpbCz7GAIUqC3pyVKN9bTE4EpaP/M0s+1HZOJg==
+4324/9: 2/22/2024 7:33:38 AM: Received request over HTTP Redirect, samlMessage=<samlp:AuthnRequest ID="_a9aeedd0-7b73-47e1-b5b1-bddd466a833b" Version="2.0" IssueInstant="2024-02-22T13:33:34.813Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44348/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>, relayState=/, signatureAlgorithm=http://www.w3.org/2001/04/xmldsig-more#rsa-sha256, signature=jcfvI/sNBM7EbpyF5uxcxZmtnaV+wM5bQ4QZuGLJSFvt9v/r/oefF6z75rd/wQWiMJMuR+u5IaRN7c3YnTX2PE4Fmj3gjxGMwsJOzmK1LxBUPWZM2KKBZctoW5BI4OfmSSQ5K4NsJyxab6oAeuHF0ZAHM77bzChRu5e5ek19kbAwPAm/kuTLbOL1PObAomZ1dQ4HbnQe9q1/47/uScgVWL73ZDtHhYZbWd1gfJvOHYdN8s6ZNdIm1OrNYe+JHnbto/sBfLr165Ywy3MBAW1m6hgbjl5k91nk5qMXtkNq8Y9cfXFCwpbCz7GAIUqC3pyVKN9bTE4EpaP/M0s+1HZOJg==
+4324/9: 2/22/2024 7:33:38 AM: SAML message received: partner=https://SpokServiceProvider, message=<samlp:AuthnRequest ID="_a9aeedd0-7b73-47e1-b5b1-bddd466a833b" Version="2.0" IssueInstant="2024-02-22T13:33:34.813Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44348/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>, relay state=/
+4324/9: 2/22/2024 7:33:38 AM: The XML validated against the SAML XML Schemas.
+4324/9: 2/22/2024 7:33:38 AM: Verifying the authn request signature.
+4324/9: 2/22/2024 7:33:38 AM: Loading the X.509 certificate from the file C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider\Certificates\sp.cer.
+4324/9: 2/22/2024 7:33:38 AM: The X.509 certificate with subject name CN=www.sp.com, serial number 0867A17DC9EFEABE4CCBF7E7ADB7C37A and thumbprint 427A3D5B39DF593B1D44B769D3697AEDF00FD83F has been loaded.
+4324/9: 2/22/2024 7:33:38 AM: The X.509 certificate with subject name CN=www.sp.com, serial number 0867A17DC9EFEABE4CCBF7E7ADB7C37A and thumbprint 427A3D5B39DF593B1D44B769D3697AEDF00FD83F has been cached.
+4324/9: 2/22/2024 7:33:38 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+4324/9: 2/22/2024 7:33:39 AM: Checking HTTP redirect signature.
+4324/9: 2/22/2024 7:33:39 AM: Query string: SAMLRequest=fZLLTsMwEEV%2FJfI%2BzZO2WG2l0gpRiUdEAgs2yImn1MKxg8cp8Pc4aUBl0UqWF6O5c4%2FveIaslg1dtnanHuGjBbTeZj0nr%2BySAXAe%2BpNykvjpBCK%2FvCjdxTlPx2M2TZKSeM9gUGg1J%2FEoJN4GsYWNQsuUdaUwTv0w9uO4iBKauJOOplHyQry1cxGK2V65s7ZBGgRSV0zuNFqapsllGOTLu9sgzx9yMHtRwYhh80W8a20q6GnnZMskQueaMUSxh79KZrTVlZZXQnGh3uakNYpqhgKpYjUgtRXtxlNHTctDE9Kbosj87CEviLdEBNPhrbTCtgYzQDw93p4ATqcH4FPKAf%2Brlgppn%2Fl5qmZ4AlnMum7aR2uO9Ofl7BeDLH5x80a%2FDzAun73gYGbB0eyDUUPv3bDNOtNSVN9d3DWzp72iUdRXBPe3fSttFTZQia0A7nKUUn%2BuDDDrlmNN63YTLA6u%2F%2F%2Fc4gc%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256
+4324/9: 2/22/2024 7:33:39 AM: Signed data: SAMLRequest=fZLLTsMwEEV%2FJfI%2BzZO2WG2l0gpRiUdEAgs2yImn1MKxg8cp8Pc4aUBl0UqWF6O5c4%2FveIaslg1dtnanHuGjBbTeZj0nr%2BySAXAe%2BpNykvjpBCK%2FvCjdxTlPx2M2TZKSeM9gUGg1J%2FEoJN4GsYWNQsuUdaUwTv0w9uO4iBKauJOOplHyQry1cxGK2V65s7ZBGgRSV0zuNFqapsllGOTLu9sgzx9yMHtRwYhh80W8a20q6GnnZMskQueaMUSxh79KZrTVlZZXQnGh3uakNYpqhgKpYjUgtRXtxlNHTctDE9Kbosj87CEviLdEBNPhrbTCtgYzQDw93p4ATqcH4FPKAf%2Brlgppn%2Fl5qmZ4AlnMum7aR2uO9Ofl7BeDLH5x80a%2FDzAun73gYGbB0eyDUUPv3bDNOtNSVN9d3DWzp72iUdRXBPe3fSttFTZQia0A7nKUUn%2BuDDDrlmNN63YTLA6u%2F%2F%2Fc4gc%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256
+4324/9: 2/22/2024 7:33:39 AM: Verifying signature.
+4324/9: 2/22/2024 7:33:39 AM: Signed data: 53 41 4d 4c 52 65 71 75 65 73 74 3d 66 5a 4c 4c 54 73 4d 77 45 45 56 25 32 46 4a 66 49 25 32 42 7a 5a 4f 32 57 47 32 6c 30 67 70 52 69 55 64 45 41 67 73 32 79 49 6d 6e 31 4d 4b 78 67 38 63 70 38 50 63 34 61 55 42 6c 30 55 71 57 46 36 4f 35 63 34 25 32 46 76 65 49 61 73 6c 67 31 64 74 6e 61 6e 48 75 47 6a 42 62 54 65 5a 6a 30 6e 72 25 32 42 79 53 41 58 41 65 25 32 42 70 4e 79 6b 76 6a 70 42 43 4b 25 32 46 76 43 6a 64 78 54 6c 50 78 32 4d 32 54 5a 4b 53 65 4d 39 67 55 47 67 31 4a 25 32 46 45 6f 4a 4e 34 47 73 59 57 4e 51 73 75 55 64 61 55 77 54 76 30 77 39 75 4f 34 69 42 4b 61 75 4a 4f 4f 70 6c 48 79 51 72 79 31 63 78 47 4b 32 56 36 35 73 37 5a 42 47 67 52 53 56 30 7a 75 4e 46 71 61 70 73 6c 6c 47 4f 54 4c 75 39 73 67 7a 78 39 79 4d 48 74 52 77 59 68 68 38 30 57 38 61 32 30 71 36 47 6e 6e 5a 4d 73 6b 51 75 65 61 4d 55 53 78 68 37 39 4b 5a 72 54 56 6c 5a 5a 58 51 6e 47 68 33 75 61 6b 4e 59 70 71 68 67 4b 70 59 6a 55 67 74 52 58 74 78 6c 4e 48 54 63 74 44 45 39 4b 62 6f 73 6a 38 37 43 45 76 69 4c 64 45 42 4e 50 68 72 62 54 43 74 67 59 7a 51 44 77 39 33 70 34 41 54 71 63 48 34 46 50 4b 41 66 25 32 42 72 6c 67 70 70 6e 25 32 46 6c 35 71 6d 5a 34 41 6c 6e 4d 75 6d 37 61 52 32 75 4f 39 4f 66 6c 37 42 65 44 4c 48 35 78 38 30 61 25 32 46 44 7a 41 75 6e 37 33 67 59 47 62 42 30 65 79 44 55 55 50 76 33 62 44 4e 4f 74 4e 53 56 4e 39 64 33 44 57 7a 70 37 32 69 55 64 52 58 42 50 65 33 66 53 74 74 46 54 5a 51 69 61 30 41 37 6e 4b 55 55 6e 25 32 42 75 44 44 44 72 6c 6d 4e 4e 36 33 59 54 4c 41 36 75 25 32 46 25 32 46 25 32 46 63 34 67 63 25 33 44 26 52 65 6c 61 79 53 74 61 74 65 3d 25 32 46 26 53 69 67 41 6c 67 3d 68 74 74 70 25 33 41 25 32 46 25 32 46 77 77 77 2e 77 33 2e 6f 72 67 25 32 46 32 30 30 31 25 32 46 30 34 25 32 46 78 6d 6c 64 73 69 67 2d 6d 6f 72 65 25 32 33 72 73 61 2d 73 68 61 32 35 36
+4324/9: 2/22/2024 7:33:39 AM: Signature: 8d c7 ef 23 fb 0d 04 ce c4 6e 9c 85 e6 ec 5c c5 99 ad 9d a5 7e c0 ce 5b 43 84 19 b8 62 c9 48 5b ed f6 ff eb fe 87 9f 17 ac fb e6 b7 7f c1 05 a2 30 93 2e 47 eb b9 21 a4 4d ed cd d8 9d 35 f6 3c 4e 05 9a 3d e0 8f 11 8c c2 c2 4e ce 62 b5 2f 10 54 3d 66 4c d8 a2 81 65 cb 68 5b 90 48 e0 e7 e6 49 24 39 2b 83 6c 27 2c 5a 6f aa 00 7a e1 c5 d1 90 07 33 be db cc 28 51 bb 97 b9 7a 4d 7d 91 b0 30 3c 09 bf 92 e4 cb 6c e2 f5 3c e6 c0 a2 66 75 75 0e 07 6e 74 1e f6 ad 7f e3 bf ee 49 c8 15 58 be f7 64 3b 47 85 86 5b 59 dd 60 7c 9b ce 1d 87 4d f2 ce 99 35 d2 26 d4 ea cd 61 ef 89 1e 76 ed a3 fb 01 7c ba f5 eb 96 30 cb 73 01 01 6d 66 ea 18 1b 8e 5e 64 f7 59 e4 e6 a3 17 b6 43 6a f1 8f 5c 7d 71 42 c2 96 c2 cf b1 80 21 4a 82 de 9c 95 28 df 5b 4c 4e 04 a5 a3 ff 33 4b 3e d4 76 4e 26
+4324/9: 2/22/2024 7:33:39 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+4324/9: 2/22/2024 7:33:39 AM: Signature verified: True
+4324/9: 2/22/2024 7:33:39 AM: HTTP redirect signature verified.
+4324/9: 2/22/2024 7:33:39 AM: The authn request signature verified.
+4324/9: 2/22/2024 7:33:40 AM: The SAML request destination won't be checked as the destination URL hasn't been specified.
+4324/9: 2/22/2024 7:33:40 AM: Saving session state for 5155b41c-0098-44e1-970d-406acc1a3be0:IdentityProviderSession to the SSO session store.
+4324/9: 2/22/2024 7:33:40 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+Pending response state:
+Action: SendSamlResponse
+Partner name: https://SpokServiceProvider
+Relay state: /
+In response to: _a9aeedd0-7b73-47e1-b5b1-bddd466a833b
+Response URL: https://localhost:44348/SAML/AssertionConsumerService.aspx
+
+4324/9: 2/22/2024 7:33:40 AM: An SSO request from the partner service provider https://SpokServiceProvider has been successfully received.
+4324/9: 2/22/2024 7:34:09 AM: Checking if there are any SSO responses pending to partner service providers.
+4324/9: 2/22/2024 7:34:09 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+Pending response state:
+Action: SendSamlResponse
+Partner name: https://SpokServiceProvider
+Relay state: /
+In response to: _a9aeedd0-7b73-47e1-b5b1-bddd466a833b
+Response URL: https://localhost:44348/SAML/AssertionConsumerService.aspx
+
+4324/9: 2/22/2024 7:34:09 AM: There are SSO responses pending to partner service providers.
+4324/9: 2/22/2024 7:34:09 AM: Sending an SSO response to a partner service provider.
+4324/9: 2/22/2024 7:34:09 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+Pending response state:
+Action: SendSamlResponse
+Partner name: https://SpokServiceProvider
+Relay state: /
+In response to: _a9aeedd0-7b73-47e1-b5b1-bddd466a833b
+Response URL: https://localhost:44348/SAML/AssertionConsumerService.aspx
+
+4324/9: 2/22/2024 7:34:09 AM: Loading the X.509 certificate from the file C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider\Certificates\idp.pfx.
+4324/9: 2/22/2024 7:34:09 AM: The X.509 certificate with subject name CN=www.idp.com, serial number 74F0EBFE22358DB8433138F9558C9AF9 and thumbprint A6A4AE4E0B378EC73678E5812690AF50E3EC3769 has been loaded.
+4324/9: 2/22/2024 7:34:09 AM: The X.509 certificate with subject name CN=www.idp.com, serial number 74F0EBFE22358DB8433138F9558C9AF9 and thumbprint A6A4AE4E0B378EC73678E5812690AF50E3EC3769 has been cached.
+4324/9: 2/22/2024 7:34:09 AM: Generating an XML signature.
+4324/9: 2/22/2024 7:34:10 AM: XML signature generation was successful.
+4324/9: 2/22/2024 7:34:10 AM: Sending response over HTTP POST, targetURL=https://localhost:44348/SAML/AssertionConsumerService.aspx, samlMessage=<samlp:Response ID="_b6ea88ce-148f-4328-b24a-db33a172a36d" InResponseTo="_a9aeedd0-7b73-47e1-b5b1-bddd466a833b" Version="2.0" IssueInstant="2024-02-22T13:34:09.599Z" Destination="https://localhost:44348/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://ExampleIdentityProvider</saml:Issuer><samlp:Status><samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" /></samlp:Status><saml:Assertion Version="2.0" ID="_03cce3c8-fed4-49fe-b60b-8105e0db9f6d" IssueInstant="2024-02-22T13:34:09.601Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:Issuer>https://ExampleIdentityProvider</saml:Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI="#_03cce3c8-fed4-49fe-b60b-8105e0db9f6d"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><InclusiveNamespaces PrefixList="#default saml ds xs xsi" xmlns="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transform></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>GfLkMN/dTDGzQf+tEHkR3Tp7aW7CMeRNu3PUIuGExsw=</DigestValue></Reference></SignedInfo><SignatureValue>ET5Z6NKb0rJt8ThrRU/Wu1wBHbhVcTdvLro5zzg9CykNprDKPx4He1ZSQZAXNh7nGyDIM3am1qIYpFj43A+Iw626DueAEeN/RM3+IBWoqGwla7ODF9TATKsYcFqj3s7yc2VNHf5LDP6LTw3/ggN0MN95NPwJVRlGB44U87+50Vzwnk9JwzOaX9Oi/80WfQrC7tM3J41pxyHwQoBc88AIkqHEzeiWNz1raLwajuwuXbA1v1G/r3w/UooQllXJAZXUwf+CHqm7YUo6Oy2TuzwUo/YsfTLBFamER4ptrLu2m8GzpE7h2HIqnlqdArfp5KA+g8mUs5UMEAtExXXkhxsBYA==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDATCCAemgAwIBAgIQdPDr/iI1jbhDMTj5VYya+TANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDEwt3d3cuaWRwLmNvbTAeFw0xMzExMjIwODIwNTJaFw00OTEyMzExNDAwMDBaMBYxFDASBgNVBAMTC3d3dy5pZHAuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi0XJRLDrcbSyqUd8XG4BgxObQMYLAkENlmJOsAEpl1xMabUiq1X4v0Fc8ZaCpUE3fFGENMEWgBjnQUUE0WtVUh5JPMsukolf9qljbJkCkvHXH3O4Uen7vA2oNQWt4bK96SpXADpZKFvpk4D7btKOgU/NamjiqwHI4fI8kFJKwKBJchRPUQdC4ljRRmGIrSnpY+t25/d3KGXwbe9Z2MGGy2hyA0tgOWuchIK+1vAKKBUh9nDEXfr80+xW680w5TqHyDcqbWvQsXXhH0yZLfINKNS6/IojHPsBy7tf36Ck9H5Pw+1PPu6NzBFSz5ZkC8KzrS6vuZXc/ImYrnheMQsqqQIDAQABo0swSTBHBgNVHQEEQDA+gBD4dY4MCPEmG4sxZrcni8vtoRgwFjEUMBIGA1UEAxMLd3d3LmlkcC5jb22CEHTw6/4iNY24QzE4+VWMmvkwDQYJKoZIhvcNAQELBQADggEBABhak2aR84MCdyXO4AKOQvZybsCMdhRq2i1i0WhD4/xe7Ry5haC6TeXIp8Q4cC3MzsrDal74xHI714BW0loafpHAsXfd9EvkKTVaJ+1Zpe16+SsTL4upS1cGydigqwUzsdpGck4wI1moJ9477O+46If2gF27u9Cdk7Onxe/5dwLIxWmkVRdbQIH5GsKUeAjOdRQmy+X1MX6KyRoaCwWGYwxi5Sa+r+3AtDvD4BX0EJGKFZeeM3J/yMpYh/75aN0cFQfDEdJ7C5NE0vonidE0QtIFvsoWtZUtur2fiW7yBxse38TPQsi2r6A6c/TZsZ5bq31yh3gr3kSN62H8iVKLQLA=</X509Certificate></X509Data></KeyInfo></Signature><saml:Subject><saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">spokaduser</saml:NameID><saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer"><saml:SubjectConfirmationData NotOnOrAfter="2024-02-22T13:37:09.603Z" Recipient="https://localhost:44348/SAML/AssertionConsumerService.aspx" InResponseTo="_a9aeedd0-7b73-47e1-b5b1-bddd466a833b" /></saml:SubjectConfirmation></saml:Subject><saml:Conditions NotBefore="2024-02-22T13:31:09.601Z" NotOnOrAfter="2024-02-22T13:37:09.601Z"><saml:AudienceRestriction><saml:Audience>https://SpokServiceProvider</saml:Audience></saml:AudienceRestriction></saml:Conditions><saml:AuthnStatement AuthnInstant="2024-02-22T13:34:09.603Z" SessionIndex="_03cce3c8-fed4-49fe-b60b-8105e0db9f6d"><saml:AuthnContext><saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef></saml:AuthnContext></saml:AuthnStatement><saml:AttributeStatement><saml:Attribute Name="Email"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Spok AD User</saml:AttributeValue></saml:Attribute><saml:Attribute Name="GivenName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKADUSER</saml:AttributeValue></saml:Attribute><saml:Attribute Name="FamilyName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKVDEV</saml:AttributeValue></saml:Attribute></saml:AttributeStatement></saml:Assertion></samlp:Response>, relayState=/
+4324/9: 2/22/2024 7:34:10 AM: Sending form by HTTP Post: 
+<html>
+    <body>
+        <noscript>
+            <p>
+                Since your browser doesn't support JavaScript, you must press the Continue button to proceed.
+            </p>
+        </noscript>
+        <form id="samlform" action="https://localhost:44348/SAML/AssertionConsumerService.aspx" method="post" target="_self">
+            <div>
+                <input type="hidden" name="SAMLResponse" value="PHNhbWxwOlJlc3BvbnNlIElEPSJfYjZlYTg4Y2UtMTQ4Zi00MzI4LWIyNGEtZGIzM2ExNzJhMzZkIiBJblJlc3BvbnNlVG89Il9hOWFlZWRkMC03YjczLTQ3ZTEtYjViMS1iZGRkNDY2YTgzM2IiIFZlcnNpb249IjIuMCIgSXNzdWVJbnN0YW50PSIyMDI0LTAyLTIyVDEzOjM0OjA5LjU5OVoiIERlc3RpbmF0aW9uPSJodHRwczovL2xvY2FsaG9zdDo0NDM0OC9TQU1ML0Fzc2VydGlvbkNvbnN1bWVyU2VydmljZS5hc3B4IiB4bWxuczpzYW1scD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIj48c2FtbDpJc3N1ZXIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+aHR0cHM6Ly9FeGFtcGxlSWRlbnRpdHlQcm92aWRlcjwvc2FtbDpJc3N1ZXI+PHNhbWxwOlN0YXR1cz48c2FtbHA6U3RhdHVzQ29kZSBWYWx1ZT0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnN0YXR1czpTdWNjZXNzIiAvPjwvc2FtbHA6U3RhdHVzPjxzYW1sOkFzc2VydGlvbiBWZXJzaW9uPSIyLjAiIElEPSJfMDNjY2UzYzgtZmVkNC00OWZlLWI2MGItODEwNWUwZGI5ZjZkIiBJc3N1ZUluc3RhbnQ9IjIwMjQtMDItMjJUMTM6MzQ6MDkuNjAxWiIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+PHNhbWw6SXNzdWVyPmh0dHBzOi8vRXhhbXBsZUlkZW50aXR5UHJvdmlkZXI8L3NhbWw6SXNzdWVyPjxTaWduYXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJbmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjxTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNyc2Etc2hhMjU2IiAvPjxSZWZlcmVuY2UgVVJJPSIjXzAzY2NlM2M4LWZlZDQtNDlmZS1iNjBiLTgxMDVlMGRiOWY2ZCI+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIiAvPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiPjxJbmNsdXNpdmVOYW1lc3BhY2VzIFByZWZpeExpc3Q9IiNkZWZhdWx0IHNhbWwgZHMgeHMgeHNpIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjwvVHJhbnNmb3JtPjwvVHJhbnNmb3Jtcz48RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjc2hhMjU2IiAvPjxEaWdlc3RWYWx1ZT5HZkxrTU4vZFRER3pRZit0RUhrUjNUcDdhVzdDTWVSTnUzUFVJdUdFeHN3PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT5FVDVaNk5LYjBySnQ4VGhyUlUvV3Uxd0JIYmhWY1RkdkxybzV6emc5Q3lrTnByREtQeDRIZTFaU1FaQVhOaDduR3lESU0zYW0xcUlZcEZqNDNBK0l3NjI2RHVlQUVlTi9STTMrSUJXb3FHd2xhN09ERjlUQVRLc1ljRnFqM3M3eWMyVk5IZjVMRFA2TFR3My9nZ04wTU45NU5Qd0pWUmxHQjQ0VTg3KzUwVnp3bms5Snd6T2FYOU9pLzgwV2ZRckM3dE0zSjQxcHh5SHdRb0JjODhBSWtxSEV6ZWlXTnoxcmFMd2FqdXd1WGJBMXYxRy9yM3cvVW9vUWxsWEpBWlhVd2YrQ0hxbTdZVW82T3kyVHV6d1VvL1lzZlRMQkZhbUVSNHB0ckx1Mm04R3pwRTdoMkhJcW5scWRBcmZwNUtBK2c4bVVzNVVNRUF0RXhYWGtoeHNCWUE9PTwvU2lnbmF0dXJlVmFsdWU+PEtleUluZm8+PFg1MDlEYXRhPjxYNTA5Q2VydGlmaWNhdGU+TUlJREFUQ0NBZW1nQXdJQkFnSVFkUERyL2lJMWpiaERNVGo1Vll5YStUQU5CZ2txaGtpRzl3MEJBUXNGQURBV01SUXdFZ1lEVlFRREV3dDNkM2N1YVdSd0xtTnZiVEFlRncweE16RXhNakl3T0RJd05USmFGdzAwT1RFeU16RXhOREF3TURCYU1CWXhGREFTQmdOVkJBTVRDM2QzZHk1cFpIQXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFpMFhKUkxEcmNiU3lxVWQ4WEc0Qmd4T2JRTVlMQWtFTmxtSk9zQUVwbDF4TWFiVWlxMVg0djBGYzhaYUNwVUUzZkZHRU5NRVdnQmpuUVVVRTBXdFZVaDVKUE1zdWtvbGY5cWxqYkprQ2t2SFhIM080VWVuN3ZBMm9OUVd0NGJLOTZTcFhBRHBaS0Z2cGs0RDdidEtPZ1UvTmFtamlxd0hJNGZJOGtGSkt3S0JKY2hSUFVRZEM0bGpSUm1HSXJTbnBZK3QyNS9kM0tHWHdiZTlaMk1HR3kyaHlBMHRnT1d1Y2hJSysxdkFLS0JVaDluREVYZnI4MCt4VzY4MHc1VHFIeURjcWJXdlFzWFhoSDB5WkxmSU5LTlM2L0lvakhQc0J5N3RmMzZDazlINVB3KzFQUHU2TnpCRlN6NVprQzhLenJTNnZ1WlhjL0ltWXJuaGVNUXNxcVFJREFRQUJvMHN3U1RCSEJnTlZIUUVFUURBK2dCRDRkWTRNQ1BFbUc0c3hacmNuaTh2dG9SZ3dGakVVTUJJR0ExVUVBeE1MZDNkM0xtbGtjQzVqYjIyQ0VIVHc2LzRpTlkyNFF6RTQrVldNbXZrd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFCaGFrMmFSODRNQ2R5WE80QUtPUXZaeWJzQ01kaFJxMmkxaTBXaEQ0L3hlN1J5NWhhQzZUZVhJcDhRNGNDM016c3JEYWw3NHhISTcxNEJXMGxvYWZwSEFzWGZkOUV2a0tUVmFKKzFacGUxNitTc1RMNHVwUzFjR3lkaWdxd1V6c2RwR2NrNHdJMW1vSjk0NzdPKzQ2SWYyZ0YyN3U5Q2RrN09ueGUvNWR3TEl4V21rVlJkYlFJSDVHc0tVZUFqT2RSUW15K1gxTVg2S3lSb2FDd1dHWXd4aTVTYStyKzNBdER2RDRCWDBFSkdLRlplZU0zSi95TXBZaC83NWFOMGNGUWZERWRKN0M1TkUwdm9uaWRFMFF0SUZ2c29XdFpVdHVyMmZpVzd5QnhzZTM4VFBRc2kycjZBNmMvVFpzWjVicTMxeWgzZ3Iza1NONjJIOGlWS0xRTEE9PC9YNTA5Q2VydGlmaWNhdGU+PC9YNTA5RGF0YT48L0tleUluZm8+PC9TaWduYXR1cmU+PHNhbWw6U3ViamVjdD48c2FtbDpOYW1lSUQgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoxLjE6bmFtZWlkLWZvcm1hdDp1bnNwZWNpZmllZCI+c3Bva2FkdXNlcjwvc2FtbDpOYW1lSUQ+PHNhbWw6U3ViamVjdENvbmZpcm1hdGlvbiBNZXRob2Q9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpjbTpiZWFyZXIiPjxzYW1sOlN1YmplY3RDb25maXJtYXRpb25EYXRhIE5vdE9uT3JBZnRlcj0iMjAyNC0wMi0yMlQxMzozNzowOS42MDNaIiBSZWNpcGllbnQ9Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzQ4L1NBTUwvQXNzZXJ0aW9uQ29uc3VtZXJTZXJ2aWNlLmFzcHgiIEluUmVzcG9uc2VUbz0iX2E5YWVlZGQwLTdiNzMtNDdlMS1iNWIxLWJkZGQ0NjZhODMzYiIgLz48L3NhbWw6U3ViamVjdENvbmZpcm1hdGlvbj48L3NhbWw6U3ViamVjdD48c2FtbDpDb25kaXRpb25zIE5vdEJlZm9yZT0iMjAyNC0wMi0yMlQxMzozMTowOS42MDFaIiBOb3RPbk9yQWZ0ZXI9IjIwMjQtMDItMjJUMTM6Mzc6MDkuNjAxWiI+PHNhbWw6QXVkaWVuY2VSZXN0cmljdGlvbj48c2FtbDpBdWRpZW5jZT5odHRwczovL1Nwb2tTZXJ2aWNlUHJvdmlkZXI8L3NhbWw6QXVkaWVuY2U+PC9zYW1sOkF1ZGllbmNlUmVzdHJpY3Rpb24+PC9zYW1sOkNvbmRpdGlvbnM+PHNhbWw6QXV0aG5TdGF0ZW1lbnQgQXV0aG5JbnN0YW50PSIyMDI0LTAyLTIyVDEzOjM0OjA5LjYwM1oiIFNlc3Npb25JbmRleD0iXzAzY2NlM2M4LWZlZDQtNDlmZS1iNjBiLTgxMDVlMGRiOWY2ZCI+PHNhbWw6QXV0aG5Db250ZXh0PjxzYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPnVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphYzpjbGFzc2VzOnVuc3BlY2lmaWVkPC9zYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPjwvc2FtbDpBdXRobkNvbnRleHQ+PC9zYW1sOkF1dGhuU3RhdGVtZW50PjxzYW1sOkF0dHJpYnV0ZVN0YXRlbWVudD48c2FtbDpBdHRyaWJ1dGUgTmFtZT0iRW1haWwiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U3BvayBBRCBVc2VyPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkdpdmVuTmFtZSI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeHNpOnR5cGU9InhzOnN0cmluZyIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj5TUE9LQURVU0VSPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkZhbWlseU5hbWUiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U1BPS1ZERVY8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48L3NhbWw6QXR0cmlidXRlU3RhdGVtZW50Pjwvc2FtbDpBc3NlcnRpb24+PC9zYW1scDpSZXNwb25zZT4="/><input type="hidden" name="RelayState" value="/"/>
+            </div>
+            <noscript>
+                <div>
+                    <input type="submit" value="Continue"/>
+                </div>
+            </noscript>
+        </form>
+    </body>
+    <script>
+        function submitForm() {
+            document.forms.samlform.submit();
+        }
+
+        if (document.readyState === "loading") {
+		    document.addEventListener("DOMContentLoaded", submitForm);
+	    } else {
+		    submitForm();
+        }
+    </script>
+</html>
+
+4324/9: 2/22/2024 7:34:10 AM: Sending SAML form: 
+<html>
+    <body>
+        <noscript>
+            <p>
+                Since your browser doesn't support JavaScript, you must press the Continue button to proceed.
+            </p>
+        </noscript>
+        <form id="samlform" action="https://localhost:44348/SAML/AssertionConsumerService.aspx" method="post" target="_self">
+            <div>
+                <input type="hidden" name="SAMLResponse" value="PHNhbWxwOlJlc3BvbnNlIElEPSJfYjZlYTg4Y2UtMTQ4Zi00MzI4LWIyNGEtZGIzM2ExNzJhMzZkIiBJblJlc3BvbnNlVG89Il9hOWFlZWRkMC03YjczLTQ3ZTEtYjViMS1iZGRkNDY2YTgzM2IiIFZlcnNpb249IjIuMCIgSXNzdWVJbnN0YW50PSIyMDI0LTAyLTIyVDEzOjM0OjA5LjU5OVoiIERlc3RpbmF0aW9uPSJodHRwczovL2xvY2FsaG9zdDo0NDM0OC9TQU1ML0Fzc2VydGlvbkNvbnN1bWVyU2VydmljZS5hc3B4IiB4bWxuczpzYW1scD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIj48c2FtbDpJc3N1ZXIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+aHR0cHM6Ly9FeGFtcGxlSWRlbnRpdHlQcm92aWRlcjwvc2FtbDpJc3N1ZXI+PHNhbWxwOlN0YXR1cz48c2FtbHA6U3RhdHVzQ29kZSBWYWx1ZT0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnN0YXR1czpTdWNjZXNzIiAvPjwvc2FtbHA6U3RhdHVzPjxzYW1sOkFzc2VydGlvbiBWZXJzaW9uPSIyLjAiIElEPSJfMDNjY2UzYzgtZmVkNC00OWZlLWI2MGItODEwNWUwZGI5ZjZkIiBJc3N1ZUluc3RhbnQ9IjIwMjQtMDItMjJUMTM6MzQ6MDkuNjAxWiIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+PHNhbWw6SXNzdWVyPmh0dHBzOi8vRXhhbXBsZUlkZW50aXR5UHJvdmlkZXI8L3NhbWw6SXNzdWVyPjxTaWduYXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJbmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjxTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNyc2Etc2hhMjU2IiAvPjxSZWZlcmVuY2UgVVJJPSIjXzAzY2NlM2M4LWZlZDQtNDlmZS1iNjBiLTgxMDVlMGRiOWY2ZCI+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIiAvPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiPjxJbmNsdXNpdmVOYW1lc3BhY2VzIFByZWZpeExpc3Q9IiNkZWZhdWx0IHNhbWwgZHMgeHMgeHNpIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjwvVHJhbnNmb3JtPjwvVHJhbnNmb3Jtcz48RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjc2hhMjU2IiAvPjxEaWdlc3RWYWx1ZT5HZkxrTU4vZFRER3pRZit0RUhrUjNUcDdhVzdDTWVSTnUzUFVJdUdFeHN3PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT5FVDVaNk5LYjBySnQ4VGhyUlUvV3Uxd0JIYmhWY1RkdkxybzV6emc5Q3lrTnByREtQeDRIZTFaU1FaQVhOaDduR3lESU0zYW0xcUlZcEZqNDNBK0l3NjI2RHVlQUVlTi9STTMrSUJXb3FHd2xhN09ERjlUQVRLc1ljRnFqM3M3eWMyVk5IZjVMRFA2TFR3My9nZ04wTU45NU5Qd0pWUmxHQjQ0VTg3KzUwVnp3bms5Snd6T2FYOU9pLzgwV2ZRckM3dE0zSjQxcHh5SHdRb0JjODhBSWtxSEV6ZWlXTnoxcmFMd2FqdXd1WGJBMXYxRy9yM3cvVW9vUWxsWEpBWlhVd2YrQ0hxbTdZVW82T3kyVHV6d1VvL1lzZlRMQkZhbUVSNHB0ckx1Mm04R3pwRTdoMkhJcW5scWRBcmZwNUtBK2c4bVVzNVVNRUF0RXhYWGtoeHNCWUE9PTwvU2lnbmF0dXJlVmFsdWU+PEtleUluZm8+PFg1MDlEYXRhPjxYNTA5Q2VydGlmaWNhdGU+TUlJREFUQ0NBZW1nQXdJQkFnSVFkUERyL2lJMWpiaERNVGo1Vll5YStUQU5CZ2txaGtpRzl3MEJBUXNGQURBV01SUXdFZ1lEVlFRREV3dDNkM2N1YVdSd0xtTnZiVEFlRncweE16RXhNakl3T0RJd05USmFGdzAwT1RFeU16RXhOREF3TURCYU1CWXhGREFTQmdOVkJBTVRDM2QzZHk1cFpIQXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFpMFhKUkxEcmNiU3lxVWQ4WEc0Qmd4T2JRTVlMQWtFTmxtSk9zQUVwbDF4TWFiVWlxMVg0djBGYzhaYUNwVUUzZkZHRU5NRVdnQmpuUVVVRTBXdFZVaDVKUE1zdWtvbGY5cWxqYkprQ2t2SFhIM080VWVuN3ZBMm9OUVd0NGJLOTZTcFhBRHBaS0Z2cGs0RDdidEtPZ1UvTmFtamlxd0hJNGZJOGtGSkt3S0JKY2hSUFVRZEM0bGpSUm1HSXJTbnBZK3QyNS9kM0tHWHdiZTlaMk1HR3kyaHlBMHRnT1d1Y2hJSysxdkFLS0JVaDluREVYZnI4MCt4VzY4MHc1VHFIeURjcWJXdlFzWFhoSDB5WkxmSU5LTlM2L0lvakhQc0J5N3RmMzZDazlINVB3KzFQUHU2TnpCRlN6NVprQzhLenJTNnZ1WlhjL0ltWXJuaGVNUXNxcVFJREFRQUJvMHN3U1RCSEJnTlZIUUVFUURBK2dCRDRkWTRNQ1BFbUc0c3hacmNuaTh2dG9SZ3dGakVVTUJJR0ExVUVBeE1MZDNkM0xtbGtjQzVqYjIyQ0VIVHc2LzRpTlkyNFF6RTQrVldNbXZrd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFCaGFrMmFSODRNQ2R5WE80QUtPUXZaeWJzQ01kaFJxMmkxaTBXaEQ0L3hlN1J5NWhhQzZUZVhJcDhRNGNDM016c3JEYWw3NHhISTcxNEJXMGxvYWZwSEFzWGZkOUV2a0tUVmFKKzFacGUxNitTc1RMNHVwUzFjR3lkaWdxd1V6c2RwR2NrNHdJMW1vSjk0NzdPKzQ2SWYyZ0YyN3U5Q2RrN09ueGUvNWR3TEl4V21rVlJkYlFJSDVHc0tVZUFqT2RSUW15K1gxTVg2S3lSb2FDd1dHWXd4aTVTYStyKzNBdER2RDRCWDBFSkdLRlplZU0zSi95TXBZaC83NWFOMGNGUWZERWRKN0M1TkUwdm9uaWRFMFF0SUZ2c29XdFpVdHVyMmZpVzd5QnhzZTM4VFBRc2kycjZBNmMvVFpzWjVicTMxeWgzZ3Iza1NONjJIOGlWS0xRTEE9PC9YNTA5Q2VydGlmaWNhdGU+PC9YNTA5RGF0YT48L0tleUluZm8+PC9TaWduYXR1cmU+PHNhbWw6U3ViamVjdD48c2FtbDpOYW1lSUQgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoxLjE6bmFtZWlkLWZvcm1hdDp1bnNwZWNpZmllZCI+c3Bva2FkdXNlcjwvc2FtbDpOYW1lSUQ+PHNhbWw6U3ViamVjdENvbmZpcm1hdGlvbiBNZXRob2Q9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpjbTpiZWFyZXIiPjxzYW1sOlN1YmplY3RDb25maXJtYXRpb25EYXRhIE5vdE9uT3JBZnRlcj0iMjAyNC0wMi0yMlQxMzozNzowOS42MDNaIiBSZWNpcGllbnQ9Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzQ4L1NBTUwvQXNzZXJ0aW9uQ29uc3VtZXJTZXJ2aWNlLmFzcHgiIEluUmVzcG9uc2VUbz0iX2E5YWVlZGQwLTdiNzMtNDdlMS1iNWIxLWJkZGQ0NjZhODMzYiIgLz48L3NhbWw6U3ViamVjdENvbmZpcm1hdGlvbj48L3NhbWw6U3ViamVjdD48c2FtbDpDb25kaXRpb25zIE5vdEJlZm9yZT0iMjAyNC0wMi0yMlQxMzozMTowOS42MDFaIiBOb3RPbk9yQWZ0ZXI9IjIwMjQtMDItMjJUMTM6Mzc6MDkuNjAxWiI+PHNhbWw6QXVkaWVuY2VSZXN0cmljdGlvbj48c2FtbDpBdWRpZW5jZT5odHRwczovL1Nwb2tTZXJ2aWNlUHJvdmlkZXI8L3NhbWw6QXVkaWVuY2U+PC9zYW1sOkF1ZGllbmNlUmVzdHJpY3Rpb24+PC9zYW1sOkNvbmRpdGlvbnM+PHNhbWw6QXV0aG5TdGF0ZW1lbnQgQXV0aG5JbnN0YW50PSIyMDI0LTAyLTIyVDEzOjM0OjA5LjYwM1oiIFNlc3Npb25JbmRleD0iXzAzY2NlM2M4LWZlZDQtNDlmZS1iNjBiLTgxMDVlMGRiOWY2ZCI+PHNhbWw6QXV0aG5Db250ZXh0PjxzYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPnVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphYzpjbGFzc2VzOnVuc3BlY2lmaWVkPC9zYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPjwvc2FtbDpBdXRobkNvbnRleHQ+PC9zYW1sOkF1dGhuU3RhdGVtZW50PjxzYW1sOkF0dHJpYnV0ZVN0YXRlbWVudD48c2FtbDpBdHRyaWJ1dGUgTmFtZT0iRW1haWwiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U3BvayBBRCBVc2VyPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkdpdmVuTmFtZSI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeHNpOnR5cGU9InhzOnN0cmluZyIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj5TUE9LQURVU0VSPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkZhbWlseU5hbWUiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U1BPS1ZERVY8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48L3NhbWw6QXR0cmlidXRlU3RhdGVtZW50Pjwvc2FtbDpBc3NlcnRpb24+PC9zYW1scDpSZXNwb25zZT4="/><input type="hidden" name="RelayState" value="/"/>
+            </div>
+            <noscript>
+                <div>
+                    <input type="submit" value="Continue"/>
+                </div>
+            </noscript>
+        </form>
+    </body>
+    <script>
+        function submitForm() {
+            document.forms.samlform.submit();
+        }
+
+        if (document.readyState === "loading") {
+		    document.addEventListener("DOMContentLoaded", submitForm);
+	    } else {
+		    submitForm();
+        }
+    </script>
+</html>
+
+4324/9: 2/22/2024 7:34:10 AM: Response sent over HTTP POST.
+4324/9: 2/22/2024 7:34:10 AM: SAML message sent: partner=https://SpokServiceProvider, message=<samlp:Response ID="_b6ea88ce-148f-4328-b24a-db33a172a36d" InResponseTo="_a9aeedd0-7b73-47e1-b5b1-bddd466a833b" Version="2.0" IssueInstant="2024-02-22T13:34:09.599Z" Destination="https://localhost:44348/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://ExampleIdentityProvider</saml:Issuer><samlp:Status><samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" /></samlp:Status><saml:Assertion Version="2.0" ID="_03cce3c8-fed4-49fe-b60b-8105e0db9f6d" IssueInstant="2024-02-22T13:34:09.601Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:Issuer>https://ExampleIdentityProvider</saml:Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI="#_03cce3c8-fed4-49fe-b60b-8105e0db9f6d"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><InclusiveNamespaces PrefixList="#default saml ds xs xsi" xmlns="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transform></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>GfLkMN/dTDGzQf+tEHkR3Tp7aW7CMeRNu3PUIuGExsw=</DigestValue></Reference></SignedInfo><SignatureValue>ET5Z6NKb0rJt8ThrRU/Wu1wBHbhVcTdvLro5zzg9CykNprDKPx4He1ZSQZAXNh7nGyDIM3am1qIYpFj43A+Iw626DueAEeN/RM3+IBWoqGwla7ODF9TATKsYcFqj3s7yc2VNHf5LDP6LTw3/ggN0MN95NPwJVRlGB44U87+50Vzwnk9JwzOaX9Oi/80WfQrC7tM3J41pxyHwQoBc88AIkqHEzeiWNz1raLwajuwuXbA1v1G/r3w/UooQllXJAZXUwf+CHqm7YUo6Oy2TuzwUo/YsfTLBFamER4ptrLu2m8GzpE7h2HIqnlqdArfp5KA+g8mUs5UMEAtExXXkhxsBYA==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDATCCAemgAwIBAgIQdPDr/iI1jbhDMTj5VYya+TANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDEwt3d3cuaWRwLmNvbTAeFw0xMzExMjIwODIwNTJaFw00OTEyMzExNDAwMDBaMBYxFDASBgNVBAMTC3d3dy5pZHAuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi0XJRLDrcbSyqUd8XG4BgxObQMYLAkENlmJOsAEpl1xMabUiq1X4v0Fc8ZaCpUE3fFGENMEWgBjnQUUE0WtVUh5JPMsukolf9qljbJkCkvHXH3O4Uen7vA2oNQWt4bK96SpXADpZKFvpk4D7btKOgU/NamjiqwHI4fI8kFJKwKBJchRPUQdC4ljRRmGIrSnpY+t25/d3KGXwbe9Z2MGGy2hyA0tgOWuchIK+1vAKKBUh9nDEXfr80+xW680w5TqHyDcqbWvQsXXhH0yZLfINKNS6/IojHPsBy7tf36Ck9H5Pw+1PPu6NzBFSz5ZkC8KzrS6vuZXc/ImYrnheMQsqqQIDAQABo0swSTBHBgNVHQEEQDA+gBD4dY4MCPEmG4sxZrcni8vtoRgwFjEUMBIGA1UEAxMLd3d3LmlkcC5jb22CEHTw6/4iNY24QzE4+VWMmvkwDQYJKoZIhvcNAQELBQADggEBABhak2aR84MCdyXO4AKOQvZybsCMdhRq2i1i0WhD4/xe7Ry5haC6TeXIp8Q4cC3MzsrDal74xHI714BW0loafpHAsXfd9EvkKTVaJ+1Zpe16+SsTL4upS1cGydigqwUzsdpGck4wI1moJ9477O+46If2gF27u9Cdk7Onxe/5dwLIxWmkVRdbQIH5GsKUeAjOdRQmy+X1MX6KyRoaCwWGYwxi5Sa+r+3AtDvD4BX0EJGKFZeeM3J/yMpYh/75aN0cFQfDEdJ7C5NE0vonidE0QtIFvsoWtZUtur2fiW7yBxse38TPQsi2r6A6c/TZsZ5bq31yh3gr3kSN62H8iVKLQLA=</X509Certificate></X509Data></KeyInfo></Signature><saml:Subject><saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">spokaduser</saml:NameID><saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer"><saml:SubjectConfirmationData NotOnOrAfter="2024-02-22T13:37:09.603Z" Recipient="https://localhost:44348/SAML/AssertionConsumerService.aspx" InResponseTo="_a9aeedd0-7b73-47e1-b5b1-bddd466a833b" /></saml:SubjectConfirmation></saml:Subject><saml:Conditions NotBefore="2024-02-22T13:31:09.601Z" NotOnOrAfter="2024-02-22T13:37:09.601Z"><saml:AudienceRestriction><saml:Audience>https://SpokServiceProvider</saml:Audience></saml:AudienceRestriction></saml:Conditions><saml:AuthnStatement AuthnInstant="2024-02-22T13:34:09.603Z" SessionIndex="_03cce3c8-fed4-49fe-b60b-8105e0db9f6d"><saml:AuthnContext><saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef></saml:AuthnContext></saml:AuthnStatement><saml:AttributeStatement><saml:Attribute Name="Email"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Spok AD User</saml:AttributeValue></saml:Attribute><saml:Attribute Name="GivenName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKADUSER</saml:AttributeValue></saml:Attribute><saml:Attribute Name="FamilyName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKVDEV</saml:AttributeValue></saml:Attribute></saml:AttributeStatement></saml:Assertion></samlp:Response>, relay state=/, destination URL=https://localhost:44348/SAML/AssertionConsumerService.aspx
+4324/9: 2/22/2024 7:34:10 AM: Saving session state for 5155b41c-0098-44e1-970d-406acc1a3be0:IdentityProviderSession to the SSO session store.
+4324/9: 2/22/2024 7:34:10 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _03cce3c8-fed4-49fe-b60b-8105e0db9f6d
+
+4324/9: 2/22/2024 7:34:10 AM: An SSO response has been successfully sent to the partner service provider https://SpokServiceProvider.
+4324/5: 2/22/2024 7:34:42 AM: Checking if there are any SSO responses pending to partner service providers.
+4324/5: 2/22/2024 7:34:42 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _03cce3c8-fed4-49fe-b60b-8105e0db9f6d
+
+4324/5: 2/22/2024 7:34:42 AM: There are no SSO responses pending to partner service providers.
+4324/5: 2/22/2024 7:34:43 AM: Receiving an SSO request from a partner service provider.
+4324/5: 2/22/2024 7:34:43 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _03cce3c8-fed4-49fe-b60b-8105e0db9f6d
+
+4324/5: 2/22/2024 7:34:43 AM: Receiving request over HTTP Redirect.
+4324/5: 2/22/2024 7:34:43 AM: HTTPS request:
+GET /SAML/SSOService.aspx?SAMLRequest=fZJLb8IwEIT%2FSuR7yJOXBUgUVBWJlojQHnqpjLMpVh079Tq0%2FffNAyp6gOtqZ%2BbzrCfIClnSeWUPagufFaB1VsspeeMjDnk47rt5vz9049F44O7zLHL5Po6Gvh%2BwLM%2BJ8wIGhVZTEvZ84qwQK1gptEzZeuSHseuHbhjugohGMY2D3iAMXomzrFOEYrZVHqwtkXqe1JzJg0ZL4zga%2B146f1x7abpJwRwFhx7D8ps499pwaGmnJGcSoUlNGKI4wt8kMdpqruWdUJlQ71NSGUU1Q4FUsQKQWk4be1pT0323hPRht0vcZJPuiDNHBNPgLbTCqgBzgnjerq8AR6MO%2BJryhP9dSIW07fw2VXl6AplNmm3aVmsu9Lfl7IxBZmfctNQfJ5i6n6PIwEy8C%2B8uqKRPtdlqmWgp%2BE9Td8Hs9aygF7QTkbl5u0orhSVwkQvI6h6l1F8LA8zWx7Gmqm%2FjzbrU%2F39u9gs%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=it9azZsbxtsH%2Ff%2BkbZcDP3NCU14CdwCmB1wNyFpNo93lSeZUO2DA00egY1UkPsoweixlgZcIQvD0kQg7Fq8xmDvL%2FsKIHmD3Q4K1TADqkh2le2obksrme9daMmEyDN0inzMC15RuOLeIj6xuzcV66kvs69KE13Wde%2BEsCmmlz31122kjak8GMkk5bLzM%2FLzgrE%2B6mheDP%2FJjDMLoiLuVrOSsQ%2Fqf6ta2nrTTTDMhkNdN60o18Uj73dighKVOYTet%2F7XfXS7kNLrO839XA5GcoDnzf%2FUORLreFWIoFJ7g4Si6JAwLgZhcow1k5%2F14lHJGboiXSD%2F%2BXl4%2FX4BR0ykeyA%3D%3D HTTP/1.1
+Cache-Control: max-age=0
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: SAML_SessionId=5155b41c-0098-44e1-970d-406acc1a3be0; ExampleIdentityProvider=60D774F38EAA1D4923480627EED99121B688ECEC42639453ADA0129C24C033B03ADEF51D5F1077C82B5658C6D34A86168FEFF2D6FE80A8887104E3C1DAF83D059BA22A9A1F7F34D9BAE3D529B70741B68E253599A26151CBB612BEB4316A286F3DDA1A42691A56E1CECBF3D431E3751DBDC09FBC051139F7534B70BAD2C1106C3CF871E9C55E6187E98313730364C25D; SpokServiceProvider=4D5AF4AF810B5C0BDF171F5BD507AF6EB9132D0C67E1A3446B0EA91EE0877FA2FE2027E59F8FE1E38FC3164B67A5F203AEE6353D186FE3AC15F407B75C79A69B9D6E4E118B30375529AC0FDD84453D1391B7F33F77C45493C3EE2833085F4230B843C79FD39B3A2B6B946A1D9208376DCC80DCFDC0638752A5FE4DB2BDABAE051CE336C1BCA90B0A7FFF4DD761AFBB04; ASP.NET_SessionId=brafjuftealry2x2jn0enfcj
+Host: localhost:44390
+Referer: https://localhost:44338/
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Site: same-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+sec-ch-ua: "Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+
+4324/5: 2/22/2024 7:34:43 AM: Parsing HTTP redirect URL: /SAML/SSOService.aspx?SAMLRequest=fZJLb8IwEIT%2FSuR7yJOXBUgUVBWJlojQHnqpjLMpVh079Tq0%2FffNAyp6gOtqZ%2BbzrCfIClnSeWUPagufFaB1VsspeeMjDnk47rt5vz9049F44O7zLHL5Po6Gvh%2BwLM%2BJ8wIGhVZTEvZ84qwQK1gptEzZeuSHseuHbhjugohGMY2D3iAMXomzrFOEYrZVHqwtkXqe1JzJg0ZL4zga%2B146f1x7abpJwRwFhx7D8ps499pwaGmnJGcSoUlNGKI4wt8kMdpqruWdUJlQ71NSGUU1Q4FUsQKQWk4be1pT0323hPRht0vcZJPuiDNHBNPgLbTCqgBzgnjerq8AR6MO%2BJryhP9dSIW07fw2VXl6AplNmm3aVmsu9Lfl7IxBZmfctNQfJ5i6n6PIwEy8C%2B8uqKRPtdlqmWgp%2BE9Td8Hs9aygF7QTkbl5u0orhSVwkQvI6h6l1F8LA8zWx7Gmqm%2FjzbrU%2F39u9gs%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=it9azZsbxtsH%2Ff%2BkbZcDP3NCU14CdwCmB1wNyFpNo93lSeZUO2DA00egY1UkPsoweixlgZcIQvD0kQg7Fq8xmDvL%2FsKIHmD3Q4K1TADqkh2le2obksrme9daMmEyDN0inzMC15RuOLeIj6xuzcV66kvs69KE13Wde%2BEsCmmlz31122kjak8GMkk5bLzM%2FLzgrE%2B6mheDP%2FJjDMLoiLuVrOSsQ%2Fqf6ta2nrTTTDMhkNdN60o18Uj73dighKVOYTet%2F7XfXS7kNLrO839XA5GcoDnzf%2FUORLreFWIoFJ7g4Si6JAwLgZhcow1k5%2F14lHJGboiXSD%2F%2BXl4%2FX4BR0ykeyA%3D%3D
+4324/5: 2/22/2024 7:34:43 AM: Decoding SAML message: fZJLb8IwEIT/SuR7yJOXBUgUVBWJlojQHnqpjLMpVh079Tq0/ffNAyp6gOtqZ+bzrCfIClnSeWUPagufFaB1VsspeeMjDnk47rt5vz9049F44O7zLHL5Po6Gvh+wLM+J8wIGhVZTEvZ84qwQK1gptEzZeuSHseuHbhjugohGMY2D3iAMXomzrFOEYrZVHqwtkXqe1JzJg0ZL4zga+146f1x7abpJwRwFhx7D8ps499pwaGmnJGcSoUlNGKI4wt8kMdpqruWdUJlQ71NSGUU1Q4FUsQKQWk4be1pT0323hPRht0vcZJPuiDNHBNPgLbTCqgBzgnjerq8AR6MO+JryhP9dSIW07fw2VXl6AplNmm3aVmsu9Lfl7IxBZmfctNQfJ5i6n6PIwEy8C+8uqKRPtdlqmWgp+E9Td8Hs9aygF7QTkbl5u0orhSVwkQvI6h6l1F8LA8zWx7Gmqm/jzbrU/39u9gs=
+4324/5: 2/22/2024 7:34:44 AM: Decoded SAML message: <samlp:AuthnRequest ID="_c8cef295-f557-4896-bfd3-cb437001adff" Version="2.0" IssueInstant="2024-02-22T13:34:41.621Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44338/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>
+4324/5: 2/22/2024 7:34:44 AM: Relay state: /
+4324/5: 2/22/2024 7:34:44 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+4324/5: 2/22/2024 7:34:44 AM: Signature: it9azZsbxtsH/f+kbZcDP3NCU14CdwCmB1wNyFpNo93lSeZUO2DA00egY1UkPsoweixlgZcIQvD0kQg7Fq8xmDvL/sKIHmD3Q4K1TADqkh2le2obksrme9daMmEyDN0inzMC15RuOLeIj6xuzcV66kvs69KE13Wde+EsCmmlz31122kjak8GMkk5bLzM/LzgrE+6mheDP/JjDMLoiLuVrOSsQ/qf6ta2nrTTTDMhkNdN60o18Uj73dighKVOYTet/7XfXS7kNLrO839XA5GcoDnzf/UORLreFWIoFJ7g4Si6JAwLgZhcow1k5/14lHJGboiXSD/+Xl4/X4BR0ykeyA==
+4324/5: 2/22/2024 7:34:44 AM: Received request over HTTP Redirect, samlMessage=<samlp:AuthnRequest ID="_c8cef295-f557-4896-bfd3-cb437001adff" Version="2.0" IssueInstant="2024-02-22T13:34:41.621Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44338/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>, relayState=/, signatureAlgorithm=http://www.w3.org/2001/04/xmldsig-more#rsa-sha256, signature=it9azZsbxtsH/f+kbZcDP3NCU14CdwCmB1wNyFpNo93lSeZUO2DA00egY1UkPsoweixlgZcIQvD0kQg7Fq8xmDvL/sKIHmD3Q4K1TADqkh2le2obksrme9daMmEyDN0inzMC15RuOLeIj6xuzcV66kvs69KE13Wde+EsCmmlz31122kjak8GMkk5bLzM/LzgrE+6mheDP/JjDMLoiLuVrOSsQ/qf6ta2nrTTTDMhkNdN60o18Uj73dighKVOYTet/7XfXS7kNLrO839XA5GcoDnzf/UORLreFWIoFJ7g4Si6JAwLgZhcow1k5/14lHJGboiXSD/+Xl4/X4BR0ykeyA==
+4324/5: 2/22/2024 7:34:45 AM: SAML message received: partner=https://SpokServiceProvider, message=<samlp:AuthnRequest ID="_c8cef295-f557-4896-bfd3-cb437001adff" Version="2.0" IssueInstant="2024-02-22T13:34:41.621Z" Destination="https://localhost:44390/SAML/SSOService.aspx" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="https://localhost:44338/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://SpokServiceProvider</saml:Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" AllowCreate="true" /></samlp:AuthnRequest>, relay state=/
+4324/5: 2/22/2024 7:34:45 AM: The XML validated against the SAML XML Schemas.
+4324/5: 2/22/2024 7:34:45 AM: Verifying the authn request signature.
+4324/5: 2/22/2024 7:34:45 AM: The X.509 certificate with subject name CN=www.sp.com, serial number 0867A17DC9EFEABE4CCBF7E7ADB7C37A and thumbprint 427A3D5B39DF593B1D44B769D3697AEDF00FD83F has been retrieved from the cache.
+4324/5: 2/22/2024 7:34:45 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+4324/5: 2/22/2024 7:34:45 AM: Checking HTTP redirect signature.
+4324/5: 2/22/2024 7:34:46 AM: Query string: SAMLRequest=fZJLb8IwEIT%2FSuR7yJOXBUgUVBWJlojQHnqpjLMpVh079Tq0%2FffNAyp6gOtqZ%2BbzrCfIClnSeWUPagufFaB1VsspeeMjDnk47rt5vz9049F44O7zLHL5Po6Gvh%2BwLM%2BJ8wIGhVZTEvZ84qwQK1gptEzZeuSHseuHbhjugohGMY2D3iAMXomzrFOEYrZVHqwtkXqe1JzJg0ZL4zga%2B146f1x7abpJwRwFhx7D8ps499pwaGmnJGcSoUlNGKI4wt8kMdpqruWdUJlQ71NSGUU1Q4FUsQKQWk4be1pT0323hPRht0vcZJPuiDNHBNPgLbTCqgBzgnjerq8AR6MO%2BJryhP9dSIW07fw2VXl6AplNmm3aVmsu9Lfl7IxBZmfctNQfJ5i6n6PIwEy8C%2B8uqKRPtdlqmWgp%2BE9Td8Hs9aygF7QTkbl5u0orhSVwkQvI6h6l1F8LA8zWx7Gmqm%2FjzbrU%2F39u9gs%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256
+4324/5: 2/22/2024 7:34:46 AM: Signed data: SAMLRequest=fZJLb8IwEIT%2FSuR7yJOXBUgUVBWJlojQHnqpjLMpVh079Tq0%2FffNAyp6gOtqZ%2BbzrCfIClnSeWUPagufFaB1VsspeeMjDnk47rt5vz9049F44O7zLHL5Po6Gvh%2BwLM%2BJ8wIGhVZTEvZ84qwQK1gptEzZeuSHseuHbhjugohGMY2D3iAMXomzrFOEYrZVHqwtkXqe1JzJg0ZL4zga%2B146f1x7abpJwRwFhx7D8ps499pwaGmnJGcSoUlNGKI4wt8kMdpqruWdUJlQ71NSGUU1Q4FUsQKQWk4be1pT0323hPRht0vcZJPuiDNHBNPgLbTCqgBzgnjerq8AR6MO%2BJryhP9dSIW07fw2VXl6AplNmm3aVmsu9Lfl7IxBZmfctNQfJ5i6n6PIwEy8C%2B8uqKRPtdlqmWgp%2BE9Td8Hs9aygF7QTkbl5u0orhSVwkQvI6h6l1F8LA8zWx7Gmqm%2FjzbrU%2F39u9gs%3D&RelayState=%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256
+4324/5: 2/22/2024 7:34:46 AM: Verifying signature.
+4324/5: 2/22/2024 7:34:46 AM: Signed data: 53 41 4d 4c 52 65 71 75 65 73 74 3d 66 5a 4a 4c 62 38 49 77 45 49 54 25 32 46 53 75 52 37 79 4a 4f 58 42 55 67 55 56 42 57 4a 6c 6f 6a 51 48 6e 71 70 6a 4c 4d 70 56 68 30 37 39 54 71 30 25 32 46 66 66 4e 41 79 70 36 67 4f 74 71 5a 25 32 42 62 7a 72 43 66 49 43 6c 6e 53 65 57 55 50 61 67 75 66 46 61 42 31 56 73 73 70 65 65 4d 6a 44 6e 6b 34 37 72 74 35 76 7a 39 30 34 39 46 34 34 4f 37 7a 4c 48 4c 35 50 6f 36 47 76 68 25 32 42 77 4c 4d 25 32 42 4a 38 77 49 47 68 56 5a 54 45 76 5a 38 34 71 77 51 4b 31 67 70 74 45 7a 5a 65 75 53 48 73 65 75 48 62 68 6a 75 67 6f 68 47 4d 59 32 44 33 69 41 4d 58 6f 6d 7a 72 46 4f 45 59 72 5a 56 48 71 77 74 6b 58 71 65 31 4a 7a 4a 67 30 5a 4c 34 7a 67 61 25 32 42 31 34 36 66 31 78 37 61 62 70 4a 77 52 77 46 68 78 37 44 38 70 73 34 39 39 70 77 61 47 6d 6e 4a 47 63 53 6f 55 6c 4e 47 4b 49 34 77 74 38 6b 4d 64 70 71 72 75 57 64 55 4a 6c 51 37 31 4e 53 47 55 55 31 51 34 46 55 73 51 4b 51 57 6b 34 62 65 31 70 54 30 33 32 33 68 50 52 68 74 30 76 63 5a 4a 50 75 69 44 4e 48 42 4e 50 67 4c 62 54 43 71 67 42 7a 67 6e 6a 65 72 71 38 41 52 36 4d 4f 25 32 42 4a 72 79 68 50 39 64 53 49 57 30 37 66 77 32 56 58 6c 36 41 70 6c 4e 6d 6d 33 61 56 6d 73 75 39 4c 66 6c 37 49 78 42 5a 6d 66 63 74 4e 51 66 4a 35 69 36 6e 36 50 49 77 45 79 38 43 25 32 42 38 75 71 4b 52 50 74 64 6c 71 6d 57 67 70 25 32 42 45 39 54 64 38 48 73 39 61 79 67 46 37 51 54 6b 62 6c 35 75 30 6f 72 68 53 56 77 6b 51 76 49 36 68 36 6c 31 46 38 4c 41 38 7a 57 78 37 47 6d 71 6d 25 32 46 6a 7a 62 72 55 25 32 46 33 39 75 39 67 73 25 33 44 26 52 65 6c 61 79 53 74 61 74 65 3d 25 32 46 26 53 69 67 41 6c 67 3d 68 74 74 70 25 33 41 25 32 46 25 32 46 77 77 77 2e 77 33 2e 6f 72 67 25 32 46 32 30 30 31 25 32 46 30 34 25 32 46 78 6d 6c 64 73 69 67 2d 6d 6f 72 65 25 32 33 72 73 61 2d 73 68 61 32 35 36
+4324/5: 2/22/2024 7:34:46 AM: Signature: 8a df 5a cd 9b 1b c6 db 07 fd ff a4 6d 97 03 3f 73 42 53 5e 02 77 00 a6 07 5c 0d c8 5a 4d a3 dd e5 49 e6 54 3b 60 c0 d3 47 a0 63 55 24 3e ca 30 7a 2c 65 81 97 08 42 f0 f4 91 08 3b 16 af 31 98 3b cb fe c2 88 1e 60 f7 43 82 b5 4c 00 ea 92 1d a5 7b 6a 1b 92 ca e6 7b d7 5a 32 61 32 0c dd 22 9f 33 02 d7 94 6e 38 b7 88 8f ac 6e cd c5 7a ea 4b ec eb d2 84 d7 75 9d 7b e1 2c 0a 69 a5 cf 7d 75 db 69 23 6a 4f 06 32 49 39 6c bc cc fc bc e0 ac 4f ba 9a 17 83 3f f2 63 0c c2 e8 88 bb 95 ac e4 ac 43 fa 9f ea d6 b6 9e b4 d3 4c 33 21 90 d7 4d eb 4a 35 f1 48 fb dd d8 a0 84 a5 4e 61 37 ad ff b5 df 5d 2e e4 34 ba ce f3 7f 57 03 91 9c a0 39 f3 7f f5 0e 44 ba de 15 62 28 14 9e e0 e1 28 ba 24 0c 0b 81 98 5c a3 0d 64 e7 fd 78 94 72 46 6e 88 97 48 3f fe 5e 5e 3f 5f 80 51 d3 29 1e c8
+4324/5: 2/22/2024 7:34:47 AM: Signature algorithm: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+4324/5: 2/22/2024 7:34:47 AM: Signature verified: True
+4324/5: 2/22/2024 7:34:47 AM: HTTP redirect signature verified.
+4324/5: 2/22/2024 7:34:47 AM: The authn request signature verified.
+4324/5: 2/22/2024 7:34:47 AM: The SAML request destination won't be checked as the destination URL hasn't been specified.
+4324/5: 2/22/2024 7:34:47 AM: Saving session state for 5155b41c-0098-44e1-970d-406acc1a3be0:IdentityProviderSession to the SSO session store.
+4324/5: 2/22/2024 7:34:48 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+Pending response state:
+Action: SendSamlResponse
+Partner name: https://SpokServiceProvider
+Relay state: /
+In response to: _c8cef295-f557-4896-bfd3-cb437001adff
+Response URL: https://localhost:44338/SAML/AssertionConsumerService.aspx
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _03cce3c8-fed4-49fe-b60b-8105e0db9f6d
+
+4324/5: 2/22/2024 7:34:48 AM: An SSO request from the partner service provider https://SpokServiceProvider has been successfully received.
+4324/5: 2/22/2024 7:34:48 AM: Sending an SSO response to a partner service provider.
+4324/5: 2/22/2024 7:34:48 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+Pending response state:
+Action: SendSamlResponse
+Partner name: https://SpokServiceProvider
+Relay state: /
+In response to: _c8cef295-f557-4896-bfd3-cb437001adff
+Response URL: https://localhost:44338/SAML/AssertionConsumerService.aspx
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _03cce3c8-fed4-49fe-b60b-8105e0db9f6d
+
+4324/5: 2/22/2024 7:34:48 AM: The X.509 certificate with subject name CN=www.idp.com, serial number 74F0EBFE22358DB8433138F9558C9AF9 and thumbprint A6A4AE4E0B378EC73678E5812690AF50E3EC3769 has been retrieved from the cache.
+4324/5: 2/22/2024 7:34:48 AM: Generating an XML signature.
+4324/5: 2/22/2024 7:34:48 AM: XML signature generation was successful.
+4324/5: 2/22/2024 7:34:49 AM: Sending response over HTTP POST, targetURL=https://localhost:44338/SAML/AssertionConsumerService.aspx, samlMessage=<samlp:Response ID="_f0a995b2-458f-4d6d-badf-a8537f8465c9" InResponseTo="_c8cef295-f557-4896-bfd3-cb437001adff" Version="2.0" IssueInstant="2024-02-22T13:34:48.575Z" Destination="https://localhost:44338/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://ExampleIdentityProvider</saml:Issuer><samlp:Status><samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" /></samlp:Status><saml:Assertion Version="2.0" ID="_95c39d46-817e-4476-9c16-4e4dd0e65480" IssueInstant="2024-02-22T13:34:48.575Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:Issuer>https://ExampleIdentityProvider</saml:Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI="#_95c39d46-817e-4476-9c16-4e4dd0e65480"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><InclusiveNamespaces PrefixList="#default saml ds xs xsi" xmlns="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transform></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>oHowCZrut3Qh9asXZ78wqBJm+tTdR9YyaWefseEhgRo=</DigestValue></Reference></SignedInfo><SignatureValue>dpGe2PQsduWRNi0DLRzD9KPNWLcADvRuzaxqCf8h7A6iyCF146nnt4Fjle0o9KEArs+XLfSDtBYcGzxP86VvJCqUDl1puAagXkO8gH2sPxKXK/nAY9zKwOzEA9auuuvitDvCaaqBZV5uxbz8XUH6HdZYRo3jdpUHffLEeL+/3JcgFFDuUSvmFs6lqGTz0WSpPyQj50TIKiwmpic7DyrdlD4G/q70/4sXuSfOW7/6+F+GW481trWyac03+ROSJVMfc/fiwkEQ6cWWZL1qKhFqCzVUZ0vyT5Ci+Yc6u5jpH8bGcBf6aS3KxetNRGd8It9ZDslF3wa9OtvURRECWhZPCQ==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDATCCAemgAwIBAgIQdPDr/iI1jbhDMTj5VYya+TANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDEwt3d3cuaWRwLmNvbTAeFw0xMzExMjIwODIwNTJaFw00OTEyMzExNDAwMDBaMBYxFDASBgNVBAMTC3d3dy5pZHAuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi0XJRLDrcbSyqUd8XG4BgxObQMYLAkENlmJOsAEpl1xMabUiq1X4v0Fc8ZaCpUE3fFGENMEWgBjnQUUE0WtVUh5JPMsukolf9qljbJkCkvHXH3O4Uen7vA2oNQWt4bK96SpXADpZKFvpk4D7btKOgU/NamjiqwHI4fI8kFJKwKBJchRPUQdC4ljRRmGIrSnpY+t25/d3KGXwbe9Z2MGGy2hyA0tgOWuchIK+1vAKKBUh9nDEXfr80+xW680w5TqHyDcqbWvQsXXhH0yZLfINKNS6/IojHPsBy7tf36Ck9H5Pw+1PPu6NzBFSz5ZkC8KzrS6vuZXc/ImYrnheMQsqqQIDAQABo0swSTBHBgNVHQEEQDA+gBD4dY4MCPEmG4sxZrcni8vtoRgwFjEUMBIGA1UEAxMLd3d3LmlkcC5jb22CEHTw6/4iNY24QzE4+VWMmvkwDQYJKoZIhvcNAQELBQADggEBABhak2aR84MCdyXO4AKOQvZybsCMdhRq2i1i0WhD4/xe7Ry5haC6TeXIp8Q4cC3MzsrDal74xHI714BW0loafpHAsXfd9EvkKTVaJ+1Zpe16+SsTL4upS1cGydigqwUzsdpGck4wI1moJ9477O+46If2gF27u9Cdk7Onxe/5dwLIxWmkVRdbQIH5GsKUeAjOdRQmy+X1MX6KyRoaCwWGYwxi5Sa+r+3AtDvD4BX0EJGKFZeeM3J/yMpYh/75aN0cFQfDEdJ7C5NE0vonidE0QtIFvsoWtZUtur2fiW7yBxse38TPQsi2r6A6c/TZsZ5bq31yh3gr3kSN62H8iVKLQLA=</X509Certificate></X509Data></KeyInfo></Signature><saml:Subject><saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">spokaduser</saml:NameID><saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer"><saml:SubjectConfirmationData NotOnOrAfter="2024-02-22T13:37:48.575Z" Recipient="https://localhost:44338/SAML/AssertionConsumerService.aspx" InResponseTo="_c8cef295-f557-4896-bfd3-cb437001adff" /></saml:SubjectConfirmation></saml:Subject><saml:Conditions NotBefore="2024-02-22T13:31:48.575Z" NotOnOrAfter="2024-02-22T13:37:48.575Z"><saml:AudienceRestriction><saml:Audience>https://SpokServiceProvider</saml:Audience></saml:AudienceRestriction></saml:Conditions><saml:AuthnStatement AuthnInstant="2024-02-22T13:34:48.575Z" SessionIndex="_95c39d46-817e-4476-9c16-4e4dd0e65480"><saml:AuthnContext><saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef></saml:AuthnContext></saml:AuthnStatement><saml:AttributeStatement><saml:Attribute Name="Email"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Spok AD User</saml:AttributeValue></saml:Attribute><saml:Attribute Name="GivenName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKADUSER</saml:AttributeValue></saml:Attribute><saml:Attribute Name="FamilyName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKVDEV</saml:AttributeValue></saml:Attribute></saml:AttributeStatement></saml:Assertion></samlp:Response>, relayState=/
+4324/5: 2/22/2024 7:34:49 AM: Sending form by HTTP Post: 
+<html>
+    <body>
+        <noscript>
+            <p>
+                Since your browser doesn't support JavaScript, you must press the Continue button to proceed.
+            </p>
+        </noscript>
+        <form id="samlform" action="https://localhost:44338/SAML/AssertionConsumerService.aspx" method="post" target="_self">
+            <div>
+                <input type="hidden" name="SAMLResponse" value="PHNhbWxwOlJlc3BvbnNlIElEPSJfZjBhOTk1YjItNDU4Zi00ZDZkLWJhZGYtYTg1MzdmODQ2NWM5IiBJblJlc3BvbnNlVG89Il9jOGNlZjI5NS1mNTU3LTQ4OTYtYmZkMy1jYjQzNzAwMWFkZmYiIFZlcnNpb249IjIuMCIgSXNzdWVJbnN0YW50PSIyMDI0LTAyLTIyVDEzOjM0OjQ4LjU3NVoiIERlc3RpbmF0aW9uPSJodHRwczovL2xvY2FsaG9zdDo0NDMzOC9TQU1ML0Fzc2VydGlvbkNvbnN1bWVyU2VydmljZS5hc3B4IiB4bWxuczpzYW1scD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIj48c2FtbDpJc3N1ZXIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+aHR0cHM6Ly9FeGFtcGxlSWRlbnRpdHlQcm92aWRlcjwvc2FtbDpJc3N1ZXI+PHNhbWxwOlN0YXR1cz48c2FtbHA6U3RhdHVzQ29kZSBWYWx1ZT0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnN0YXR1czpTdWNjZXNzIiAvPjwvc2FtbHA6U3RhdHVzPjxzYW1sOkFzc2VydGlvbiBWZXJzaW9uPSIyLjAiIElEPSJfOTVjMzlkNDYtODE3ZS00NDc2LTljMTYtNGU0ZGQwZTY1NDgwIiBJc3N1ZUluc3RhbnQ9IjIwMjQtMDItMjJUMTM6MzQ6NDguNTc1WiIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+PHNhbWw6SXNzdWVyPmh0dHBzOi8vRXhhbXBsZUlkZW50aXR5UHJvdmlkZXI8L3NhbWw6SXNzdWVyPjxTaWduYXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJbmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjxTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNyc2Etc2hhMjU2IiAvPjxSZWZlcmVuY2UgVVJJPSIjXzk1YzM5ZDQ2LTgxN2UtNDQ3Ni05YzE2LTRlNGRkMGU2NTQ4MCI+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIiAvPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiPjxJbmNsdXNpdmVOYW1lc3BhY2VzIFByZWZpeExpc3Q9IiNkZWZhdWx0IHNhbWwgZHMgeHMgeHNpIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjwvVHJhbnNmb3JtPjwvVHJhbnNmb3Jtcz48RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjc2hhMjU2IiAvPjxEaWdlc3RWYWx1ZT5vSG93Q1pydXQzUWg5YXNYWjc4d3FCSm0rdFRkUjlZeWFXZWZzZUVoZ1JvPTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT5kcEdlMlBRc2R1V1JOaTBETFJ6RDlLUE5XTGNBRHZSdXpheHFDZjhoN0E2aXlDRjE0Nm5udDRGamxlMG85S0VBcnMrWExmU0R0QlljR3p4UDg2VnZKQ3FVRGwxcHVBYWdYa084Z0gyc1B4S1hLL25BWTl6S3dPekVBOWF1dXV2aXREdkNhYXFCWlY1dXhiejhYVUg2SGRaWVJvM2pkcFVIZmZMRWVMKy8zSmNnRkZEdVVTdm1GczZscUdUejBXU3BQeVFqNTBUSUtpd21waWM3RHlyZGxENEcvcTcwLzRzWHVTZk9XNy82K0YrR1c0ODF0cld5YWMwMytST1NKVk1mYy9maXdrRVE2Y1dXWkwxcUtoRnFDelZVWjB2eVQ1Q2krWWM2dTVqcEg4YkdjQmY2YVMzS3hldE5SR2Q4SXQ5WkRzbEYzd2E5T3R2VVJSRUNXaFpQQ1E9PTwvU2lnbmF0dXJlVmFsdWU+PEtleUluZm8+PFg1MDlEYXRhPjxYNTA5Q2VydGlmaWNhdGU+TUlJREFUQ0NBZW1nQXdJQkFnSVFkUERyL2lJMWpiaERNVGo1Vll5YStUQU5CZ2txaGtpRzl3MEJBUXNGQURBV01SUXdFZ1lEVlFRREV3dDNkM2N1YVdSd0xtTnZiVEFlRncweE16RXhNakl3T0RJd05USmFGdzAwT1RFeU16RXhOREF3TURCYU1CWXhGREFTQmdOVkJBTVRDM2QzZHk1cFpIQXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFpMFhKUkxEcmNiU3lxVWQ4WEc0Qmd4T2JRTVlMQWtFTmxtSk9zQUVwbDF4TWFiVWlxMVg0djBGYzhaYUNwVUUzZkZHRU5NRVdnQmpuUVVVRTBXdFZVaDVKUE1zdWtvbGY5cWxqYkprQ2t2SFhIM080VWVuN3ZBMm9OUVd0NGJLOTZTcFhBRHBaS0Z2cGs0RDdidEtPZ1UvTmFtamlxd0hJNGZJOGtGSkt3S0JKY2hSUFVRZEM0bGpSUm1HSXJTbnBZK3QyNS9kM0tHWHdiZTlaMk1HR3kyaHlBMHRnT1d1Y2hJSysxdkFLS0JVaDluREVYZnI4MCt4VzY4MHc1VHFIeURjcWJXdlFzWFhoSDB5WkxmSU5LTlM2L0lvakhQc0J5N3RmMzZDazlINVB3KzFQUHU2TnpCRlN6NVprQzhLenJTNnZ1WlhjL0ltWXJuaGVNUXNxcVFJREFRQUJvMHN3U1RCSEJnTlZIUUVFUURBK2dCRDRkWTRNQ1BFbUc0c3hacmNuaTh2dG9SZ3dGakVVTUJJR0ExVUVBeE1MZDNkM0xtbGtjQzVqYjIyQ0VIVHc2LzRpTlkyNFF6RTQrVldNbXZrd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFCaGFrMmFSODRNQ2R5WE80QUtPUXZaeWJzQ01kaFJxMmkxaTBXaEQ0L3hlN1J5NWhhQzZUZVhJcDhRNGNDM016c3JEYWw3NHhISTcxNEJXMGxvYWZwSEFzWGZkOUV2a0tUVmFKKzFacGUxNitTc1RMNHVwUzFjR3lkaWdxd1V6c2RwR2NrNHdJMW1vSjk0NzdPKzQ2SWYyZ0YyN3U5Q2RrN09ueGUvNWR3TEl4V21rVlJkYlFJSDVHc0tVZUFqT2RSUW15K1gxTVg2S3lSb2FDd1dHWXd4aTVTYStyKzNBdER2RDRCWDBFSkdLRlplZU0zSi95TXBZaC83NWFOMGNGUWZERWRKN0M1TkUwdm9uaWRFMFF0SUZ2c29XdFpVdHVyMmZpVzd5QnhzZTM4VFBRc2kycjZBNmMvVFpzWjVicTMxeWgzZ3Iza1NONjJIOGlWS0xRTEE9PC9YNTA5Q2VydGlmaWNhdGU+PC9YNTA5RGF0YT48L0tleUluZm8+PC9TaWduYXR1cmU+PHNhbWw6U3ViamVjdD48c2FtbDpOYW1lSUQgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoxLjE6bmFtZWlkLWZvcm1hdDp1bnNwZWNpZmllZCI+c3Bva2FkdXNlcjwvc2FtbDpOYW1lSUQ+PHNhbWw6U3ViamVjdENvbmZpcm1hdGlvbiBNZXRob2Q9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpjbTpiZWFyZXIiPjxzYW1sOlN1YmplY3RDb25maXJtYXRpb25EYXRhIE5vdE9uT3JBZnRlcj0iMjAyNC0wMi0yMlQxMzozNzo0OC41NzVaIiBSZWNpcGllbnQ9Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzM4L1NBTUwvQXNzZXJ0aW9uQ29uc3VtZXJTZXJ2aWNlLmFzcHgiIEluUmVzcG9uc2VUbz0iX2M4Y2VmMjk1LWY1NTctNDg5Ni1iZmQzLWNiNDM3MDAxYWRmZiIgLz48L3NhbWw6U3ViamVjdENvbmZpcm1hdGlvbj48L3NhbWw6U3ViamVjdD48c2FtbDpDb25kaXRpb25zIE5vdEJlZm9yZT0iMjAyNC0wMi0yMlQxMzozMTo0OC41NzVaIiBOb3RPbk9yQWZ0ZXI9IjIwMjQtMDItMjJUMTM6Mzc6NDguNTc1WiI+PHNhbWw6QXVkaWVuY2VSZXN0cmljdGlvbj48c2FtbDpBdWRpZW5jZT5odHRwczovL1Nwb2tTZXJ2aWNlUHJvdmlkZXI8L3NhbWw6QXVkaWVuY2U+PC9zYW1sOkF1ZGllbmNlUmVzdHJpY3Rpb24+PC9zYW1sOkNvbmRpdGlvbnM+PHNhbWw6QXV0aG5TdGF0ZW1lbnQgQXV0aG5JbnN0YW50PSIyMDI0LTAyLTIyVDEzOjM0OjQ4LjU3NVoiIFNlc3Npb25JbmRleD0iXzk1YzM5ZDQ2LTgxN2UtNDQ3Ni05YzE2LTRlNGRkMGU2NTQ4MCI+PHNhbWw6QXV0aG5Db250ZXh0PjxzYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPnVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphYzpjbGFzc2VzOnVuc3BlY2lmaWVkPC9zYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPjwvc2FtbDpBdXRobkNvbnRleHQ+PC9zYW1sOkF1dGhuU3RhdGVtZW50PjxzYW1sOkF0dHJpYnV0ZVN0YXRlbWVudD48c2FtbDpBdHRyaWJ1dGUgTmFtZT0iRW1haWwiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U3BvayBBRCBVc2VyPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkdpdmVuTmFtZSI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeHNpOnR5cGU9InhzOnN0cmluZyIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj5TUE9LQURVU0VSPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkZhbWlseU5hbWUiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U1BPS1ZERVY8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48L3NhbWw6QXR0cmlidXRlU3RhdGVtZW50Pjwvc2FtbDpBc3NlcnRpb24+PC9zYW1scDpSZXNwb25zZT4="/><input type="hidden" name="RelayState" value="/"/>
+            </div>
+            <noscript>
+                <div>
+                    <input type="submit" value="Continue"/>
+                </div>
+            </noscript>
+        </form>
+    </body>
+    <script>
+        function submitForm() {
+            document.forms.samlform.submit();
+        }
+
+        if (document.readyState === "loading") {
+		    document.addEventListener("DOMContentLoaded", submitForm);
+	    } else {
+		    submitForm();
+        }
+    </script>
+</html>
+
+4324/5: 2/22/2024 7:34:49 AM: Sending SAML form: 
+<html>
+    <body>
+        <noscript>
+            <p>
+                Since your browser doesn't support JavaScript, you must press the Continue button to proceed.
+            </p>
+        </noscript>
+        <form id="samlform" action="https://localhost:44338/SAML/AssertionConsumerService.aspx" method="post" target="_self">
+            <div>
+                <input type="hidden" name="SAMLResponse" value="PHNhbWxwOlJlc3BvbnNlIElEPSJfZjBhOTk1YjItNDU4Zi00ZDZkLWJhZGYtYTg1MzdmODQ2NWM5IiBJblJlc3BvbnNlVG89Il9jOGNlZjI5NS1mNTU3LTQ4OTYtYmZkMy1jYjQzNzAwMWFkZmYiIFZlcnNpb249IjIuMCIgSXNzdWVJbnN0YW50PSIyMDI0LTAyLTIyVDEzOjM0OjQ4LjU3NVoiIERlc3RpbmF0aW9uPSJodHRwczovL2xvY2FsaG9zdDo0NDMzOC9TQU1ML0Fzc2VydGlvbkNvbnN1bWVyU2VydmljZS5hc3B4IiB4bWxuczpzYW1scD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIj48c2FtbDpJc3N1ZXIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+aHR0cHM6Ly9FeGFtcGxlSWRlbnRpdHlQcm92aWRlcjwvc2FtbDpJc3N1ZXI+PHNhbWxwOlN0YXR1cz48c2FtbHA6U3RhdHVzQ29kZSBWYWx1ZT0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnN0YXR1czpTdWNjZXNzIiAvPjwvc2FtbHA6U3RhdHVzPjxzYW1sOkFzc2VydGlvbiBWZXJzaW9uPSIyLjAiIElEPSJfOTVjMzlkNDYtODE3ZS00NDc2LTljMTYtNGU0ZGQwZTY1NDgwIiBJc3N1ZUluc3RhbnQ9IjIwMjQtMDItMjJUMTM6MzQ6NDguNTc1WiIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+PHNhbWw6SXNzdWVyPmh0dHBzOi8vRXhhbXBsZUlkZW50aXR5UHJvdmlkZXI8L3NhbWw6SXNzdWVyPjxTaWduYXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJbmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjxTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNyc2Etc2hhMjU2IiAvPjxSZWZlcmVuY2UgVVJJPSIjXzk1YzM5ZDQ2LTgxN2UtNDQ3Ni05YzE2LTRlNGRkMGU2NTQ4MCI+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIiAvPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiPjxJbmNsdXNpdmVOYW1lc3BhY2VzIFByZWZpeExpc3Q9IiNkZWZhdWx0IHNhbWwgZHMgeHMgeHNpIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjwvVHJhbnNmb3JtPjwvVHJhbnNmb3Jtcz48RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjc2hhMjU2IiAvPjxEaWdlc3RWYWx1ZT5vSG93Q1pydXQzUWg5YXNYWjc4d3FCSm0rdFRkUjlZeWFXZWZzZUVoZ1JvPTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT5kcEdlMlBRc2R1V1JOaTBETFJ6RDlLUE5XTGNBRHZSdXpheHFDZjhoN0E2aXlDRjE0Nm5udDRGamxlMG85S0VBcnMrWExmU0R0QlljR3p4UDg2VnZKQ3FVRGwxcHVBYWdYa084Z0gyc1B4S1hLL25BWTl6S3dPekVBOWF1dXV2aXREdkNhYXFCWlY1dXhiejhYVUg2SGRaWVJvM2pkcFVIZmZMRWVMKy8zSmNnRkZEdVVTdm1GczZscUdUejBXU3BQeVFqNTBUSUtpd21waWM3RHlyZGxENEcvcTcwLzRzWHVTZk9XNy82K0YrR1c0ODF0cld5YWMwMytST1NKVk1mYy9maXdrRVE2Y1dXWkwxcUtoRnFDelZVWjB2eVQ1Q2krWWM2dTVqcEg4YkdjQmY2YVMzS3hldE5SR2Q4SXQ5WkRzbEYzd2E5T3R2VVJSRUNXaFpQQ1E9PTwvU2lnbmF0dXJlVmFsdWU+PEtleUluZm8+PFg1MDlEYXRhPjxYNTA5Q2VydGlmaWNhdGU+TUlJREFUQ0NBZW1nQXdJQkFnSVFkUERyL2lJMWpiaERNVGo1Vll5YStUQU5CZ2txaGtpRzl3MEJBUXNGQURBV01SUXdFZ1lEVlFRREV3dDNkM2N1YVdSd0xtTnZiVEFlRncweE16RXhNakl3T0RJd05USmFGdzAwT1RFeU16RXhOREF3TURCYU1CWXhGREFTQmdOVkJBTVRDM2QzZHk1cFpIQXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFpMFhKUkxEcmNiU3lxVWQ4WEc0Qmd4T2JRTVlMQWtFTmxtSk9zQUVwbDF4TWFiVWlxMVg0djBGYzhaYUNwVUUzZkZHRU5NRVdnQmpuUVVVRTBXdFZVaDVKUE1zdWtvbGY5cWxqYkprQ2t2SFhIM080VWVuN3ZBMm9OUVd0NGJLOTZTcFhBRHBaS0Z2cGs0RDdidEtPZ1UvTmFtamlxd0hJNGZJOGtGSkt3S0JKY2hSUFVRZEM0bGpSUm1HSXJTbnBZK3QyNS9kM0tHWHdiZTlaMk1HR3kyaHlBMHRnT1d1Y2hJSysxdkFLS0JVaDluREVYZnI4MCt4VzY4MHc1VHFIeURjcWJXdlFzWFhoSDB5WkxmSU5LTlM2L0lvakhQc0J5N3RmMzZDazlINVB3KzFQUHU2TnpCRlN6NVprQzhLenJTNnZ1WlhjL0ltWXJuaGVNUXNxcVFJREFRQUJvMHN3U1RCSEJnTlZIUUVFUURBK2dCRDRkWTRNQ1BFbUc0c3hacmNuaTh2dG9SZ3dGakVVTUJJR0ExVUVBeE1MZDNkM0xtbGtjQzVqYjIyQ0VIVHc2LzRpTlkyNFF6RTQrVldNbXZrd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFCaGFrMmFSODRNQ2R5WE80QUtPUXZaeWJzQ01kaFJxMmkxaTBXaEQ0L3hlN1J5NWhhQzZUZVhJcDhRNGNDM016c3JEYWw3NHhISTcxNEJXMGxvYWZwSEFzWGZkOUV2a0tUVmFKKzFacGUxNitTc1RMNHVwUzFjR3lkaWdxd1V6c2RwR2NrNHdJMW1vSjk0NzdPKzQ2SWYyZ0YyN3U5Q2RrN09ueGUvNWR3TEl4V21rVlJkYlFJSDVHc0tVZUFqT2RSUW15K1gxTVg2S3lSb2FDd1dHWXd4aTVTYStyKzNBdER2RDRCWDBFSkdLRlplZU0zSi95TXBZaC83NWFOMGNGUWZERWRKN0M1TkUwdm9uaWRFMFF0SUZ2c29XdFpVdHVyMmZpVzd5QnhzZTM4VFBRc2kycjZBNmMvVFpzWjVicTMxeWgzZ3Iza1NONjJIOGlWS0xRTEE9PC9YNTA5Q2VydGlmaWNhdGU+PC9YNTA5RGF0YT48L0tleUluZm8+PC9TaWduYXR1cmU+PHNhbWw6U3ViamVjdD48c2FtbDpOYW1lSUQgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoxLjE6bmFtZWlkLWZvcm1hdDp1bnNwZWNpZmllZCI+c3Bva2FkdXNlcjwvc2FtbDpOYW1lSUQ+PHNhbWw6U3ViamVjdENvbmZpcm1hdGlvbiBNZXRob2Q9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpjbTpiZWFyZXIiPjxzYW1sOlN1YmplY3RDb25maXJtYXRpb25EYXRhIE5vdE9uT3JBZnRlcj0iMjAyNC0wMi0yMlQxMzozNzo0OC41NzVaIiBSZWNpcGllbnQ9Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzM4L1NBTUwvQXNzZXJ0aW9uQ29uc3VtZXJTZXJ2aWNlLmFzcHgiIEluUmVzcG9uc2VUbz0iX2M4Y2VmMjk1LWY1NTctNDg5Ni1iZmQzLWNiNDM3MDAxYWRmZiIgLz48L3NhbWw6U3ViamVjdENvbmZpcm1hdGlvbj48L3NhbWw6U3ViamVjdD48c2FtbDpDb25kaXRpb25zIE5vdEJlZm9yZT0iMjAyNC0wMi0yMlQxMzozMTo0OC41NzVaIiBOb3RPbk9yQWZ0ZXI9IjIwMjQtMDItMjJUMTM6Mzc6NDguNTc1WiI+PHNhbWw6QXVkaWVuY2VSZXN0cmljdGlvbj48c2FtbDpBdWRpZW5jZT5odHRwczovL1Nwb2tTZXJ2aWNlUHJvdmlkZXI8L3NhbWw6QXVkaWVuY2U+PC9zYW1sOkF1ZGllbmNlUmVzdHJpY3Rpb24+PC9zYW1sOkNvbmRpdGlvbnM+PHNhbWw6QXV0aG5TdGF0ZW1lbnQgQXV0aG5JbnN0YW50PSIyMDI0LTAyLTIyVDEzOjM0OjQ4LjU3NVoiIFNlc3Npb25JbmRleD0iXzk1YzM5ZDQ2LTgxN2UtNDQ3Ni05YzE2LTRlNGRkMGU2NTQ4MCI+PHNhbWw6QXV0aG5Db250ZXh0PjxzYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPnVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphYzpjbGFzc2VzOnVuc3BlY2lmaWVkPC9zYW1sOkF1dGhuQ29udGV4dENsYXNzUmVmPjwvc2FtbDpBdXRobkNvbnRleHQ+PC9zYW1sOkF1dGhuU3RhdGVtZW50PjxzYW1sOkF0dHJpYnV0ZVN0YXRlbWVudD48c2FtbDpBdHRyaWJ1dGUgTmFtZT0iRW1haWwiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U3BvayBBRCBVc2VyPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkdpdmVuTmFtZSI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeHNpOnR5cGU9InhzOnN0cmluZyIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj5TUE9LQURVU0VSPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9IkZhbWlseU5hbWUiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhzaTp0eXBlPSJ4czpzdHJpbmciIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+U1BPS1ZERVY8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48L3NhbWw6QXR0cmlidXRlU3RhdGVtZW50Pjwvc2FtbDpBc3NlcnRpb24+PC9zYW1scDpSZXNwb25zZT4="/><input type="hidden" name="RelayState" value="/"/>
+            </div>
+            <noscript>
+                <div>
+                    <input type="submit" value="Continue"/>
+                </div>
+            </noscript>
+        </form>
+    </body>
+    <script>
+        function submitForm() {
+            document.forms.samlform.submit();
+        }
+
+        if (document.readyState === "loading") {
+		    document.addEventListener("DOMContentLoaded", submitForm);
+	    } else {
+		    submitForm();
+        }
+    </script>
+</html>
+
+4324/5: 2/22/2024 7:34:49 AM: Response sent over HTTP POST.
+4324/5: 2/22/2024 7:34:49 AM: SAML message sent: partner=https://SpokServiceProvider, message=<samlp:Response ID="_f0a995b2-458f-4d6d-badf-a8537f8465c9" InResponseTo="_c8cef295-f557-4896-bfd3-cb437001adff" Version="2.0" IssueInstant="2024-02-22T13:34:48.575Z" Destination="https://localhost:44338/SAML/AssertionConsumerService.aspx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://ExampleIdentityProvider</saml:Issuer><samlp:Status><samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" /></samlp:Status><saml:Assertion Version="2.0" ID="_95c39d46-817e-4476-9c16-4e4dd0e65480" IssueInstant="2024-02-22T13:34:48.575Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:Issuer>https://ExampleIdentityProvider</saml:Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI="#_95c39d46-817e-4476-9c16-4e4dd0e65480"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><InclusiveNamespaces PrefixList="#default saml ds xs xsi" xmlns="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transform></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>oHowCZrut3Qh9asXZ78wqBJm+tTdR9YyaWefseEhgRo=</DigestValue></Reference></SignedInfo><SignatureValue>dpGe2PQsduWRNi0DLRzD9KPNWLcADvRuzaxqCf8h7A6iyCF146nnt4Fjle0o9KEArs+XLfSDtBYcGzxP86VvJCqUDl1puAagXkO8gH2sPxKXK/nAY9zKwOzEA9auuuvitDvCaaqBZV5uxbz8XUH6HdZYRo3jdpUHffLEeL+/3JcgFFDuUSvmFs6lqGTz0WSpPyQj50TIKiwmpic7DyrdlD4G/q70/4sXuSfOW7/6+F+GW481trWyac03+ROSJVMfc/fiwkEQ6cWWZL1qKhFqCzVUZ0vyT5Ci+Yc6u5jpH8bGcBf6aS3KxetNRGd8It9ZDslF3wa9OtvURRECWhZPCQ==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDATCCAemgAwIBAgIQdPDr/iI1jbhDMTj5VYya+TANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDEwt3d3cuaWRwLmNvbTAeFw0xMzExMjIwODIwNTJaFw00OTEyMzExNDAwMDBaMBYxFDASBgNVBAMTC3d3dy5pZHAuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi0XJRLDrcbSyqUd8XG4BgxObQMYLAkENlmJOsAEpl1xMabUiq1X4v0Fc8ZaCpUE3fFGENMEWgBjnQUUE0WtVUh5JPMsukolf9qljbJkCkvHXH3O4Uen7vA2oNQWt4bK96SpXADpZKFvpk4D7btKOgU/NamjiqwHI4fI8kFJKwKBJchRPUQdC4ljRRmGIrSnpY+t25/d3KGXwbe9Z2MGGy2hyA0tgOWuchIK+1vAKKBUh9nDEXfr80+xW680w5TqHyDcqbWvQsXXhH0yZLfINKNS6/IojHPsBy7tf36Ck9H5Pw+1PPu6NzBFSz5ZkC8KzrS6vuZXc/ImYrnheMQsqqQIDAQABo0swSTBHBgNVHQEEQDA+gBD4dY4MCPEmG4sxZrcni8vtoRgwFjEUMBIGA1UEAxMLd3d3LmlkcC5jb22CEHTw6/4iNY24QzE4+VWMmvkwDQYJKoZIhvcNAQELBQADggEBABhak2aR84MCdyXO4AKOQvZybsCMdhRq2i1i0WhD4/xe7Ry5haC6TeXIp8Q4cC3MzsrDal74xHI714BW0loafpHAsXfd9EvkKTVaJ+1Zpe16+SsTL4upS1cGydigqwUzsdpGck4wI1moJ9477O+46If2gF27u9Cdk7Onxe/5dwLIxWmkVRdbQIH5GsKUeAjOdRQmy+X1MX6KyRoaCwWGYwxi5Sa+r+3AtDvD4BX0EJGKFZeeM3J/yMpYh/75aN0cFQfDEdJ7C5NE0vonidE0QtIFvsoWtZUtur2fiW7yBxse38TPQsi2r6A6c/TZsZ5bq31yh3gr3kSN62H8iVKLQLA=</X509Certificate></X509Data></KeyInfo></Signature><saml:Subject><saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">spokaduser</saml:NameID><saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer"><saml:SubjectConfirmationData NotOnOrAfter="2024-02-22T13:37:48.575Z" Recipient="https://localhost:44338/SAML/AssertionConsumerService.aspx" InResponseTo="_c8cef295-f557-4896-bfd3-cb437001adff" /></saml:SubjectConfirmation></saml:Subject><saml:Conditions NotBefore="2024-02-22T13:31:48.575Z" NotOnOrAfter="2024-02-22T13:37:48.575Z"><saml:AudienceRestriction><saml:Audience>https://SpokServiceProvider</saml:Audience></saml:AudienceRestriction></saml:Conditions><saml:AuthnStatement AuthnInstant="2024-02-22T13:34:48.575Z" SessionIndex="_95c39d46-817e-4476-9c16-4e4dd0e65480"><saml:AuthnContext><saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef></saml:AuthnContext></saml:AuthnStatement><saml:AttributeStatement><saml:Attribute Name="Email"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Spok AD User</saml:AttributeValue></saml:Attribute><saml:Attribute Name="GivenName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKADUSER</saml:AttributeValue></saml:Attribute><saml:Attribute Name="FamilyName"><saml:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SPOKVDEV</saml:AttributeValue></saml:Attribute></saml:AttributeStatement></saml:Assertion></samlp:Response>, relay state=/, destination URL=https://localhost:44338/SAML/AssertionConsumerService.aspx
+4324/5: 2/22/2024 7:34:50 AM: Saving session state for 5155b41c-0098-44e1-970d-406acc1a3be0:IdentityProviderSession to the SSO session store.
+4324/5: 2/22/2024 7:34:50 AM: Identity provider session (5155b41c-0098-44e1-970d-406acc1a3be0) state:
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _03cce3c8-fed4-49fe-b60b-8105e0db9f6d
+SSO session state:
+Partner name: https://SpokServiceProvider
+Name ID: <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">spokaduser</saml:NameID>
+Session index: _95c39d46-817e-4476-9c16-4e4dd0e65480
+
+4324/5: 2/22/2024 7:34:50 AM: An SSO response has been successfully sent to the partner service provider https://SpokServiceProvider.
+10428/27: 2/22/2024 9:35:24 AM: ComponentSpace.Saml2, Version=6.5.0.0, Culture=neutral, PublicKeyToken=16647a1283418145, .NET v4.0 build, Evaluation.
+10428/27: 2/22/2024 9:35:24 AM: CLR: 4.0.30319.42000, OS: Microsoft Windows NT 6.3.9600.0, Account: IIS APPPOOL\DefaultAppPool, Culture: English (United States)
+10428/27: 2/22/2024 9:35:24 AM: Initializing the SAML environment.
+10428/27: 2/22/2024 9:35:24 AM: Loading the SAML configuration file C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider\saml.config.
+10428/27: 2/22/2024 9:35:25 AM: SAML configuration:
+<?xml version="1.0"?>
+<SAMLConfiguration xmlns="urn:componentspace:SAML:2.0:configuration">
+	<!--Name="https://fs.spok.com/adfs/services/trust"-->
+  <IdentityProvider	 
+    Name="https://ExampleIdentityProvider"
+    Description="Example Identity Provider">
+    <LocalCertificates>
+      <Certificate FileName="Certificates\idp.pfx" Password="********"/>
+    </LocalCertificates>
+  </IdentityProvider>
+
+  <PartnerServiceProviders>
+    <!-- Web forms example -->
+    <PartnerServiceProvider
+      Name="https://ExampleServiceProvider"
+      Description="Example Service Provider"
+      AssertionConsumerServiceUrl="https://localhost/ExampleServiceProvider/SAML/AssertionConsumerService.aspx"
+      SingleLogoutServiceUrl="https://localhost/ExampleServiceProvider/SAML/SLOService.aspx">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\sp.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+
+	  <!-- Web forms example -->
+	  <PartnerServiceProvider
+		Name="https://SpokServiceProvider"
+		Description="Spok Service Provider"
+		AssertionConsumerServiceUrl="https://localhost:44348/SAML/AssertionConsumerService.aspx"
+		SingleLogoutServiceUrl="https://localhost:44348/SAML/SLOService.aspx">
+		  <PartnerCertificates>
+			  <Certificate FileName="Certificates\sp.cer"/>
+		  </PartnerCertificates>
+	  </PartnerServiceProvider>
+
+    <!-- MVC example -->
+    <PartnerServiceProvider 
+	  Name="https://MvcExampleServiceProvider"
+	  Description="MVC Example Service Provider"
+	  AssertionConsumerServiceUrl="https://localhost:44386/SAML/AssertionConsumerService"
+	  SingleLogoutServiceUrl="https://localhost:44386/SAML/SingleLogoutService">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\sp.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+
+    <!-- SAML Proxy -->
+    <PartnerServiceProvider
+      Name="https://SamlProxy"
+      Description="SAML Proxy"
+      AssertionConsumerServiceUrl="https://localhost:44361/SAML/SP/AssertionConsumerService"
+      SingleLogoutServiceUrl="https://localhost:44361/SAML/SP/SingleLogoutService">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\proxy.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+	  
+    <!-- ADFS -->
+    <PartnerServiceProvider
+      Name="http://adfs.test/adfs/services/trust"
+      Description="ADFS"
+      AssertionConsumerServiceUrl="https://fs.spok.com/adfs/ls">
+    </PartnerServiceProvider>   
+  </PartnerServiceProviders>
+</SAMLConfiguration>
+
+10428/27: 2/22/2024 9:35:25 AM: The SAML configuration file has been successfully loaded.
+10428/27: 2/22/2024 9:35:25 AM: SAML configuration changes in the directory C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider are being monitored.
+10428/27: 2/22/2024 9:35:25 AM: The SAML environment has been successfully initialized.
+10428/27: 2/22/2024 9:35:25 AM: Checking if there are any partner service providers that have successfully completed SSO and also support SLO.
+10428/27: 2/22/2024 9:35:25 AM: Identity provider session (53511ef6-cedb-4703-8fa8-81cd1859891b) state:
+10428/27: 2/22/2024 9:35:25 AM: SLO to partner service providers cannot occur.
+10428/22: 2/22/2024 9:59:14 AM: ComponentSpace.Saml2, Version=6.5.0.0, Culture=neutral, PublicKeyToken=16647a1283418145, .NET v4.0 build, Evaluation.
+10428/22: 2/22/2024 9:59:18 AM: CLR: 4.0.30319.42000, OS: Microsoft Windows NT 6.3.9600.0, Account: IIS APPPOOL\DefaultAppPool, Culture: English (United States)
+10428/22: 2/22/2024 9:59:18 AM: Initializing the SAML environment.
+10428/22: 2/22/2024 9:59:18 AM: Loading the SAML configuration file C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider\saml.config.
+10428/22: 2/22/2024 9:59:19 AM: SAML configuration:
+<?xml version="1.0"?>
+<SAMLConfiguration xmlns="urn:componentspace:SAML:2.0:configuration">
+	<!--Name="https://fs.spok.com/adfs/services/trust"-->
+  <IdentityProvider	 
+    Name="https://ExampleIdentityProvider"
+    Description="Example Identity Provider">
+    <LocalCertificates>
+      <Certificate FileName="Certificates\idp.pfx" Password="********"/>
+    </LocalCertificates>
+  </IdentityProvider>
+
+  <PartnerServiceProviders>
+    <!-- Web forms example -->
+    <PartnerServiceProvider
+      Name="https://ExampleServiceProvider"
+      Description="Example Service Provider"
+      AssertionConsumerServiceUrl="https://localhost/ExampleServiceProvider/SAML/AssertionConsumerService.aspx"
+      SingleLogoutServiceUrl="https://localhost/ExampleServiceProvider/SAML/SLOService.aspx">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\sp.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+
+	  <!-- Web forms example -->
+	  <PartnerServiceProvider
+		Name="https://SpokServiceProvider"
+		Description="Spok Service Provider"
+		AssertionConsumerServiceUrl="https://localhost:44348/SAML/AssertionConsumerService.aspx"
+		SingleLogoutServiceUrl="https://localhost:44348/SAML/SLOService.aspx">
+		  <PartnerCertificates>
+			  <Certificate FileName="Certificates\sp.cer"/>
+		  </PartnerCertificates>
+	  </PartnerServiceProvider>
+
+    <!-- MVC example -->
+    <PartnerServiceProvider 
+	  Name="https://MvcExampleServiceProvider"
+	  Description="MVC Example Service Provider"
+	  AssertionConsumerServiceUrl="https://localhost:44386/SAML/AssertionConsumerService"
+	  SingleLogoutServiceUrl="https://localhost:44386/SAML/SingleLogoutService">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\sp.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+
+    <!-- SAML Proxy -->
+    <PartnerServiceProvider
+      Name="https://SamlProxy"
+      Description="SAML Proxy"
+      AssertionConsumerServiceUrl="https://localhost:44361/SAML/SP/AssertionConsumerService"
+      SingleLogoutServiceUrl="https://localhost:44361/SAML/SP/SingleLogoutService">
+      <PartnerCertificates>
+        <Certificate FileName="Certificates\proxy.cer"/>
+      </PartnerCertificates>
+    </PartnerServiceProvider>
+	  
+    <!-- ADFS -->
+    <PartnerServiceProvider
+      Name="http://adfs.test/adfs/services/trust"
+      Description="ADFS"
+      AssertionConsumerServiceUrl="https://fs.spok.com/adfs/ls">
+    </PartnerServiceProvider>   
+  </PartnerServiceProviders>
+</SAMLConfiguration>
+
+10428/22: 2/22/2024 9:59:20 AM: The SAML configuration file has been successfully loaded.
+10428/22: 2/22/2024 9:59:23 AM: SAML configuration changes in the directory C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider are being monitored.
+10428/22: 2/22/2024 9:59:23 AM: The SAML environment has been successfully initialized.
+10428/22: 2/22/2024 9:59:23 AM: Checking if there are any SSO responses pending to partner service providers.
+10428/22: 2/22/2024 9:59:26 AM: Identity provider session (53511ef6-cedb-4703-8fa8-81cd1859891b) state:
+10428/22: 2/22/2024 9:59:28 AM: There are no SSO responses pending to partner service providers.
+10428/22: 2/22/2024 9:59:28 AM: Receiving an SSO request from a partner service provider.
+10428/22: 2/22/2024 9:59:28 AM: Identity provider session (53511ef6-cedb-4703-8fa8-81cd1859891b) state:
+10428/22: 2/22/2024 9:59:28 AM: Receiving request over HTTP Redirect.
+10428/22: 2/22/2024 9:59:28 AM: HTTP request:
+GET /ExampleIdentityProvider/SAML/SSOService2.aspx HTTP/1.1
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: SAML_SessionId=53511ef6-cedb-4703-8fa8-81cd1859891b
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36
+sec-ch-ua: "Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+
+10428/22: 2/22/2024 9:59:28 AM: Parsing HTTP redirect URL: /ExampleIdentityProvider/SAML/SSOService2.aspx
+10428/22: 2/22/2024 9:59:29 AM: Exception: ComponentSpace.SAML2.Exceptions.SAMLBindingException: The query string is missing SAMLRequest
+10428/22: 2/22/2024 9:59:32 AM:    at ComponentSpace.SAML2.Exceptions.SAMLException..ctor(String message)
+   at ComponentSpace.SAML2.Exceptions.SAMLBindingException..ctor(String message)
+   at ComponentSpace.SAML2.Bindings.HTTPRedirectBinding.ParseQueryString(String redirectURL, String messageQueryName, XmlElement& samlMessage, String& relayState, String& signatureAlgorithm, String& signature)
+   at ComponentSpace.SAML2.Bindings.HTTPRedirectBinding.ReceiveRequest(HttpRequestBase httpRequest, XmlElement& samlMessage, String& relayState, String& signatureAlgorithm, String& signature)
+   at ComponentSpace.SAML2.InternalSAMLIdentityProvider.ReceiveAuthnRequest(HttpRequestBase httpRequest, XmlElement& authnRequestElement, String& relayState, String& signatureAlgorithm, String& signature, String& binding)
+   at ComponentSpace.SAML2.InternalSAMLIdentityProvider.ReceiveSSO(HttpRequestBase httpRequest, String& partnerSP, SSOOptions& ssoOptions)
+   at ComponentSpace.SAML2.SAMLIdentityProvider.ReceiveSSO(HttpRequestBase httpRequest, String& partnerSP, SSOOptions& ssoOptions)
+   at ComponentSpace.SAML2.SAMLIdentityProvider.ReceiveSSO(HttpRequestBase httpRequest, String& partnerSP)
+   at ComponentSpace.SAML2.SAMLIdentityProvider.ReceiveSSO(HttpRequest httpRequest, String& partnerSP)
+   at ExampleIdentityProvider.SAML.SSOService.Page_Load(Object sender, EventArgs e) in C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleIdentityProvider\SSOService.aspx.cs:line 25
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.saml_ssoservice2_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\exampleidentityprovider\389ac023\d4ba600f\App_Web_5cww4par.2.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+   at System.Web.HttpApplication.PipelineStepManager.ResumeSteps(Exception error)
+   at System.Web.HttpApplication.BeginProcessRequestNotification(HttpContext context, AsyncCallback cb)
+   at System.Web.HttpRuntime.ProcessRequestNotificationPrivate(IIS7WorkerRequest wr, HttpContext context)
+   at System.Web.Hosting.PipelineRuntime.ProcessRequestNotificationHelper(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)
+   at System.Web.Hosting.PipelineRuntime.ProcessRequestNotification(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)
+   at System.Web.Hosting.UnsafeIISMethods.MgdIndicateCompletion(IntPtr pHandler, RequestNotificationStatus& notificationStatus)
+   at System.Web.Hosting.UnsafeIISMethods.MgdIndicateCompletion(IntPtr pHandler, RequestNotificationStatus& notificationStatus)
+   at System.Web.Hosting.PipelineRuntime.ProcessRequestNotificationHelper(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)
+   at System.Web.Hosting.PipelineRuntime.ProcessRequestNotification(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)
+

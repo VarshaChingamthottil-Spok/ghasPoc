@@ -1,0 +1,11 @@
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\bin\Debug\ValidateConfig.exe.config
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\bin\Debug\ValidateConfig.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\bin\Debug\ValidateConfig.pdb
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\bin\Debug\ComponentSpace.Saml2.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\bin\Debug\System.Security.Principal.Windows.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\bin\Debug\ComponentSpace.Saml2.xml
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\obj\Debug\ValidateConfig.csproj.AssemblyReference.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\obj\Debug\ValidateConfig.csproj.CoreCompileInputs.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\obj\Debug\ValidateConfig.csproj.CopyComplete
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\obj\Debug\ValidateConfig.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Configuration\ValidateConfig\obj\Debug\ValidateConfig.pdb

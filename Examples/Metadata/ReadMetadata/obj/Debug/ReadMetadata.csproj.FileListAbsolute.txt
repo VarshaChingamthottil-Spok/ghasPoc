@@ -1,0 +1,13 @@
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\bin\Debug\idp-metadata.xml
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\bin\Debug\sp-metadata.xml
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\bin\Debug\ReadMetadata.exe.config
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\bin\Debug\ReadMetadata.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\bin\Debug\ReadMetadata.pdb
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\bin\Debug\ComponentSpace.Saml2.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\bin\Debug\System.Security.Principal.Windows.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\bin\Debug\ComponentSpace.Saml2.xml
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\obj\Debug\ReadMetadata.csproj.AssemblyReference.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\obj\Debug\ReadMetadata.csproj.CoreCompileInputs.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\obj\Debug\ReadMetadata.csproj.CopyComplete
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\obj\Debug\ReadMetadata.exe
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\Metadata\ReadMetadata\obj\Debug\ReadMetadata.pdb

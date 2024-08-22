@@ -1,0 +1,10 @@
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\SpokServiceProvider\bin\SpokServiceProvider.dll.config
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\SpokServiceProvider\bin\SpokServiceProvider.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\SpokServiceProvider\bin\SpokServiceProvider.pdb
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\SpokServiceProvider\bin\ComponentSpace.Saml2.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\SpokServiceProvider\bin\ComponentSpace.Saml2.xml
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\SpokServiceProvider\obj\Debug\SpokServiceProvider.csproj.CoreCompileInputs.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\SpokServiceProvider\obj\Debug\SpokServiceProvider.csproj.CopyComplete
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\SpokServiceProvider\obj\Debug\SpokServiceProvider.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\SpokServiceProvider\obj\Debug\SpokServiceProvider.pdb
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\SpokServiceProvider\obj\Debug\SpokServiceProvider.csproj.AssemblyReference.cache

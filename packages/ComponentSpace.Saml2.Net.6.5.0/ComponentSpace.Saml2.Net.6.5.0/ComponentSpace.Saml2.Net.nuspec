@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>ComponentSpace.Saml2.Net</id>
+    <version>6.5.0</version>
+    <title>SAML SSO for ASP.NET</title>
+    <authors>ComponentSpace</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">license.md</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>readme.md</readme>
+    <projectUrl>https://www.componentspace.com/saml</projectUrl>
+    <description>Enable SAML v2.0 identity provider (IdP) and service provider (SP) single sign-on (SSO) in ASP.NET applications.
+
+This is a fully functional evaluation version of a commercial product. The trial period is 30 days.</description>
+    <releaseNotes>https://www.componentspace.com/saml-net-release-notes</releaseNotes>
+    <copyright>Copyright © ComponentSpace 2004-2023</copyright>
+    <tags>ComponentSpace SAML SSO authentication aspnet</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="System.Security.Cryptography.Xml" version="7.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.8">
+        <dependency id="System.Security.Cryptography.Xml" version="7.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.0, .NETFramework4.6.2, .NETFramework4.8" />
+      <frameworkAssembly assemblyName="System.Runtime.Caching" targetFramework=".NETFramework4.0, .NETFramework4.6.2, .NETFramework4.8" />
+      <frameworkAssembly assemblyName="System.Security" targetFramework=".NETFramework4.0, .NETFramework4.6.2, .NETFramework4.8" />
+      <frameworkAssembly assemblyName="System.Web" targetFramework=".NETFramework4.0, .NETFramework4.6.2, .NETFramework4.8" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

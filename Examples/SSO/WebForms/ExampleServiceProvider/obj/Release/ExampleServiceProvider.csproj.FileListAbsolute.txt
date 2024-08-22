@@ -1,0 +1,10 @@
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleServiceProvider\bin\ExampleServiceProvider.dll.config
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleServiceProvider\bin\ExampleServiceProvider.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleServiceProvider\bin\ExampleServiceProvider.pdb
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleServiceProvider\bin\ComponentSpace.Saml2.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleServiceProvider\bin\ComponentSpace.Saml2.xml
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleServiceProvider\obj\Release\ExampleServiceProvider.csproj.CoreCompileInputs.cache
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleServiceProvider\obj\Release\ExampleServiceProvider.csproj.CopyComplete
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleServiceProvider\obj\Release\ExampleServiceProvider.dll
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleServiceProvider\obj\Release\ExampleServiceProvider.pdb
+C:\_Varsha\SAMLv20-evaluation\SAML for .NET\Examples\SSO\WebForms\ExampleServiceProvider\obj\Release\ExampleServiceProvider.csproj.AssemblyReference.cache

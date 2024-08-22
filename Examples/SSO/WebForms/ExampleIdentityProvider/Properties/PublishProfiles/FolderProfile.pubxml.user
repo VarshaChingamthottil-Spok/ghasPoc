@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_NewBackgroundProfile>True</_NewBackgroundProfile>
+    <_PublishTargetUrl>C:\_Varsha\SAMLv20-evaluation\Publishcode\ExampleIdentityProvider</_PublishTargetUrl>
+    <History>True|2024-02-23T12:53:32.3807735Z;True|2024-02-23T06:39:01.7061858-06:00;True|2024-02-23T06:02:34.0613872-06:00;True|2023-10-18T01:44:40.4778791-05:00;True|2023-10-18T01:38:58.5923294-05:00;True|2023-10-15T00:18:07.3942412-05:00;True|2023-10-14T23:48:40.4043600-05:00;True|2022-04-10T20:34:05.6013622-05:00;True|2022-04-10T20:20:00.9206598-05:00;True|2022-04-10T20:18:17.4999480-05:00;True|2022-04-10T20:17:05.8852588-05:00;True|2022-04-10T20:00:40.5970349-05:00;True|2022-04-07T21:18:29.0505683-05:00;True|2022-04-07T21:10:06.6716657-05:00;True|2021-07-07T20:54:07.4046024-05:00;True|2021-07-07T20:34:33.4851384-05:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/readme.txt">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="bin/ComponentSpace.SAML2.dll">
+      <publishTime>11/07/2023 18:37:42</publishTime>
+    </File>
+    <File Include="bin/ComponentSpace.SAML2.pdb">
+      <publishTime>10/28/2017 09:51:43</publishTime>
+    </File>
+    <File Include="bin/ExampleIdentityProvider.dll">
+      <publishTime>02/23/2024 06:53:31</publishTime>
+    </File>
+    <File Include="bin/ExampleIdentityProvider.pdb">
+      <publishTime>02/23/2024 06:53:31</publishTime>
+    </File>
+    <File Include="bin/System.Security.AccessControl.dll">
+      <publishTime>11/15/2019 08:41:04</publishTime>
+    </File>
+    <File Include="bin/System.Security.Cryptography.Xml.dll">
+      <publishTime>11/15/2019 08:38:22</publishTime>
+    </File>
+    <File Include="bin/System.Security.Permissions.dll">
+      <publishTime>11/15/2019 08:38:24</publishTime>
+    </File>
+    <File Include="bin/System.Security.Principal.Windows.dll">
+      <publishTime>11/15/2019 08:41:16</publishTime>
+    </File>
+    <File Include="Certificates/idp.cer">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="Certificates/idp.pfx">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="Certificates/proxy.cer">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="Certificates/sp.cer">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>02/19/2024 09:02:49</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>02/19/2024 06:45:32</publishTime>
+    </File>
+    <File Include="saml.config">
+      <publishTime>02/23/2024 06:50:08</publishTime>
+    </File>
+    <File Include="SAML/ECP.aspx">
+      <publishTime>06/13/2013 14:56:22</publishTime>
+    </File>
+    <File Include="SAML/ExportMetadata.aspx">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="SAML/ImportMetadata.aspx">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="SAML/SLOService.aspx">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="SAML/SSOService.aspx">
+      <publishTime>02/23/2024 06:38:53</publishTime>
+    </File>
+    <File Include="SAML/SSOService2.aspx">
+      <publishTime>02/22/2024 09:57:53</publishTime>
+    </File>
+    <File Include="SAML/Web.config">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.11.3.min.js">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="Site.css">
+      <publishTime>01/31/2024 08:02:33</publishTime>
+    </File>
+    <File Include="SSOService.aspx">
+      <publishTime>02/22/2024 09:57:02</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/20/2024 04:38:54</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
